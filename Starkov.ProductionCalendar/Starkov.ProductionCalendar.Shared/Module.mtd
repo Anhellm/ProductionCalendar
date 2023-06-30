@@ -1,0 +1,60 @@
+{
+  "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
+  "NameGuid": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+  "Name": "ProductionCalendar",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Starkov.ProductionCalendar.Client",
+  "ClientBaseAssemblyName": "Starkov.ProductionCalendar.ClientBase",
+  "ClientBaseNamespace": "Starkov.ProductionCalendar.ClientBase",
+  "ClientNamespace": "Starkov.ProductionCalendar.Client",
+  "Code": "Product",
+  "CompanyCode": "Starkov",
+  "Cover": {
+    "NameGuid": "1d3bf1c8-e134-4d4c-89d1-a2b17ff4f4f1",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "6518e621-3601-4b40-bb20-a301fbf83d21",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "fc87ad2c-bb45-4cd6-8b8f-4460ce4333c7",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "Dependencies": [
+    {
+      "Id": "8e2e9dc0-09c0-4f66-8cf8-352f18b6a4e3",
+      "IsSolutionModule": true,
+      "MaxVersion": "",
+      "MinVersion": ""
+    }
+  ],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Starkov.ProductionCalendar",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "Starkov.ProductionCalendar.Server",
+  "ServerNamespace": "Starkov.ProductionCalendar.Server",
+  "SharedAssemblyName": "Starkov.ProductionCalendar.Shared",
+  "SharedNamespace": "Starkov.ProductionCalendar.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$type": "Sungero.Metadata.SolutionMetadata, Sungero.Metadata",
+  "NameGuid": "8e2e9dc0-09c0-4f66-8cf8-352f18b6a4e3",
+  "Name": "CalendarExtensions",
+  "AsyncHandlers": [],
+  "ClientAssemblyName": "Starkov.CalendarExtensions.Client",
+  "ClientBaseAssemblyName": "Starkov.CalendarExtensions.ClientBase",
+  "ClientBaseNamespace": "Starkov.CalendarExtensions.ClientBase",
+  "ClientNamespace": "Starkov.CalendarExtensions.Client",
+  "Code": "Calenda",
+  "CompanyCode": "Starkov",
+  "Cover": {
+    "NameGuid": "3d886643-e91c-448c-9c19-58c4af72814f",
+    "Actions": [],
+    "Background": null,
+    "Footer": {
+      "NameGuid": "871cf11c-57f5-4fda-9464-6ff8453f61d9",
+      "BackgroundPosition": "Stretch"
+    },
+    "Groups": [],
+    "Header": {
+      "NameGuid": "2a6406d6-18d3-4319-8acc-0f221ddcc898",
+      "BackgroundPosition": "Stretch"
+    },
+    "Tabs": []
+  },
+  "DesktopViews": [],
+  "IconResourcesKeys": [],
+  "Importance": "Medium",
+  "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "InterfaceNamespace": "Starkov.CalendarExtensions",
+  "OrderedSpecialFolders": [],
+  "PublicStructures": [],
+  "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
+  "ResourceInterfaceNamespace": "Starkov.CalendarExtensions",
+  "ResourcesKeys": [],
+  "ServerAssemblyName": "Starkov.CalendarExtensions.Server",
+  "ServerNamespace": "Starkov.CalendarExtensions.Server",
+  "SharedAssemblyName": "Starkov.CalendarExtensions.Shared",
+  "SharedNamespace": "Starkov.CalendarExtensions.Shared",
+  "SpecialFolders": [],
+  "Version": "0.0.1.0",
+  "Widgets": [],
+  "Versions": [
+    {
+      "Type": "SolutionMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "ModuleMetadata",
+      "Number": 8
+    },
+    {
+      "Type": "DomainApi",
+      "Number": 3
+    }
+  ]
+}
