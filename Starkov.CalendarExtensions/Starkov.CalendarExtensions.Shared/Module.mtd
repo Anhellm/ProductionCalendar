@@ -7,7 +7,7 @@
   "ClientBaseAssemblyName": "Starkov.CalendarExtensions.ClientBase",
   "ClientBaseNamespace": "Starkov.CalendarExtensions.ClientBase",
   "ClientNamespace": "Starkov.CalendarExtensions.Client",
-  "Code": "Calenda",
+  "Code": "CalExt",
   "CompanyCode": "Starkov",
   "Cover": {
     "NameGuid": "3d886643-e91c-448c-9c19-58c4af72814f",

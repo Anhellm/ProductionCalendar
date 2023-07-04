@@ -7,22 +7,50 @@
   "ClientBaseAssemblyName": "Starkov.ProductionCalendar.ClientBase",
   "ClientBaseNamespace": "Starkov.ProductionCalendar.ClientBase",
   "ClientNamespace": "Starkov.ProductionCalendar.Client",
-  "Code": "Product",
+  "Code": "Calend",
   "CompanyCode": "Starkov",
   "Cover": {
     "NameGuid": "1d3bf1c8-e134-4d4c-89d1-a2b17ff4f4f1",
-    "Actions": [],
+    "Actions": [
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
+        "Name": "ProductionCalendars",
+        "EntityTypeId": "a0cb9556-3538-46b3-a869-892ba0b6fc89",
+        "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
+        "PreviousItemGuid": "a07c7815-72bb-416b-803c-9b72def4960a"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "a07c7815-72bb-416b-803c-9b72def4960a",
+        "Name": "CurrentYearCalendar",
+        "FunctionName": "Function1",
+        "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
+      }
+    ],
     "Background": null,
     "Footer": {
       "NameGuid": "6518e621-3601-4b40-bb20-a301fbf83d21",
       "BackgroundPosition": "Stretch"
     },
-    "Groups": [],
+    "Groups": [
+      {
+        "NameGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
+        "Name": "Calendar",
+        "BackgroundPosition": "Stretch",
+        "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+      }
+    ],
     "Header": {
       "NameGuid": "fc87ad2c-bb45-4cd6-8b8f-4460ce4333c7",
       "BackgroundPosition": "Stretch"
     },
-    "Tabs": []
+    "Tabs": [
+      {
+        "NameGuid": "287dae68-942d-442c-81fd-71f1fc2b99c5",
+        "Name": "Tab"
+      }
+    ]
   },
   "Dependencies": [
     {
@@ -30,6 +58,11 @@
       "IsSolutionModule": true,
       "MaxVersion": "",
       "MinVersion": ""
+    }
+  ],
+  "ExplorerTreeOrder": [
+    {
+      "ItemId": "a0cb9556-3538-46b3-a869-892ba0b6fc89"
     }
   ],
   "IconResourcesKeys": [],

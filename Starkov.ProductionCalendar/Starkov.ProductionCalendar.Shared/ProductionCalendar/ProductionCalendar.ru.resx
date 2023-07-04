@@ -58,28 +58,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DisplayName" xml:space="preserve">
-    <value>Production calendar</value>
-  </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Production calendar</value>
-  </data>
-  <data name="CoverTab_Tab" xml:space="preserve">
-    <value>Tab</value>
-  </data>
-  <data name="CoverGroup_Calendar" xml:space="preserve">
-    <value>Calendar</value>
-  </data>
-  <data name="CoverAction_CurrentYearCalendar" xml:space="preserve">
-    <value>Current year calendar</value>
-  </data>
-  <data name="CoverDescription_CurrentYearCalendar" xml:space="preserve">
-    <value>Show or create current year calendar</value>
-  </data>
-  <data name="CoverAction_ProductionCalendars" xml:space="preserve">
-    <value>Production calendars</value>
-  </data>
-  <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
-    <value>Show production calendar databook.</value>
-  </data>
 </root>

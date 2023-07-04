@@ -1,0 +1,197 @@
+{
+  "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
+  "NameGuid": "a0cb9556-3538-46b3-a869-892ba0b6fc89",
+  "Name": "ProductionCalendar",
+  "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
+  "CanBeNavigationPropertyType": true,
+  "CanBeSearch": true,
+  "Code": "ProdCalendar",
+  "CreationAreaMetadata": {
+    "NameGuid": "f7766750-eee2-4fcd-8003-5c06a90d1f44",
+    "Name": "CreationArea",
+    "Buttons": [],
+    "IsAncestorMetadata": true
+  },
+  "ExtraSearchProperties": [],
+  "FilterPanel": {
+    "NameGuid": "b0125fbd-3b91-4dbb-914a-689276216404",
+    "Name": "FilterPanel",
+    "Controls": [],
+    "IsAncestorMetadata": true
+  },
+  "Forms": [
+    {
+      "$type": "Sungero.Metadata.StandaloneFormMetadata, Sungero.Metadata",
+      "NameGuid": "d87cac07-7d45-4b14-b269-21f085b0a7fe",
+      "Name": "Card",
+      "Controls": [
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "52a144fa-f6b9-4c25-b893-1d7bde9d97d5",
+          "Name": "ControlGroup"
+        },
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "addd7b20-71e2-4549-afd0-321565b66683",
+          "Name": "PropertyGroup",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "ParentGuid": "52a144fa-f6b9-4c25-b893-1d7bde9d97d5",
+          "RowNumber": 0,
+          "RowSpan": 1
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "3ec3259a-15cc-4eda-a065-f6aa07dc48dd",
+          "Name": "Name",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+          "ParentGuid": "addd7b20-71e2-4549-afd0-321565b66683",
+          "PropertyGuid": "25b90d6f-005d-4ac2-a658-44c728ec6dea",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "c0cf9067-cdba-4c35-ad66-8c101383e207",
+          "Name": "WorkingTimeCalendar",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+          "ParentGuid": "addd7b20-71e2-4549-afd0-321565b66683",
+          "PropertyGuid": "fb96460c-42b5-43fb-9074-c1bdf25182b6",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "3da04637-21a7-4dbb-aba0-b8bcac477085",
+          "Name": "CalenedarViewGroup",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "ParentGuid": "52a144fa-f6b9-4c25-b893-1d7bde9d97d5",
+          "RowNumber": 1,
+          "RowSpan": 1
+        },
+        {
+          "$type": "Sungero.Metadata.FunctionControlMetadata, Sungero.Metadata",
+          "NameGuid": "aabbe79b-af08-4b56-b6cc-c61988d4a96a",
+          "Name": "CalendarState",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StateViewToFunctionBinder",
+          "FunctionName": "GetProductionCalendarState",
+          "HeaderLocation": "None",
+          "ParentGuid": "3da04637-21a7-4dbb-aba0-b8bcac477085",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        }
+      ]
+    }
+  ],
+  "HandledEvents": [
+    "BeforeSaveServer"
+  ],
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "ProductionCalendarProductionCalendar",
+  "OperationsClass": "",
+  "Overridden": [
+    "CanBeSearch"
+  ],
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "25b90d6f-005d-4ac2-a658-44c728ec6dea",
+      "Name": "Name",
+      "Code": "Name",
+      "IsDisplayValue": true,
+      "IsEnabled": false,
+      "IsQuickSearchAllowed": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "1dcedc29-5140-4770-ac92-eabc212326a1"
+    },
+    {
+      "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "fb96460c-42b5-43fb-9074-c1bdf25182b6",
+      "Name": "WorkingTimeCalendar",
+      "Code": "Calendar",
+      "EntityGuid": "02720bfa-107b-4d7e-baac-0cd146a4b527",
+      "FlatListInStandaloneLookup": true,
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "IsLoadEagerly": true,
+      "IsRequired": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+      "PreviousPropertyGuid": "25b90d6f-005d-4ac2-a658-44c728ec6dea"
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "GetCalendar",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "year",
+          "ParameterType": "global::System.Nullable<global::System.Int32>",
+          "ParameterTypeFullName": "System.Nullable"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::Starkov.ProductionCalendar.IProductionCalendar",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "GetCalendar",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "workingTimeCalendar",
+          "ParameterType": "global::Sungero.CoreEntities.IWorkingTimeCalendar",
+          "ParameterTypeFullName": "Sungero.CoreEntities.IWorkingTimeCalendar, Sungero.Domain.Shared"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::Starkov.ProductionCalendar.IProductionCalendar",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "GetCalendars",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::System.Linq.IQueryable<global::Starkov.ProductionCalendar.IProductionCalendar>",
+      "ReturnTypeFullName": "System.Linq.IQueryable"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [],
+  "RibbonCardMetadata": {
+    "NameGuid": "8520d92b-1f6f-4885-bcb9-40f4178a82ee",
+    "Name": "RibbonCard",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": [],
+    "RibbonKind": "Card"
+  },
+  "RibbonCollectionMetadata": {
+    "NameGuid": "54b7c1cf-a2b2-4c70-9e90-6d612ab72ad7",
+    "Name": "RibbonCollection",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": []
+  },
+  "Versions": [
+    {
+      "Type": "EntityMetadata",
+      "Number": 11
+    }
+  ]
+}

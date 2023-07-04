@@ -61,4 +61,22 @@
   <data name="DisplayName" xml:space="preserve">
     <value>Производственный календарь</value>
   </data>
+  <data name="CoverTitle" xml:space="preserve">
+    <value>Производственный календарь</value>
+  </data>
+  <data name="CoverGroup_Calendar" xml:space="preserve">
+    <value>Календарь</value>
+  </data>
+  <data name="CoverAction_CurrentYearCalendar" xml:space="preserve">
+    <value>Календарь на текущий год</value>
+  </data>
+  <data name="CoverDescription_CurrentYearCalendar" xml:space="preserve">
+    <value>Открыть или добавить календарь за текущий год</value>
+  </data>
+  <data name="CoverAction_ProductionCalendars" xml:space="preserve">
+    <value>Производственные календари</value>
+  </data>
+  <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
+    <value>Открыть справочник с производственными календарями.</value>
+  </data>
 </root>
