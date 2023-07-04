@@ -58,4 +58,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Duplicate_Error" xml:space="preserve">
+    <value>Calendar view already exists</value>
+  </data>
+  <data name="PrivateLabel_Name" xml:space="preserve">
+    <value> (Private) </value>
+  </data>
+  <data name="NameTemplate" xml:space="preserve">
+    <value>Production calendar{0}for {1} year</value>
+  </data>
 </root>

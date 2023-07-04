@@ -67,8 +67,8 @@
   <data name="CoverTab_Tab" xml:space="preserve">
     <value>Tab</value>
   </data>
-  <data name="CoverGroup_Calendar" xml:space="preserve">
-    <value>Calendar</value>
+  <data name="CoverGroup_Calendars" xml:space="preserve">
+    <value>Main calendars</value>
   </data>
   <data name="CoverAction_CurrentYearCalendar" xml:space="preserve">
     <value>Current year calendar</value>
@@ -81,5 +81,26 @@
   </data>
   <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
     <value>Show production calendar databook.</value>
+  </data>
+  <data name="CoverAction_NextYearCalendar" xml:space="preserve">
+    <value>Next year calendar</value>
+  </data>
+  <data name="CoverDescription_NextYearCalendar" xml:space="preserve">
+    <value>Открыть или добавить календарь на следующий год</value>
+  </data>
+  <data name="CoverGroup_PrivateCalendars" xml:space="preserve">
+    <value>Private calendars</value>
+  </data>
+  <data name="CoverAction_PrivateProductionCalendars" xml:space="preserve">
+    <value>Private production calendars</value>
+  </data>
+  <data name="CoverDescription_PrivateProductionCalendars" xml:space="preserve">
+    <value>Show private production calendar databook.</value>
+  </data>
+  <data name="CoverAction_CreatePrivateCalendar" xml:space="preserve">
+    <value>Create private calendar</value>
+  </data>
+  <data name="CoverDescription_CreatePrivateCalendar" xml:space="preserve">
+    <value>Create private production calendar</value>
   </data>
 </root>

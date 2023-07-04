@@ -15,8 +15,11 @@ namespace Starkov.ProductionCalendar
       if (Equals(e.NewValue, e.OldValue))
         return;
       
-      _obj.State.Controls.CalendarState.Refresh();
+      _obj.IsPrivate = PrivateWorkingTimeCalendars.Is(e.NewValue);
+      _obj.Year = e.NewValue?.Year;
+      
       Functions.ProductionCalendar.FillName(_obj);
+      _obj.State.Controls.CalendarState.Refresh();
     }
 
   }

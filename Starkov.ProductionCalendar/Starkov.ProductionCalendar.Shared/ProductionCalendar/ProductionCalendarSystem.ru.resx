@@ -73,4 +73,10 @@
   <data name="CollectionDisplayName" xml:space="preserve">
     <value>Производственные календари</value>
   </data>
+  <data name="Property_IsPrivate" xml:space="preserve">
+    <value>Частный</value>
+  </data>
+  <data name="Property_Year" xml:space="preserve">
+    <value>Год</value>
+  </data>
 </root>

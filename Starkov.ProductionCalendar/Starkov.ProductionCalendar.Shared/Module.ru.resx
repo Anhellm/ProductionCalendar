@@ -58,4 +58,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccessRightsCreate_Error" xml:space="preserve">
+    <value>Нет прав на создание календарей.</value>
+  </data>
+  <data name="NullCalendar_Error" xml:space="preserve">
+    <value>Ошибка при создании производственного календаря. Обратитесь к администратору.</value>
+  </data>
+  <data name="CalendarNotSaved_Message" xml:space="preserve">
+    <value>Календарь рабочего времени не сохранен</value>
+  </data>
+  <data name="CalendarCreate_Error" xml:space="preserve">
+    <value>Ошибка при создании календаря рабочего времени: {0}. Обратитесь к администратору.</value>
+  </data>
 </root>

@@ -64,8 +64,8 @@
   <data name="CoverTitle" xml:space="preserve">
     <value>Производственный календарь</value>
   </data>
-  <data name="CoverGroup_Calendar" xml:space="preserve">
-    <value>Календарь</value>
+  <data name="CoverGroup_Calendars" xml:space="preserve">
+    <value>Основные календари</value>
   </data>
   <data name="CoverAction_CurrentYearCalendar" xml:space="preserve">
     <value>Календарь на текущий год</value>
@@ -78,5 +78,23 @@
   </data>
   <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
     <value>Открыть справочник с производственными календарями.</value>
+  </data>
+  <data name="CoverAction_NextYearCalendar" xml:space="preserve">
+    <value>Календарь на следующий  год</value>
+  </data>
+  <data name="CoverGroup_PrivateCalendars" xml:space="preserve">
+    <value>Частные календари</value>
+  </data>
+  <data name="CoverAction_PrivateProductionCalendars" xml:space="preserve">
+    <value>Частные производственные календари</value>
+  </data>
+  <data name="CoverDescription_PrivateProductionCalendars" xml:space="preserve">
+    <value>Открыть справочник с частными производственными календарями.</value>
+  </data>
+  <data name="CoverAction_CreatePrivateCalendar" xml:space="preserve">
+    <value>Создать частный календарь</value>
+  </data>
+  <data name="CoverDescription_CreatePrivateCalendar" xml:space="preserve">
+    <value>Создать частный производственный календарь</value>
   </data>
 </root>

@@ -79,4 +79,10 @@
   <data name="ControlGroup_3da0463721a74dbbaba0b8bcac477085" xml:space="preserve">
     <value />
   </data>
+  <data name="Property_IsPrivate" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="Property_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
 </root>

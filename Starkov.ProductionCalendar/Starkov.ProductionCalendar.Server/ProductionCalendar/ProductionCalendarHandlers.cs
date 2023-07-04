@@ -7,14 +7,27 @@ using Starkov.ProductionCalendar.ProductionCalendar;
 
 namespace Starkov.ProductionCalendar
 {
+  partial class ProductionCalendarCreatingFromServerHandler
+  {
+
+    public override void CreatingFrom(Sungero.Domain.CreatingFromEventArgs e)
+    {
+      e.Without(_info.Properties.WorkingTimeCalendar);
+      e.Without(_info.Properties.Name);
+      e.Without(_info.Properties.IsPrivate);
+    }
+  }
+
   partial class ProductionCalendarServerHandlers
   {
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
-      var duplicate = Functions.ProductionCalendar.GetCalendar(_obj.WorkingTimeCalendar);
-      if (duplicate != null)
-        e.AddError(string.Format("Представление для календаря уже существует {0}", Hyperlinks.Get(duplicate)));
+      var duplicates = Functions.ProductionCalendar.GetCalendars()
+        .Where(x => Equals(x.WorkingTimeCalendar, _obj.WorkingTimeCalendar))
+        .Where(x => !Equals(x, _obj));
+      if (duplicates.Any())
+        e.AddError(ProductionCalendars.Resources.Duplicate_Error);
     }
   }
 

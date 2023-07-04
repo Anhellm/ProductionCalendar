@@ -58,4 +58,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Duplicate_Error" xml:space="preserve">
+    <value>Представление для календаря уже существует</value>
+  </data>
+  <data name="PrivateLabel_Name" xml:space="preserve">
+    <value> (Частный) </value>
+  </data>
+  <data name="NameTemplate" xml:space="preserve">
+    <value>Производственный календарь{0}на {1} год</value>
+  </data>
 </root>

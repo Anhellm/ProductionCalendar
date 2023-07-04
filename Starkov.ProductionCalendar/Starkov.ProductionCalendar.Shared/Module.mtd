@@ -13,18 +13,41 @@
     "NameGuid": "1d3bf1c8-e134-4d4c-89d1-a2b17ff4f4f1",
     "Actions": [
       {
-        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
         "NameGuid": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
         "Name": "ProductionCalendars",
-        "EntityTypeId": "a0cb9556-3538-46b3-a869-892ba0b6fc89",
+        "FunctionName": "ShowMainCalendars",
+        "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
+        "PreviousItemGuid": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c",
+        "Name": "NextYearCalendar",
+        "FunctionName": "ShowOrCreateNextYearCalendar",
         "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
         "PreviousItemGuid": "a07c7815-72bb-416b-803c-9b72def4960a"
       },
       {
         "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "5d9848e0-a818-41df-8d25-6421b0de3d5d",
+        "Name": "CreatePrivateCalendar",
+        "FunctionName": "CreatePrivateCalendar",
+        "GroupId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
+        "Name": "PrivateProductionCalendars",
+        "FunctionName": "ShowPrivateCalendars",
+        "GroupId": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+        "PreviousItemGuid": "5d9848e0-a818-41df-8d25-6421b0de3d5d"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
         "NameGuid": "a07c7815-72bb-416b-803c-9b72def4960a",
         "Name": "CurrentYearCalendar",
-        "FunctionName": "Function1",
+        "FunctionName": "ShowOrCreateCurrentYearCalendar",
         "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
       }
     ],
@@ -36,8 +59,17 @@
     "Groups": [
       {
         "NameGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
-        "Name": "Calendar",
+        "Name": "Calendars",
         "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconCalendars_8cf999cb4ce44e74a0bad7db3f6e8b1c.png",
+        "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+      },
+      {
+        "NameGuid": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+        "Name": "PrivateCalendars",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconPrivateCalendars_6fa23aa1f078400693f866d304cfab73.png",
+        "PreviousItemGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
         "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
       }
     ],
@@ -69,10 +101,68 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "PublicFunctions": [
+    {
+      "Name": "CreateWorkingTimeCalendar",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Sungero.CoreEntities.IWorkingTimeCalendar",
+      "ReturnTypeFullName": "Sungero.CoreEntities.IWorkingTimeCalendar, Sungero.Domain.Shared"
+    },
+    {
+      "Name": "GetWorkingTimeCalendars",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::System.Linq.IQueryable<global::Sungero.CoreEntities.IWorkingTimeCalendar>",
+      "ReturnTypeFullName": "System.Linq.IQueryable"
+    },
+    {
+      "Name": "ShowMainCalendars",
+      "Placement": "Client",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ShowOrCreateCurrentYearCalendar",
+      "Placement": "Client",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ShowOrCreateMainCalendar",
+      "Parameters": [
+        {
+          "Name": "year",
+          "ParameterType": "global::System.Int32",
+          "ParameterTypeFullName": "System.Int32"
+        }
+      ],
+      "Placement": "Client",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ShowOrCreateNextYearCalendar",
+      "Placement": "Client",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    },
+    {
+      "Name": "ShowPrivateCalendars",
+      "Placement": "Client",
+      "ReturnType": "void",
+      "ReturnTypeFullName": "System.Void"
+    }
+  ],
   "PublicStructures": [],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.ProductionCalendar",
-  "ResourcesKeys": [],
+  "ResourcesKeys": [
+    "AccessRightsCreate_Error",
+    "NullCalendar_Error",
+    "CalendarNotSaved_Message",
+    "CalendarCreate_Error"
+  ],
   "ServerAssemblyName": "Starkov.ProductionCalendar.Server",
   "ServerNamespace": "Starkov.ProductionCalendar.Server",
   "SharedAssemblyName": "Starkov.ProductionCalendar.Shared",

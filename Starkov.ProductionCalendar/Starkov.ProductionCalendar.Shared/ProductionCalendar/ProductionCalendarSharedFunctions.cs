@@ -10,9 +10,13 @@ namespace Starkov.ProductionCalendar.Shared
   partial class ProductionCalendarFunctions
   {
 
+    /// <summary>
+    /// Заполнить имя календаря.
+    /// </summary>
     public void FillName()
     {
-      _obj.Name = string.Format("Производственный календарь на {0} год", _obj.WorkingTimeCalendar?.Year);
+      string privateCalendarLabel = _obj.IsPrivate == true ? ProductionCalendars.Resources.PrivateLabel_Name : " ";
+      _obj.Name = ProductionCalendars.Resources.NameTemplateFormat(privateCalendarLabel, _obj.Year);
     }
   }
 }

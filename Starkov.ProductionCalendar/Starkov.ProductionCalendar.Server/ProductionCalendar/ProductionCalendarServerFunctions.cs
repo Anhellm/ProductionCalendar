@@ -11,17 +11,17 @@ namespace Starkov.ProductionCalendar.Server
   {
     #region Получение данных.
     /// <summary>
-    /// Получить производственные календари.
+    /// Получить основные производственные календари.
     /// </summary>
     /// <returns>Производственные календари.</returns>
     [Public, Remote(IsPure = true)]
     public static IQueryable<IProductionCalendar> GetCalendars()
     {
-      return ProductionCalendars.GetAll();
+      return ProductionCalendars.GetAll(x => x.IsPrivate != true);
     }
     
     /// <summary>
-    /// Получить производственный календарь.
+    /// Получить основной производственный календарь.
     /// </summary>
     /// <param name="year">Год.</param>
     /// <returns>Производственный календарь на конкретный год.</returns>
@@ -31,11 +31,11 @@ namespace Starkov.ProductionCalendar.Server
       if (!year.HasValue)
         return ProductionCalendars.Null;
       
-      return GetCalendars().Where(x => x.WorkingTimeCalendar != null && x.WorkingTimeCalendar.Year == year).FirstOrDefault();
+      return GetCalendars().Where(x => x.Year == year).FirstOrDefault();
     }
     
     /// <summary>
-    /// Получить производственный календарь.
+    /// Получить основной производственный календарь.
     /// </summary>
     /// <param name="workingTimeCalendar">Календарь рабочего времени.</param>
     /// <returns>Получить производственный календарь на основе календаря рабочего времени.</returns>
@@ -47,8 +47,49 @@ namespace Starkov.ProductionCalendar.Server
       
       return GetCalendars().Where(x => Equals(x.WorkingTimeCalendar, workingTimeCalendar)).FirstOrDefault();
     }
+    
+    #region Частные календари.
+    /// <summary>
+    /// Получить частные производственные календари.
+    /// </summary>
+    /// <returns>Производственные календари.</returns>
+    [Public, Remote(IsPure = true)]
+    public static IQueryable<IProductionCalendar> GetPrivateCalendars()
+    {
+      return ProductionCalendars.GetAll(x => x.IsPrivate == true);
+    }
+    
+    /// <summary>
+    /// Получить частные производственные календари.
+    /// </summary>
+    /// <param name="year">Год.</param>
+    /// <returns>Производственные календари.</returns>
+    [Public, Remote(IsPure = true)]
+    public static IQueryable<IProductionCalendar> GetPrivateCalendars(int? year)
+    {
+      return GetPrivateCalendars().Where(x => x.Year == year);
+    }
     #endregion
-
+    #endregion
+    
+    #region Создание
+    /// <summary>
+    /// Создать производственный календарь.
+    /// </summary>
+    /// <param name="workingTimeCalendar">Календарь рабочего времени.</param>
+    /// <returns>Производственный календарь.</returns>
+    [Public, Remote]
+    public static IProductionCalendar CreateCalendar(IWorkingTimeCalendar workingTimeCalendar)
+    {
+      if (workingTimeCalendar == null)
+        return ProductionCalendars.Null;
+      
+      var calendar = ProductionCalendars.Create();
+      calendar.WorkingTimeCalendar = workingTimeCalendar;
+      return calendar;
+    }
+    #endregion
+    
     #region StateView календаря.
     /// <summary>
     /// 
