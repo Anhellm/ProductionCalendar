@@ -67,4 +67,25 @@
   <data name="NameTemplate" xml:space="preserve">
     <value>Production calendar{0}for {1} year</value>
   </data>
+  <data name="DaysCount_Header" xml:space="preserve">
+    <value>Days count</value>
+  </data>
+  <data name="WorkingHours_Header" xml:space="preserve">
+    <value>Working hours</value>
+  </data>
+  <data name="Calendar_Title" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="Weekend_Title" xml:space="preserve">
+    <value>Weekends and holidays</value>
+  </data>
+  <data name="Working_Title" xml:space="preserve">
+    <value>Working</value>
+  </data>
+  <data name="HoursLabel_Title" xml:space="preserve">
+    <value>{0} - hours week</value>
+  </data>
+  <data name="QuarterLabel_Header" xml:space="preserve">
+    <value>{0} QUARTER</value>
+  </data>
 </root>

@@ -92,132 +92,241 @@ namespace Starkov.ProductionCalendar.Server
     
     #region StateView календаря.
     /// <summary>
-    /// 
+    /// Сформировать представление календаря.
     /// </summary>
     [Remote]
-    public StateView GetProductionCalendarState()
+    public virtual StateView GetProductionCalendarState()
     {
       var stateView = StateView.Create();
       if (_obj.WorkingTimeCalendar == null)
         return stateView;
       
-      var calendar = _obj.WorkingTimeCalendar.Day;
-      for (int i = 1; i <= 4; i++)
-      {
-        AddQuarter(stateView, GetQuarterNumber(i), calendar.Where(x => (x.Day.Month + 2) / 3 == i).ToList());
-      }
+      AddColumns(stateView);
+      
+      var calendar = _obj.WorkingTimeCalendar.Day.ToList();
+      for (int i = 0; i <= 4; i++)
+        AddBlock(stateView, i, calendar);
       
       return stateView;
     }
     
-    private static void AddQuarter(StateView stateView, string number, List<Sungero.CoreEntities.IWorkingTimeCalendarDay> days)
+    /// <summary>
+    /// Добавить заголовки.
+    /// </summary>
+    /// <param name="stateView">StateView календаря.</param>
+    public virtual void AddColumns(StateView stateView)
     {
-      var quarter = stateView.AddBlock();
-      quarter.IsExpanded = days.Any(x => x.Day == Calendar.Today);
-      
+      var columnBlock = stateView.AddBlock();
       var headerStyle = Sungero.Docflow.PublicFunctions.Module.CreateHeaderStyle(false);
-      quarter.AddLabel(number + " КВАРТАЛ", headerStyle);
       
-      int workingDays = days.Where(x => !x.Kind.HasValue).Count();
+      foreach (var header in new string[] { string.Empty, ProductionCalendars.Resources.DaysCount_Header, string.Empty, ProductionCalendars.Resources.WorkingHours_Header, string.Empty })
+      {
+        var content = columnBlock.AddContent();
+        content.AddLabel(header, headerStyle);
+      }
       
-      var daysInfoName = quarter.AddContent();
-      daysInfoName.AddLabel("Количество дней", headerStyle);
-      daysInfoName.AddLineBreak();
-      daysInfoName.AddLabel("Календарных");
-      daysInfoName.AddLineBreak();
-      daysInfoName.AddLabel("Выходных и праздничных");
-      daysInfoName.AddLineBreak();
-      daysInfoName.AddLabel("Рабочих");
-      
-      var daysInfoValue = quarter.AddContent();
-      daysInfoValue.AddEmptyLine();
-      daysInfoValue.AddLineBreak();
-      daysInfoValue.AddLabel(days.Count.ToString());
-      daysInfoValue.AddLineBreak();
-      daysInfoValue.AddLabel(days.Where(x => x.Kind.HasValue).Count().ToString());
-      daysInfoValue.AddLineBreak();
-      daysInfoValue.AddLabel(workingDays.ToString());
-
-      quarter.AddContent().AddEmptyLine();
-      
-      var hoursInfoName = quarter.AddContent();
-      hoursInfoName.AddLabel("Рабочие часы", headerStyle);
-      hoursInfoName.AddLineBreak();
-      hoursInfoName.AddLabel("40-часовая неделя");
-      hoursInfoName.AddLineBreak();
-      hoursInfoName.AddLabel("36-часовая неделя");
-      hoursInfoName.AddLineBreak();
-      hoursInfoName.AddLabel("24-часовая неделя");
-      
-      var hoursInfoValue = quarter.AddContent();
-      hoursInfoValue.AddEmptyLine();
-      hoursInfoValue.AddLineBreak();
-      hoursInfoValue.AddLabel((40 / 5 * workingDays).ToString());
-      hoursInfoValue.AddLineBreak();
-      hoursInfoValue.AddLabel((36 / 5 * workingDays).ToString());
-      hoursInfoValue.AddLineBreak();
-      hoursInfoValue.AddLabel((24 / 5 * workingDays).ToString());
-      
-      quarter.AddContent().AddEmptyLine();
-      
-      AddMonthsQuarterBlock(quarter, days);
+      AddEmptyContent(columnBlock);
     }
     
-    private string GetQuarterNumber(int number)
+    /// <summary>
+    /// Добавить блок со статистикой по дням/часам.
+    /// </summary>
+    /// <param name="stateView">StateView календаря.</param>
+    /// <param name="number">Номер квартала (если 0 - информация за год)</param>
+    /// <param name="days">Коллекция дней производственного календаря.</param>
+    public virtual void AddBlock(StateView stateView, int number, List<Sungero.CoreEntities.IWorkingTimeCalendarDay> days)
+    {
+      var block = stateView.AddBlock();
+      
+      string blockName = string.Empty;
+      
+      bool isQuarterInfo = number > 0;
+      if (isQuarterInfo)
+      {
+        blockName = GetQuarterName(number);
+        
+        days = days.Where(x => (x.Day.Month + 2) / 3 == number).ToList();
+        
+        bool isCurrent = days.Any(x => x.Day == Calendar.Today);
+        block.IsExpanded = isCurrent;
+        if (isCurrent)
+          block.Background = Sungero.Core.Colors.Common.LightGreen;
+      }
+      
+      block.AddLabel(blockName, Sungero.Docflow.PublicFunctions.Module.CreateHeaderStyle(false));
+      
+      int workingDays = days.Where(x => !x.Kind.HasValue).Count();
+      int daysCount = days.Count;
+      
+      #region Количество дней.
+      var daysInfoName = new string[]
+      {
+        ProductionCalendars.Resources.Calendar_Title,
+        ProductionCalendars.Resources.Weekend_Title,
+        ProductionCalendars.Resources.Working_Title
+      };
+      AddContent(block, daysInfoName);
+      
+      var daysInfoValue = new string[]
+      {
+        daysCount.ToString(),
+        (daysCount - workingDays).ToString(),
+        workingDays.ToString()
+      };
+      AddContent(block, daysInfoValue);
+      #endregion
+      
+      #region Количество часов.
+      var rates = new int[] { 40, 36, 24 };
+      var hoursInfoName = rates.Select(x => ProductionCalendars.Resources.HoursLabel_TitleFormat(x).ToString()).ToArray();
+      AddContent(block, hoursInfoName);
+      
+      var hoursInfoValue = rates.Select(x => x / 5 * workingDays).Select(x => x.ToString()).ToArray();
+      AddContent(block, hoursInfoValue);
+      #endregion
+      
+      AddEmptyContent(block);
+      
+      if (isQuarterInfo)
+        AddMonthsQuarterBlock(block, days);
+    }
+    
+    /// <summary>
+    /// Получить наименование для квартала.
+    /// </summary>
+    /// <param name="number">Номер квартала.</param>
+    /// <returns>Наименование квартала.</returns>
+    public virtual string GetQuarterName(int number)
     {
       switch (number)
       {
         case 1:
-          return "I";
+          return ProductionCalendars.Resources.QuarterLabel_HeaderFormat("I");
         case 2:
-          return "II";
+          return ProductionCalendars.Resources.QuarterLabel_HeaderFormat("II");
         case 3:
-          return "III";
+          return ProductionCalendars.Resources.QuarterLabel_HeaderFormat("III");
         case 4:
-          return "IV";
+          return ProductionCalendars.Resources.QuarterLabel_HeaderFormat("IV");
       }
       
       return string.Empty;
     }
     
-    private static void AddMonthsQuarterBlock(StateBlock block, List<Sungero.CoreEntities.IWorkingTimeCalendarDay> days)
+    /// <summary>
+    /// Добавить данные в столбец с информацией.
+    /// </summary>
+    /// <param name="block">Блок.</param>
+    /// <param name="data">Массив данных для столбца.</param>
+    public virtual void AddContent(Sungero.Core.StateBlock block, string[] data)
     {
-      
+      var content = block.AddContent();
+      foreach (var line in data)
+      {
+        content.AddLabel(line);
+        content.AddLineBreak();
+      }
+    }
+
+    /// <summary>
+    /// Добавить данные по представениям месяцев квартала.
+    /// </summary>
+    /// <param name="block">Основной блок квартала.</param>
+    /// <param name="days">Коллекция дней производственного календаря.</param>
+    public virtual void AddMonthsQuarterBlock(Sungero.Core.StateBlock block, List<Sungero.CoreEntities.IWorkingTimeCalendarDay> days)
+    {
+      #region Стили.
       var headerStyle = Sungero.Docflow.PublicFunctions.Module.CreateHeaderStyle(false);
-      var noteStyle = Sungero.Docflow.PublicFunctions.Module.CreateNoteStyle(true);
+      
+      var headerWeekendStyle = Sungero.Docflow.PublicFunctions.Module.CreateHeaderStyle(false);
+      headerWeekendStyle.Color = Sungero.Core.Colors.Common.Red;
       
       var deafaultStyle = Sungero.Docflow.PublicFunctions.Module.CreateStyle(Sungero.Core.Colors.Common.Black);
       var weekendStyle = Sungero.Docflow.PublicFunctions.Module.CreateStyle(Sungero.Core.Colors.Common.Red);
+      var preholidayStyle = Sungero.Docflow.PublicFunctions.Module.CreateStyle(Sungero.Core.Colors.Common.Blue);
+      #endregion
       
+      var maxDuration = days.Select(x => x.Duration).Max();
+      
+      // Группируем данные по месяцам в квартале.
       foreach (var month in days.GroupBy(x => x.Day.Month))
       {
-        var child = block.AddChildBlock();
-        child.AddLabel(month.FirstOrDefault().Day.ToString("MMMM"), headerStyle);
-        child.AddLineBreak();
+        var firstMonthDay = month.FirstOrDefault().Day;
         
+        var child = block.AddChildBlock();
+        
+        bool isCurrent = month.Any(x => x.Day == Calendar.Today);
+        child.IsExpanded = isCurrent;
+        if (isCurrent)
+          child.Background = Sungero.Core.Colors.Common.LightGreen;
+        
+        child.AddLabel(firstMonthDay.ToString("MMMM"), headerStyle);
+        
+        // Блок календаря.
         var contentBlock = child.AddChildBlock();
-        var first = month.FirstOrDefault().Day.DayOfWeek;
-        foreach (var dayOfWeek in month.GroupBy(x => x.Day.DayOfWeek).OrderBy(x => x.Key))
+        contentBlock.ShowBorder = false;
+        if (isCurrent)
+          contentBlock.Background = Sungero.Core.Colors.Common.LightGreen;
+        
+        // Первый день недели месяца.
+        var firstDayOfMonth = GetDayOfWeekOrder((byte)firstMonthDay.DayOfWeek);
+        
+        // Группируем по дням недели.
+        foreach (var dayOfWeek in month.GroupBy(x => x.Day.DayOfWeek).OrderBy(x => GetDayOfWeekOrder((byte)x.Key)))
         {
+          var firstWeekDay = dayOfWeek.FirstOrDefault().Day;
+          
+          var key = GetDayOfWeekOrder((byte)dayOfWeek.Key);
+          var columnStyle = key > 4 ? headerWeekendStyle : headerStyle;
+          string dayName = Sungero.Docflow.PublicFunctions.Module.ReplaceFirstSymbolToUpperCase(firstWeekDay.ToString("dddd"));
+          
           var content = contentBlock.AddContent();
-          content.AddLabel(dayOfWeek.Key.ToString(), noteStyle);
+          content.AddLabel(dayName, columnStyle);
           content.AddLineBreak();
           
+          // Первый день недели.
+          var firstDayOfWeek = firstWeekDay.Day;
           foreach (var day in dayOfWeek)
           {
-            if (day.Day == dayOfWeek.Select(x => x.Day).Min() && dayOfWeek.Key < first)
+            // Пропуск для выравнивания таблицы.
+            if (day.Day.Day == firstDayOfWeek && key < firstDayOfMonth)
             {
               content.AddEmptyLine();
               content.AddLineBreak();
             }
             
+            // Стиль отображения дня.
             var style = day.Kind.HasValue ? weekendStyle : deafaultStyle;
+            if (maxDuration - day.Duration == 1)
+              style = preholidayStyle;
+            
             content.AddLabel(day.Day.Day.ToString(), style);
             content.AddLineBreak();
-            
           }
         }
+        
+        AddEmptyContent(contentBlock);
       }
+    }
+    
+    /// <summary>
+    /// Задать порядок вывода дней недели.
+    /// </summary>
+    /// <param name="day">Число дня недели.</param>
+    /// <returns>Число в соответствующем порядке.</returns>
+    private byte GetDayOfWeekOrder(byte day)
+    {
+      return (byte)((day + 6) % 7);
+    }
+    
+    /// <summary>
+    /// Добавить пустую колонку.
+    /// </summary>
+    /// <param name="block">Блок.</param>
+    private void AddEmptyContent(StateBlock block)
+    {
+      var empty = block.AddContent();
+      empty.AddLabel();
     }
     #endregion
   }

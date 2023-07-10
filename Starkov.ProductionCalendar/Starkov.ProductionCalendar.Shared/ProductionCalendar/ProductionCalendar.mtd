@@ -149,6 +149,7 @@
       "Code": "Year",
       "IsEnabled": false,
       "IsLoadEagerly": true,
+      "IsRequired": true,
       "IsVisibility": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
       "PreviousPropertyGuid": "bece7b9a-35e3-4cb1-b5a6-eed987fd0499"
@@ -230,7 +231,14 @@
   "ResourcesKeys": [
     "Duplicate_Error",
     "PrivateLabel_Name",
-    "NameTemplate"
+    "NameTemplate",
+    "DaysCount_Header",
+    "WorkingHours_Header",
+    "Calendar_Title",
+    "Weekend_Title",
+    "Working_Title",
+    "HoursLabel_Title",
+    "QuarterLabel_Header"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "8520d92b-1f6f-4885-bcb9-40f4178a82ee",
