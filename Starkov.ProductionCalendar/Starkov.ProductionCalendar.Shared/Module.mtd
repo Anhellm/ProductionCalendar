@@ -95,7 +95,14 @@
   "ExplorerTreeOrder": [
     {
       "ItemId": "a0cb9556-3538-46b3-a869-892ba0b6fc89"
+    },
+    {
+      "ItemId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
+      "PreviousItemId": "a0cb9556-3538-46b3-a869-892ba0b6fc89"
     }
+  ],
+  "HandledEvents": [
+    "InitializingServer"
   ],
   "IconResourcesKeys": [],
   "Importance": "Medium",
