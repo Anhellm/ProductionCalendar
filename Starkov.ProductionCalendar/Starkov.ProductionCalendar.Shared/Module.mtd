@@ -36,6 +36,13 @@
         "GroupId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
       },
       {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "5e88e9bb-dea6-464c-a4bf-b2644fced777",
+        "Name": "Services",
+        "EntityTypeId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
+        "GroupId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972"
+      },
+      {
         "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
         "NameGuid": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
         "Name": "PrivateProductionCalendars",
@@ -71,6 +78,14 @@
         "IconName": "GroupIconPrivateCalendars_6fa23aa1f078400693f866d304cfab73.png",
         "PreviousItemGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
         "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+      },
+      {
+        "NameGuid": "735b2f0c-feeb-49a2-aa68-fb484fd7b972",
+        "Name": "Settings",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconSettings_735b2f0cfeeb49a2aa68fb484fd7b972.png",
+        "PreviousItemGuid": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+        "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
       }
     ],
     "Header": {
@@ -90,6 +105,11 @@
       "IsSolutionModule": true,
       "MaxVersion": "",
       "MinVersion": ""
+    },
+    {
+      "Id": "d8bb255b-db7e-41f3-b1e0-12f9f0348041",
+      "MaxVersion": "",
+      "MinVersion": "0.0.1.0"
     }
   ],
   "ExplorerTreeOrder": [

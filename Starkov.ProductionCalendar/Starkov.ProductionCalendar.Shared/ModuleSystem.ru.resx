@@ -97,4 +97,13 @@
   <data name="CoverDescription_CreatePrivateCalendar" xml:space="preserve">
     <value>Создать частный производственный календарь</value>
   </data>
+  <data name="CoverGroup_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="CoverAction_Services" xml:space="preserve">
+    <value>Сервисы</value>
+  </data>
+  <data name="CoverDescription_Services" xml:space="preserve">
+    <value>Открыть справочник с настройками сервисов</value>
+  </data>
 </root>
