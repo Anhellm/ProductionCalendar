@@ -109,4 +109,19 @@
   <data name="Property_HolidayInfo" xml:space="preserve">
     <value>Holiday information</value>
   </data>
+  <data name="Action_ShowHolidays" xml:space="preserve">
+    <value>Show holidays</value>
+  </data>
+  <data name="Action_ShowHolidaysDescription" xml:space="preserve">
+    <value>Show holidays information</value>
+  </data>
+  <data name="Action_ShowHolidaysHint" xml:space="preserve">
+    <value>Show holidays information</value>
+  </data>
+  <data name="Action_ShowHolidaysConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_ShowHolidaysConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>

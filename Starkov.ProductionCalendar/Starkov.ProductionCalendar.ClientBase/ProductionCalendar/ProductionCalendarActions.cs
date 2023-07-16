@@ -9,6 +9,19 @@ namespace Starkov.ProductionCalendar.Client
 {
   partial class ProductionCalendarActions
   {
+    #region Показать праздники.
+    public virtual void ShowHolidays(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      Dialogs.ShowMessage(_obj.HolidayInfo);
+    }
+
+    public virtual bool CanShowHolidays(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return !string.IsNullOrEmpty(_obj.HolidayInfo);
+    }
+    #endregion
+
+    #region Обновить праздники.
     public virtual void UpdateWeekends(Sungero.Domain.Client.ExecuteActionArgs e)
     {
       var dialog = Dialogs.CreateInputDialog("Параметры");
@@ -31,7 +44,7 @@ namespace Starkov.ProductionCalendar.Client
     {
       return _obj.WorkingTimeCalendar?.AccessRights?.CanUpdate() ?? false;
     }
-
+    #endregion
   }
 
 }

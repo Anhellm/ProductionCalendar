@@ -97,4 +97,13 @@
   <data name="Property_HolidayInfo" xml:space="preserve">
     <value>Информация о праздниках</value>
   </data>
+  <data name="Action_ShowHolidays" xml:space="preserve">
+    <value>Показать праздники</value>
+  </data>
+  <data name="Action_ShowHolidaysHint" xml:space="preserve">
+    <value>Показать информацию о праздниках</value>
+  </data>
+  <data name="Action_ShowHolidaysDescription" xml:space="preserve">
+    <value>Показать информацию о праздниках</value>
+  </data>
 </root>

@@ -10,6 +10,14 @@
       "GenerateHandler": true,
       "LargeIconName": "Action_UpdateWeekends_large_fe79f5a757ca477e80a48d9abc6f53c7.png",
       "SmallIconName": "Action_UpdateWeekends_small_fe79f5a757ca477e80a48d9abc6f53c7.png"
+    },
+    {
+      "NameGuid": "f5f28c62-e120-476c-8cd0-2d4a9fd52336",
+      "Name": "ShowHolidays",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": null,
+      "SmallIconName": null
     }
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
@@ -52,19 +60,6 @@
         },
         {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
-          "NameGuid": "3ec3259a-15cc-4eda-a065-f6aa07dc48dd",
-          "Name": "Name",
-          "ColumnNumber": 0,
-          "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
-          "ParentGuid": "addd7b20-71e2-4549-afd0-321565b66683",
-          "PropertyGuid": "25b90d6f-005d-4ac2-a658-44c728ec6dea",
-          "RowNumber": 0,
-          "RowSpan": 1,
-          "Settings": []
-        },
-        {
-          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "c0cf9067-cdba-4c35-ad66-8c101383e207",
           "Name": "WorkingTimeCalendar",
           "ColumnNumber": 0,
@@ -72,7 +67,7 @@
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
           "ParentGuid": "addd7b20-71e2-4549-afd0-321565b66683",
           "PropertyGuid": "fb96460c-42b5-43fb-9074-c1bdf25182b6",
-          "RowNumber": 1,
+          "RowNumber": 0,
           "RowSpan": 1,
           "Settings": []
         },
@@ -106,7 +101,8 @@
   "HandledEvents": [
     "BeforeSaveServer",
     "CreatingFromServer",
-    "RefreshClient"
+    "RefreshClient",
+    "ShowingClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "ProductionCalendarProductionCalendar",
@@ -283,6 +279,15 @@
         "ActionGuid": "fe79f5a7-57ca-477e-80a4-8d9abc6f53c7",
         "ButtonSize": "Large",
         "Index": -1,
+        "ParentGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "4450f91a-cdbf-4ffe-83dd-9abf5b596fb2",
+        "Name": "ShowHolidays",
+        "ActionGuid": "f5f28c62-e120-476c-8cd0-2d4a9fd52336",
+        "ButtonSize": "Large",
+        "Index": 0,
         "ParentGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028"
       }
     ],
