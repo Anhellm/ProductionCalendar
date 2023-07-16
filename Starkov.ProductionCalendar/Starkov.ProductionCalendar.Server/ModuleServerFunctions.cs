@@ -46,6 +46,7 @@ namespace Starkov.ProductionCalendar.Server
     {
       if (service == null)
       {
+        Logger.Error("ProductionCalendar. GetWeekendData(func). Получен пустой сервис.");
         return null;
       }
       
@@ -63,7 +64,10 @@ namespace Starkov.ProductionCalendar.Server
     public virtual Structures.Module.WeekendData GetWeekendData(CalendarService.WeekendData data)
     {
       if (data == null)
+      {
+        Logger.Error("ProductionCalendar. GetWeekendData(func). Получены пустые данные из внешнего сервиса.");
         return null;
+      }
       
       var year = data.Year;
       

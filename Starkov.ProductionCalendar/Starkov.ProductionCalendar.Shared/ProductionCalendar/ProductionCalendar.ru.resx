@@ -88,4 +88,7 @@
   <data name="QuarterLabel_Header" xml:space="preserve">
     <value>{0} КВАРТАЛ</value>
   </data>
+  <data name="UpdateWeekends_Error" xml:space="preserve">
+    <value>Ошибка при обработке данных: {0}</value>
+  </data>
 </root>

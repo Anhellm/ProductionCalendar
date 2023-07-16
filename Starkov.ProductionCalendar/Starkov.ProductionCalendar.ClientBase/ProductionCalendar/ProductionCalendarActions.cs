@@ -33,12 +33,21 @@ namespace Starkov.ProductionCalendar.Client
       if (dialog.Show() == DialogButtons.Ok)
       {
         var serviceValue = service.Value;
-        var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
         
-        Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, withPreHolidays.Value.GetValueOrDefault());
-        _obj.HolidayInfo = data.HolidayInfo;
-        _obj.UpdateInfo = string.Format("Данные получены из сервиса {0}: {1}", serviceValue.Name, Calendar.Now.ToString());
-        _obj.Save();
+        try
+        {
+          var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
+          
+          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, withPreHolidays.Value.GetValueOrDefault(), settings);
+          _obj.HolidayInfo = data.HolidayInfo;
+          _obj.UpdateInfo = string.Format("Данные получены из сервиса {0}: {1}", serviceValue.Name, Calendar.Now.ToString());
+          _obj.Save();
+        }
+        catch (Exception ex)
+        {
+          Logger.Error("ProductionCalendar. UpdateWeekends(action). Ошибка обработки данных.", ex);
+          Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
+        }
       }
     }
 

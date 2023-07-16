@@ -32,7 +32,7 @@ namespace Starkov.ProductionCalendar.Shared
                 {
                   DateTime date;
                   string stringDate = string.Format("{0}.{1}.{2}", x, month, year);
-                  return DateTime.TryParseExact(stringDate, "dd.mm.yyyy", TenantInfo.Culture, System.Globalization.DateTimeStyles.None, out date) ?
+                  return DateTime.TryParseExact(stringDate, "d.M.yyyy", TenantInfo.Culture, System.Globalization.DateTimeStyles.None, out date) ?
                     date :
                     DateTime.MinValue;
                 })
@@ -46,10 +46,16 @@ namespace Starkov.ProductionCalendar.Shared
     /// <param name="calendar">Календарь.</param>
     /// <param name="data">Данные по выходным.</param>
     /// <param name="withPreHolidays">Необходимость обновления предпраздничных дней.</param>
-    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, bool withPreHolidays)
+    /// <param name="settings">Настройки.</param>
+    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, bool withPreHolidays, ICalendarSettings settings)
     {
       if (calendar == null || data == null)
+      {
+        Logger.Error("ProductionCalendar. UpdateCalendar(func). Переданы пустые параметры.");
         return;
+      }
+      
+      Logger.DebugFormat("ProductionCalendar. UpdateCalendar(func). Обновление данных календаря с ИД {0}.", calendar.Id);
       
       var days = calendar.Day;
       var processed = new List<int>();
@@ -76,6 +82,15 @@ namespace Starkov.ProductionCalendar.Shared
       if (withPreHolidays)
         foreach (var preHoliday in days.Where(x => data.PreHolidays.Contains(x.Day)))
           preHoliday.DayEnding -= 1;
+      
+      // Заполняем время для рабочих дней
+      foreach (var workingDay in days.Where(x => !x.Duration.HasValue && !x.Kind.HasValue))
+      {
+        workingDay.DayBeginning = settings.DayBeginning;
+        workingDay.DayEnding = settings.DayEnding;
+        workingDay.LunchBreakBeginning = settings.LunchBreakBeginning;
+        workingDay.LunchBreakEnding = settings.LunchBreakEnding;
+      }
     }
   }
 }
