@@ -40,6 +40,14 @@
         "NameGuid": "5e88e9bb-dea6-464c-a4bf-b2644fced777",
         "Name": "Services",
         "EntityTypeId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
+        "GroupId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972",
+        "PreviousItemGuid": "76b789f0-09ab-453d-a1f7-56ac09c4debf"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverFunctionActionMetadata, Sungero.Metadata",
+        "NameGuid": "76b789f0-09ab-453d-a1f7-56ac09c4debf",
+        "Name": "Settings",
+        "FunctionName": "ShowCalendarSettings",
         "GroupId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972"
       },
       {
@@ -119,6 +127,10 @@
     {
       "ItemId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
       "PreviousItemId": "a0cb9556-3538-46b3-a869-892ba0b6fc89"
+    },
+    {
+      "ItemId": "55d17b88-babb-4b75-a8e3-9b2cd0ee8472",
+      "PreviousItemId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85"
     }
   ],
   "HandledEvents": [

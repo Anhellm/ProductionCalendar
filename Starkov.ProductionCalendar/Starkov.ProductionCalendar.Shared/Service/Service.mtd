@@ -39,22 +39,14 @@
         {
           "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
           "NameGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
-          "Name": "ControlGroup",
-          "ColumnDefinitions": [
-            {
-              "Percentage": 72.22
-            },
-            {
-              "Percentage": 27.78
-            }
-          ]
+          "Name": "ControlGroup"
         },
         {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "174aefda-a3c7-4464-83ab-d6ea338549f0",
           "Name": "Control",
           "ColumnNumber": 0,
-          "ColumnSpan": 2,
+          "ColumnSpan": 1,
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
           "ParentGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
           "PropertyGuid": "5b42418b-6183-4506-9bdf-7eab025df55d",
@@ -67,24 +59,11 @@
           "NameGuid": "7f272141-adfa-48e1-a584-f01ee53946e0",
           "Name": "Url",
           "ColumnNumber": 0,
-          "ColumnSpan": 2,
+          "ColumnSpan": 1,
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
           "ParentGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
           "PropertyGuid": "2c63f62e-29bc-4c63-b12c-1d92dc9adef5",
           "RowNumber": 1,
-          "RowSpan": 1,
-          "Settings": []
-        },
-        {
-          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
-          "NameGuid": "fcf82f73-51d0-4a02-b8b8-48951acc9510",
-          "Name": "IsPriority",
-          "ColumnNumber": 1,
-          "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
-          "ParentGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
-          "PropertyGuid": "25ff4971-88c2-4a2e-b48d-3bea276a5f26",
-          "RowNumber": 2,
           "RowSpan": 1,
           "Settings": []
         },
@@ -97,7 +76,7 @@
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",
           "ParentGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
           "PropertyGuid": "1dcedc29-5140-4770-ac92-eabc212326a1",
-          "RowNumber": 2,
+          "RowNumber": 3,
           "RowSpan": 1,
           "Settings": []
         },
@@ -105,12 +84,12 @@
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "5efe2fef-38ee-4e2a-b0cb-5bcdb38b50bf",
           "Name": "UseApi",
-          "ColumnNumber": 1,
+          "ColumnNumber": 0,
           "ColumnSpan": 1,
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
           "ParentGuid": "0b1eb6a8-9a3a-4c7d-b9f4-0162a14101d3",
           "PropertyGuid": "5c1df502-1712-43de-93e5-eeb31af0a124",
-          "RowNumber": 3,
+          "RowNumber": 2,
           "RowSpan": 1,
           "Settings": []
         }
@@ -119,7 +98,6 @@
   ],
   "HandledEvents": [
     "BeforeDeleteServer",
-    "SavingServer",
     "BeforeSaveServer",
     "CreatedServer"
   ],
@@ -165,14 +143,6 @@
       "PreviousPropertyGuid": "5b42418b-6183-4506-9bdf-7eab025df55d"
     },
     {
-      "$type": "Sungero.Metadata.BooleanPropertyMetadata, Sungero.Metadata",
-      "NameGuid": "25ff4971-88c2-4a2e-b48d-3bea276a5f26",
-      "Name": "IsPriority",
-      "Code": "IsPriority",
-      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
-      "PreviousPropertyGuid": "2c63f62e-29bc-4c63-b12c-1d92dc9adef5"
-    },
-    {
       "$type": "Sungero.Metadata.EnumPropertyMetadata, Sungero.Metadata",
       "NameGuid": "945bc627-6397-4270-93d8-df3486b06f88",
       "Name": "DataSource",
@@ -195,7 +165,7 @@
       "IsShowedInList": false,
       "IsVisibility": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToEnumerationBinder",
-      "PreviousPropertyGuid": "25ff4971-88c2-4a2e-b48d-3bea276a5f26"
+      "PreviousPropertyGuid": "2c63f62e-29bc-4c63-b12c-1d92dc9adef5"
     },
     {
       "$type": "Sungero.Metadata.BooleanPropertyMetadata, Sungero.Metadata",
@@ -227,23 +197,11 @@
           "ParameterTypeFullName": "Sungero.Core.Enumeration, Sungero.Domain.Shared"
         },
         {
-          "Name": "isPriority",
-          "ParameterType": "global::System.Boolean",
-          "ParameterTypeFullName": "System.Boolean"
-        },
-        {
           "Name": "canUseApi",
           "ParameterType": "global::System.Boolean",
           "ParameterTypeFullName": "System.Boolean"
         }
       ],
-      "Placement": "Shared",
-      "ReturnType": "global::Starkov.ProductionCalendar.IService",
-      "ReturnTypeFullName": "Starkov.ProductionCalendar.IService, Sungero.Domain.Interfaces"
-    },
-    {
-      "Name": "GetPriorityService",
-      "IsRemote": true,
       "Placement": "Shared",
       "ReturnType": "global::Starkov.ProductionCalendar.IService",
       "ReturnTypeFullName": "Starkov.ProductionCalendar.IService, Sungero.Domain.Interfaces"

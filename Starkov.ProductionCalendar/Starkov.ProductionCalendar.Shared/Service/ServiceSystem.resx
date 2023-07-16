@@ -73,9 +73,6 @@
   <data name="Property_Url" xml:space="preserve">
     <value>Url</value>
   </data>
-  <data name="Property_IsPriority" xml:space="preserve">
-    <value>Is priority</value>
-  </data>
   <data name="Property_DataSource" xml:space="preserve">
     <value>Source</value>
   </data>

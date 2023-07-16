@@ -11,6 +11,16 @@ namespace Starkov.ProductionCalendar.Client
 
     #region Обложка.
     /// <summary>
+    /// Открыть настройки календарей.
+    /// </summary>
+    public virtual void ShowCalendarSettings()
+    {
+      var settings = Functions.CalendarSettings.Remote.GetSettings();
+      if (settings != null)
+        settings.Show();
+    }
+    
+    /// <summary>
     /// Показать основные производственные календари.
     /// </summary>
     [Public]

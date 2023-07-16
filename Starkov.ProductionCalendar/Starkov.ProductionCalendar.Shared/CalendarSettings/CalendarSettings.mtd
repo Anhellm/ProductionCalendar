@@ -1,0 +1,261 @@
+{
+  "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
+  "NameGuid": "55d17b88-babb-4b75-a8e3-9b2cd0ee8472",
+  "Name": "CalendarSettings",
+  "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
+  "CanBeNavigationPropertyType": true,
+  "Code": "Settings",
+  "CreationAreaMetadata": {
+    "NameGuid": "f7766750-eee2-4fcd-8003-5c06a90d1f44",
+    "Name": "CreationArea",
+    "Buttons": [],
+    "IsAncestorMetadata": true
+  },
+  "ExtraSearchProperties": [],
+  "FilterPanel": {
+    "NameGuid": "b0125fbd-3b91-4dbb-914a-689276216404",
+    "Name": "FilterPanel",
+    "Controls": [],
+    "IsAncestorMetadata": true
+  },
+  "Forms": [
+    {
+      "$type": "Sungero.Metadata.StandaloneFormMetadata, Sungero.Metadata",
+      "NameGuid": "290740f8-c1eb-4625-9742-412242e59b42",
+      "Name": "Card",
+      "Controls": [
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
+          "Name": "MainGroup"
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "1e57e5cc-2f31-4f83-b7f1-8c200287e668",
+          "Name": "DefaultService",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+          "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
+          "PropertyGuid": "fbb2fc43-bb5a-46fb-94b9-3b7f16e2c7af",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "b43acf4d-75cd-40e0-bf30-0d4e5a47cd65",
+          "Name": "NeedSetPreHolidays",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+          "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
+          "PropertyGuid": "54bae82f-8731-46e1-8859-1951feb0f4d3",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
+          "Name": "ScheduleGroup",
+          "ColumnDefinitions": [
+            {
+              "Percentage": 50.0
+            },
+            {
+              "Percentage": 50.0
+            }
+          ],
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "GroupType": "GroupBox",
+          "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
+          "RowNumber": 2,
+          "RowSpan": 1
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "ed7361b5-8583-4f77-8aca-c4d6063bc0b8",
+          "Name": "DayBeginning",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
+          "PropertyGuid": "30fc6afc-bf48-4250-8da3-96c42316af8d",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "366ed875-5622-4c77-b604-e15cc6162c3f",
+          "Name": "DayEnding",
+          "ColumnNumber": 1,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
+          "PropertyGuid": "cf47140a-82a0-419f-b563-a107922997d7",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "784ecbdc-508c-4efc-bf16-4e734f1fb05d",
+          "Name": "LunchBreakBeginning",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
+          "PropertyGuid": "1f6daf6f-b460-4d5e-a1e3-6eb205b9b5d4",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "c6f6d250-201e-49d8-ae43-72888e527ebe",
+          "Name": "LunchBreakEnding",
+          "ColumnNumber": 1,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+          "ParentGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
+          "PropertyGuid": "dd407d36-3241-48d2-8b45-7f60ba291198",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": []
+        }
+      ]
+    }
+  ],
+  "HandledEvents": [
+    "CreatedServer"
+  ],
+  "HideFromCreationArea": true,
+  "HideFromNavigationEditorCreationArea": true,
+  "IconResourcesKeys": [],
+  "IntegrationServiceName": "ProductionCalendarCalendarSettings",
+  "IsAutoCreated": true,
+  "IsCacheable": true,
+  "IsVisible": false,
+  "OperationsClass": "",
+  "Overridden": [
+    "IsVisible",
+    "IsAutoCreated",
+    "IsCacheable",
+    "HideFromNavigationEditorCreationArea",
+    "HideFromCreationArea"
+  ],
+  "Properties": [
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "c9d7a76a-6c3a-41fb-8e81-b401b30419f9",
+      "Name": "Name",
+      "Code": "Name",
+      "IsDisplayValue": true,
+      "IsQuickSearchAllowed": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "1dcedc29-5140-4770-ac92-eabc212326a1"
+    },
+    {
+      "$type": "Sungero.Metadata.NavigationPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "fbb2fc43-bb5a-46fb-94b9-3b7f16e2c7af",
+      "Name": "DefaultService",
+      "Code": "DefaultService",
+      "EntityGuid": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
+      "FlatListInStandaloneLookup": true,
+      "IsRequired": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
+      "PreviousPropertyGuid": "c9d7a76a-6c3a-41fb-8e81-b401b30419f9"
+    },
+    {
+      "$type": "Sungero.Metadata.BooleanPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "54bae82f-8731-46e1-8859-1951feb0f4d3",
+      "Name": "NeedSetPreHolidays",
+      "Code": "SetPreHolidays",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+      "PreviousPropertyGuid": "fbb2fc43-bb5a-46fb-94b9-3b7f16e2c7af"
+    },
+    {
+      "$type": "Sungero.Metadata.DoublePropertyMetadata, Sungero.Metadata",
+      "NameGuid": "30fc6afc-bf48-4250-8da3-96c42316af8d",
+      "Name": "DayBeginning",
+      "Code": "DayBeginning",
+      "IsRequired": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "54bae82f-8731-46e1-8859-1951feb0f4d3"
+    },
+    {
+      "$type": "Sungero.Metadata.DoublePropertyMetadata, Sungero.Metadata",
+      "NameGuid": "cf47140a-82a0-419f-b563-a107922997d7",
+      "Name": "DayEnding",
+      "Code": "DayEnding",
+      "IsRequired": true,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "30fc6afc-bf48-4250-8da3-96c42316af8d",
+      "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.DoublePropertyMetadata, Sungero.Metadata",
+      "NameGuid": "1f6daf6f-b460-4d5e-a1e3-6eb205b9b5d4",
+      "Name": "LunchBreakBeginning",
+      "Code": "LunchBegin",
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "cf47140a-82a0-419f-b563-a107922997d7"
+    },
+    {
+      "$type": "Sungero.Metadata.DoublePropertyMetadata, Sungero.Metadata",
+      "NameGuid": "dd407d36-3241-48d2-8b45-7f60ba291198",
+      "Name": "LunchBreakEnding",
+      "Code": "LunchEnd",
+      "HandledEvents": [
+        "ChangedShared"
+      ],
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
+      "PreviousPropertyGuid": "1f6daf6f-b460-4d5e-a1e3-6eb205b9b5d4",
+      "Versions": []
+    }
+  ],
+  "PublicFunctions": [
+    {
+      "Name": "GetSettings",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Starkov.ProductionCalendar.ICalendarSettings",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.ICalendarSettings, Sungero.Domain.Interfaces"
+    }
+  ],
+  "PublicStructures": [],
+  "ResourcesKeys": [
+    "CalendarSettingsName"
+  ],
+  "RibbonCardMetadata": {
+    "NameGuid": "9af2f4b4-23ba-43d4-9f6f-3670fd808ac6",
+    "Name": "RibbonCard",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": [],
+    "RibbonKind": "Card"
+  },
+  "RibbonCollectionMetadata": {
+    "NameGuid": "03d45b84-e125-4618-ade6-14ad741c67a0",
+    "Name": "RibbonCollection",
+    "Categories": [],
+    "Elements": [],
+    "Groups": [],
+    "IsAncestorMetadata": true,
+    "Pages": []
+  },
+  "Versions": [
+    {
+      "Type": "EntityMetadata",
+      "Number": 11
+    }
+  ]
+}

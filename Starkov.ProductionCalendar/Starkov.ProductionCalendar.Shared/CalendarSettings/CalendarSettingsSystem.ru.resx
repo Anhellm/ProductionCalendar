@@ -58,64 +58,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Property_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Production calendar</value>
+    <value>Настройки</value>
   </data>
-  <data name="CoverTitle" xml:space="preserve">
-    <value>Production calendar</value>
+  <data name="AccusativeDisplayName" xml:space="preserve">
+    <value>Настройки</value>
   </data>
-  <data name="CoverTab_Tab" xml:space="preserve">
-    <value>Tab</value>
+  <data name="CollectionDisplayName" xml:space="preserve">
+    <value>Настройки</value>
   </data>
-  <data name="CoverGroup_Calendars" xml:space="preserve">
-    <value>Main calendars</value>
+  <data name="Property_DefaultService" xml:space="preserve">
+    <value>Сервис по умолчанию</value>
   </data>
-  <data name="CoverAction_CurrentYearCalendar" xml:space="preserve">
-    <value>Current year calendar</value>
+  <data name="Property_NeedSetPreHolidays" xml:space="preserve">
+    <value>Заполнять предпраздничные дни</value>
   </data>
-  <data name="CoverDescription_CurrentYearCalendar" xml:space="preserve">
-    <value>Show or create current year calendar</value>
+  <data name="Property_DayBeginning" xml:space="preserve">
+    <value>Начало дня</value>
   </data>
-  <data name="CoverAction_ProductionCalendars" xml:space="preserve">
-    <value>Production calendars</value>
+  <data name="Property_DayEnding" xml:space="preserve">
+    <value>Конец дня</value>
   </data>
-  <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
-    <value>Show production calendar databook.</value>
+  <data name="Property_LunchBreakBeginning" xml:space="preserve">
+    <value>Начало обеда</value>
   </data>
-  <data name="CoverAction_NextYearCalendar" xml:space="preserve">
-    <value>Next year calendar</value>
+  <data name="Property_LunchBreakEnding" xml:space="preserve">
+    <value>Конец обеда</value>
   </data>
-  <data name="CoverDescription_NextYearCalendar" xml:space="preserve">
-    <value>Открыть или добавить календарь на следующий год</value>
-  </data>
-  <data name="CoverGroup_PrivateCalendars" xml:space="preserve">
-    <value>Private calendars</value>
-  </data>
-  <data name="CoverAction_PrivateProductionCalendars" xml:space="preserve">
-    <value>Private production calendars</value>
-  </data>
-  <data name="CoverDescription_PrivateProductionCalendars" xml:space="preserve">
-    <value>Show private production calendar databook.</value>
-  </data>
-  <data name="CoverAction_CreatePrivateCalendar" xml:space="preserve">
-    <value>Create private calendar</value>
-  </data>
-  <data name="CoverDescription_CreatePrivateCalendar" xml:space="preserve">
-    <value>Create private production calendar</value>
-  </data>
-  <data name="CoverGroup_Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="CoverAction_Services" xml:space="preserve">
-    <value>Services</value>
-  </data>
-  <data name="CoverDescription_Services" xml:space="preserve">
-    <value>Show databook with service settings</value>
-  </data>
-  <data name="CoverAction_Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="CoverDescription_Settings" xml:space="preserve">
-    <value>Open calendar settings</value>
+  <data name="ControlGroup_bf8d7be5d06f49969fe451480d4c22ab" xml:space="preserve">
+    <value>Распорядок дня</value>
   </data>
 </root>

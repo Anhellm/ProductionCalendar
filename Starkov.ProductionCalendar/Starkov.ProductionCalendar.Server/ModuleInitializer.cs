@@ -13,19 +13,23 @@ namespace Starkov.ProductionCalendar.Server
     public override void Initializing(Sungero.Domain.ModuleInitializingEventArgs e)
     {
       CreateDefaultServices();
+      CreateDefaultSettings();
       
       GrantDefaultAccessRights();
     }
     
+    #region Сервисы.
     /// <summary>
     /// Создать сервисы доступа по-умолчанию.
     /// </summary>
     public virtual void CreateDefaultServices()
     {
+      InitializationLogger.Debug("Init ProductionCalendar: Create default services.");
+      
       CreateDefaultService(Services.Resources.Consultant_DefaultName, Services.Resources.Consultant_DefaultURL,
-                           Starkov.ProductionCalendar.Service.DataSource.Consultant, true, false);
+                           Starkov.ProductionCalendar.Service.DataSource.Consultant, false);
       CreateDefaultService(Services.Resources.HeadHunter_DefaultName, Services.Resources.HeadHunter_DefaultURL,
-                           Starkov.ProductionCalendar.Service.DataSource.HeadHunter, false, false);
+                           Starkov.ProductionCalendar.Service.DataSource.HeadHunter, false);
     }
     
     /// <summary>
@@ -34,12 +38,25 @@ namespace Starkov.ProductionCalendar.Server
     /// <param name="name">Имя.</param>
     /// <param name="url">Адрес.</param>
     /// <param name="dataSource">Тип источника данных.</param>
-    /// <param name="isPriority">Приоритетная.</param>
     /// <param name="canUseApi">Использовать API.</param>
-    public virtual void CreateDefaultService(string name, string url, Enumeration dataSource, bool isPriority, bool canUseApi)
+    public virtual void CreateDefaultService(string name, string url, Enumeration dataSource, bool canUseApi)
     {
       if (!Functions.Service.GetServices(dataSource).Any())
-        Functions.Service.CreateService(name, url, dataSource, isPriority, canUseApi);
+        Functions.Service.CreateService(name, url, dataSource, canUseApi);
+    }
+    #endregion
+    
+    /// <summary>
+    /// Создать настройки по умолчанию.
+    /// </summary>
+    public virtual void CreateDefaultSettings()
+    {
+      InitializationLogger.Debug("Init ProductionCalendar: Create default settings.");
+      
+      if (Functions.CalendarSettings.GetSettings() != null)
+        return;
+      
+      Functions.CalendarSettings.CreateDefaultSettings();
     }
     
     /// <summary>
@@ -47,12 +64,19 @@ namespace Starkov.ProductionCalendar.Server
     /// </summary>
     public virtual void GrantDefaultAccessRights()
     {
+      InitializationLogger.Debug("Init ProductionCalendar: Grant default access rignts.");
+      
       var all = Roles.AllUsers;
       
       // Справочник Производственные календари.
       var calendarAccessRights = ProductionCalendars.AccessRights;
       calendarAccessRights.Grant(all, DefaultAccessRightsTypes.Read);
       calendarAccessRights.Save();
+      
+      // Справочник Настройки.
+      var settingsAccessRights = CalendarSettingses.AccessRights;
+      settingsAccessRights.Grant(all, DefaultAccessRightsTypes.Read);
+      settingsAccessRights.Save();
     }
   }
 }

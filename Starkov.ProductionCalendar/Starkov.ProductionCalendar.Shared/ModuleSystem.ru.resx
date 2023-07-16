@@ -106,4 +106,10 @@
   <data name="CoverDescription_Services" xml:space="preserve">
     <value>Открыть справочник с настройками сервисов</value>
   </data>
+  <data name="CoverAction_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="CoverDescription_Settings" xml:space="preserve">
+    <value>Открыть настройки календарей</value>
+  </data>
 </root>

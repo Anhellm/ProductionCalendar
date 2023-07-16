@@ -25,17 +25,6 @@ namespace Starkov.ProductionCalendar.Server
       
       return services;
     }
-    
-    /// <summary>
-    /// Получить приоритетный сервис для получения данных.
-    /// </summary>
-    /// <returns>Сервис.</returns>
-    [Public, Remote(IsPure = true)]
-    public static IService GetPriorityService()
-    {
-      var services = GetServices(null);
-      return services.FirstOrDefault(x => x.IsPriority == true) ?? services.FirstOrDefault();
-    }
     #endregion
     
     /// <summary>
@@ -44,11 +33,10 @@ namespace Starkov.ProductionCalendar.Server
     /// <param name="name">Имя.</param>
     /// <param name="url">Адрес.</param>
     /// <param name="dataSource">Тип источника данных.</param>
-    /// <param name="isPriority">Приоритетная.</param>
     /// <param name="canUseApi">Использовать API.</param>
     /// <returns>Созданный сервис.</returns>
     [Public, Remote(IsPure = true)]
-    public static IService CreateService(string name, string url, Enumeration dataSource, bool isPriority, bool canUseApi)
+    public static IService CreateService(string name, string url, Enumeration dataSource, bool canUseApi)
     {
       if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(url))
         return Services.Null;
@@ -57,7 +45,6 @@ namespace Starkov.ProductionCalendar.Server
       service.Name = name;
       service.Url = url;
       service.DataSource = dataSource;
-      service.IsPriority = isPriority;
       service.UseApi = canUseApi;
       
       try

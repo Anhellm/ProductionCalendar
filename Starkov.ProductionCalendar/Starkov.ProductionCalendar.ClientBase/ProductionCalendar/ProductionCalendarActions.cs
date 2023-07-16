@@ -24,9 +24,11 @@ namespace Starkov.ProductionCalendar.Client
     #region Обновить праздники.
     public virtual void UpdateWeekends(Sungero.Domain.Client.ExecuteActionArgs e)
     {
+      var settings = Functions.CalendarSettings.Remote.GetSettings();
+      
       var dialog = Dialogs.CreateInputDialog("Параметры");
-      var service = dialog.AddSelect("Сервис", true, Functions.Service.Remote.GetPriorityService());
-      var withPreHolidays = dialog.AddBoolean("Обработать предпраздничные дни", false);
+      var service = dialog.AddSelect("Сервис", true, settings?.DefaultService);
+      var withPreHolidays = dialog.AddBoolean("Обработать предпраздничные дни", settings?.NeedSetPreHolidays.GetValueOrDefault() ?? false);
       
       if (dialog.Show() == DialogButtons.Ok)
       {
