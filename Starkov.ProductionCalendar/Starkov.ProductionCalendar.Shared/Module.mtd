@@ -128,6 +128,13 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "Libraries": [
+    {
+      "NameGuid": "b88c3921-8f31-4924-86c6-ae39db439da6",
+      "Name": "CalendarService",
+      "Scope": "Both"
+    }
+  ],
   "PublicFunctions": [
     {
       "Name": "CreateWorkingTimeCalendar",

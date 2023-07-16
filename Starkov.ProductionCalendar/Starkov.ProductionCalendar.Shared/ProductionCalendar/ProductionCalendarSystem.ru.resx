@@ -79,4 +79,22 @@
   <data name="Property_Year" xml:space="preserve">
     <value>Год</value>
   </data>
+  <data name="Action_UpdateWeekends" xml:space="preserve">
+    <value>Обновить выходные</value>
+  </data>
+  <data name="Action_UpdateWeekendsHint" xml:space="preserve">
+    <value>Обновить выходыне из внешнего сервиса</value>
+  </data>
+  <data name="Action_UpdateWeekendsDescription" xml:space="preserve">
+    <value>Обновить выходыне из внешнего сервиса</value>
+  </data>
+  <data name="Ribbon_ExternalServiceGroup_368ec19b5f5d4af3a1f432d0a1ea9028" xml:space="preserve">
+    <value>Внешний сервис</value>
+  </data>
+  <data name="Property_UpdateInfo" xml:space="preserve">
+    <value>Информация по обновлению данных</value>
+  </data>
+  <data name="Property_HolidayInfo" xml:space="preserve">
+    <value>Информация о праздниках</value>
+  </data>
 </root>

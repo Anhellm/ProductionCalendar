@@ -12,16 +12,6 @@
       "Overridden": [
         "GenerateHandler"
       ]
-    },
-    {
-      "NameGuid": "9f70df4c-99a1-4c55-bbd8-dd6c7727a479",
-      "Name": "DeleteEntities",
-      "GenerateHandler": true,
-      "IsAncestorMetadata": true,
-      "IsVisibleInDesktopClient": false,
-      "Overridden": [
-        "GenerateHandler"
-      ]
     }
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
@@ -52,10 +42,10 @@
           "Name": "ControlGroup",
           "ColumnDefinitions": [
             {
-              "Percentage": 71.44
+              "Percentage": 72.22
             },
             {
-              "Percentage": 27.48
+              "Percentage": 27.78
             }
           ]
         },

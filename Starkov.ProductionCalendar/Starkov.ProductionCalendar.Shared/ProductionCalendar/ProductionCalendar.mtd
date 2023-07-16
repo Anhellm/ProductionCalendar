@@ -2,6 +2,16 @@
   "$type": "Sungero.Metadata.EntityMetadata, Sungero.Metadata",
   "NameGuid": "a0cb9556-3538-46b3-a869-892ba0b6fc89",
   "Name": "ProductionCalendar",
+  "Actions": [
+    {
+      "NameGuid": "fe79f5a7-57ca-477e-80a4-8d9abc6f53c7",
+      "Name": "UpdateWeekends",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_UpdateWeekends_large_fe79f5a757ca477e80a48d9abc6f53c7.png",
+      "SmallIconName": "Action_UpdateWeekends_small_fe79f5a757ca477e80a48d9abc6f53c7.png"
+    }
+  ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
   "CanBeNavigationPropertyType": true,
   "CanBeSearch": true,
@@ -95,7 +105,8 @@
   ],
   "HandledEvents": [
     "BeforeSaveServer",
-    "CreatingFromServer"
+    "CreatingFromServer",
+    "RefreshClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "ProductionCalendarProductionCalendar",
@@ -153,6 +164,26 @@
       "IsVisibility": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
       "PreviousPropertyGuid": "bece7b9a-35e3-4cb1-b5a6-eed987fd0499"
+    },
+    {
+      "$type": "Sungero.Metadata.StringPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "7688c811-3537-4df8-bb39-2204ce744292",
+      "Name": "UpdateInfo",
+      "CanBeSearch": false,
+      "Code": "UpdateInfo",
+      "IsEnabled": false,
+      "IsShowedInList": false,
+      "IsVisibility": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToStringBinder",
+      "PreviousPropertyGuid": "48d3c6f9-c1a1-4541-9960-cbc829edb83b"
+    },
+    {
+      "$type": "Sungero.Metadata.TextPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "b3575c1e-fe3a-4cdc-b59e-11dee1c63452",
+      "Name": "HolidayInfo",
+      "Code": "HolidayInfo",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToTextBinder",
+      "PreviousPropertyGuid": "7688c811-3537-4df8-bb39-2204ce744292"
     }
   ],
   "PublicFunctions": [
@@ -244,8 +275,27 @@
     "NameGuid": "8520d92b-1f6f-4885-bcb9-40f4178a82ee",
     "Name": "RibbonCard",
     "Categories": [],
-    "Elements": [],
-    "Groups": [],
+    "Elements": [
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "29b1c651-d388-402d-9453-5054d82daf72",
+        "Name": "UpdateWeekends",
+        "ActionGuid": "fe79f5a7-57ca-477e-80a4-8d9abc6f53c7",
+        "ButtonSize": "Large",
+        "Index": -1,
+        "ParentGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028"
+      }
+    ],
+    "Groups": [
+      {
+        "NameGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028",
+        "Name": "ExternalServiceGroup",
+        "IconName": null,
+        "Index": 21,
+        "ParentGuid": "21a31627-5f58-4416-8c4a-90f538ee2e57",
+        "SmallIconName": null
+      }
+    ],
     "IsAncestorMetadata": true,
     "Pages": [],
     "RibbonKind": "Card"

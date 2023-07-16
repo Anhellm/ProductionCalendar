@@ -85,4 +85,28 @@
   <data name="Property_Year" xml:space="preserve">
     <value>Year</value>
   </data>
+  <data name="Action_UpdateWeekends" xml:space="preserve">
+    <value>Update weekends</value>
+  </data>
+  <data name="Action_UpdateWeekendsDescription" xml:space="preserve">
+    <value>Update weekends from external service</value>
+  </data>
+  <data name="Action_UpdateWeekendsHint" xml:space="preserve">
+    <value>Update weekends from external service</value>
+  </data>
+  <data name="Action_UpdateWeekendsConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_UpdateWeekendsConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ribbon_ExternalServiceGroup_368ec19b5f5d4af3a1f432d0a1ea9028" xml:space="preserve">
+    <value>External service</value>
+  </data>
+  <data name="Property_UpdateInfo" xml:space="preserve">
+    <value>Update information</value>
+  </data>
+  <data name="Property_HolidayInfo" xml:space="preserve">
+    <value>Holiday information</value>
+  </data>
 </root>
