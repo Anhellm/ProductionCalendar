@@ -77,7 +77,7 @@
     <value>Производственные календари</value>
   </data>
   <data name="CoverDescription_ProductionCalendars" xml:space="preserve">
-    <value>Открыть справочник с производственными календарями.</value>
+    <value>Открыть справочник производственных календарей.</value>
   </data>
   <data name="CoverAction_NextYearCalendar" xml:space="preserve">
     <value>Календарь на следующий  год</value>
@@ -89,7 +89,7 @@
     <value>Частные производственные календари</value>
   </data>
   <data name="CoverDescription_PrivateProductionCalendars" xml:space="preserve">
-    <value>Открыть справочник с частными производственными календарями.</value>
+    <value>Открыть справочник частных производственных календарей.</value>
   </data>
   <data name="CoverAction_CreatePrivateCalendar" xml:space="preserve">
     <value>Создать частный календарь</value>
@@ -111,5 +111,14 @@
   </data>
   <data name="CoverDescription_Settings" xml:space="preserve">
     <value>Открыть настройки календарей</value>
+  </data>
+  <data name="CoverGroup_WorkingTimeCalendars" xml:space="preserve">
+    <value>Календари рабочего времени</value>
+  </data>
+  <data name="CoverAction_WorkingTimeCalendars" xml:space="preserve">
+    <value>Календари рабочего времени</value>
+  </data>
+  <data name="CoverDescription_WorkingTimeCalendars" xml:space="preserve">
+    <value>Открыть справочник календарей рабочего времени.</value>
   </data>
 </root>

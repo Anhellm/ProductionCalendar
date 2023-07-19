@@ -118,4 +118,13 @@
   <data name="CoverDescription_Settings" xml:space="preserve">
     <value>Open calendar settings</value>
   </data>
+  <data name="CoverGroup_WorkingTimeCalendars" xml:space="preserve">
+    <value>Working time calendars</value>
+  </data>
+  <data name="CoverAction_WorkingTimeCalendars" xml:space="preserve">
+    <value>Working time Calendars</value>
+  </data>
+  <data name="CoverDescription_WorkingTimeCalendars" xml:space="preserve">
+    <value>Open working time calendar databook.</value>
+  </data>
 </root>

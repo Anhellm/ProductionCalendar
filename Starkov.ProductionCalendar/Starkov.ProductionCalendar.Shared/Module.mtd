@@ -64,6 +64,13 @@
         "Name": "CurrentYearCalendar",
         "FunctionName": "ShowOrCreateCurrentYearCalendar",
         "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
+      },
+      {
+        "$type": "Sungero.Metadata.CoverEntityListActionMetadata, Sungero.Metadata",
+        "NameGuid": "d0c4e334-a62c-4cf6-9a8d-73e757f48fe8",
+        "Name": "WorkingTimeCalendars",
+        "EntityTypeId": "02720bfa-107b-4d7e-baac-0cd146a4b527",
+        "GroupId": "ad906bdd-8028-4b47-8335-7958e7d8cddb"
       }
     ],
     "Background": null,
@@ -93,6 +100,14 @@
         "BackgroundPosition": "Stretch",
         "IconName": "GroupIconSettings_735b2f0cfeeb49a2aa68fb484fd7b972.png",
         "PreviousItemGuid": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+        "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+      },
+      {
+        "NameGuid": "ad906bdd-8028-4b47-8335-7958e7d8cddb",
+        "Name": "WorkingTimeCalendars",
+        "BackgroundPosition": "Stretch",
+        "IconName": "GroupIconWorkingTimeCalendars_ad906bdd80284b4783357958e7d8cddb.png",
+        "PreviousItemGuid": "735b2f0c-feeb-49a2-aa68-fb484fd7b972",
         "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
       }
     ],

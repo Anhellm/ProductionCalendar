@@ -83,7 +83,7 @@ namespace Starkov.ProductionCalendar.Shared
         foreach (var preHoliday in days.Where(x => data.PreHolidays.Contains(x.Day)))
           preHoliday.DayEnding -= 1;
       
-      // Заполняем время для рабочих дней
+      // Заполняем время для рабочих дней.
       foreach (var workingDay in days.Where(x => !x.Duration.HasValue && !x.Kind.HasValue))
       {
         workingDay.DayBeginning = settings.DayBeginning;
