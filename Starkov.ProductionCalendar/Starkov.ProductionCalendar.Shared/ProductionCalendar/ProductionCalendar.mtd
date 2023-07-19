@@ -5,7 +5,7 @@
   "Actions": [
     {
       "NameGuid": "fe79f5a7-57ca-477e-80a4-8d9abc6f53c7",
-      "Name": "UpdateWeekends",
+      "Name": "UpdateFromExternalService",
       "ActionArea": "Card",
       "GenerateHandler": true,
       "LargeIconName": "Action_UpdateWeekends_large_fe79f5a757ca477e80a48d9abc6f53c7.png",
@@ -96,6 +96,34 @@
           "Settings": []
         }
       ]
+    },
+    {
+      "$type": "Sungero.Metadata.InplaceFormMetadata, Sungero.Metadata",
+      "NameGuid": "71f0b4d9-1232-404b-9f19-ded7e30369d7",
+      "Name": "PreHolidaysPage",
+      "Controls": [
+        {
+          "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
+          "NameGuid": "06553252-cc3d-4f9a-907c-da5b49102267",
+          "Name": "PreholidaysGroup",
+          "SharedNestedGroupsAlignment": true
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "9b4056c2-bca7-4b07-a2fe-9a7559b639cf",
+          "Name": "PreHolidays",
+          "ColumnNumber": 0,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.GridControlToChildCollectionBinder",
+          "HeaderLocation": "Top",
+          "ParentGuid": "06553252-cc3d-4f9a-907c-da5b49102267",
+          "PropertyGuid": "bd1a3b60-457c-4577-96eb-84a1a8657c3c",
+          "RowNumber": 0,
+          "RowSpan": 1,
+          "Settings": []
+        }
+      ],
+      "ParentFormGuid": "d87cac07-7d45-4b14-b269-21f085b0a7fe"
     }
   ],
   "HandledEvents": [
@@ -180,6 +208,15 @@
       "Code": "HolidayInfo",
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToTextBinder",
       "PreviousPropertyGuid": "7688c811-3537-4df8-bb39-2204ce744292"
+    },
+    {
+      "$type": "Sungero.Metadata.CollectionPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "bd1a3b60-457c-4577-96eb-84a1a8657c3c",
+      "Name": "PreHolidays",
+      "Code": "PreHolidays",
+      "EntityGuid": "e9c6049f-cdbd-4053-b6ea-8249159c4eaa",
+      "IsShowedInList": false,
+      "PreviousPropertyGuid": "b3575c1e-fe3a-4cdc-b59e-11dee1c63452"
     }
   ],
   "PublicFunctions": [
@@ -233,6 +270,19 @@
       "ReturnTypeFullName": "System.Linq.IQueryable"
     },
     {
+      "Name": "GetPreHolidays",
+      "Parameters": [
+        {
+          "Name": "productionCalendar",
+          "ParameterType": "global::Starkov.ProductionCalendar.IProductionCalendar",
+          "ParameterTypeFullName": "Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::System.Collections.Generic.List<global::System.DateTime>",
+      "ReturnTypeFullName": "System.Collections.Generic.List"
+    },
+    {
       "Name": "GetPrivateCalendars",
       "IsRemote": true,
       "Placement": "Shared",
@@ -266,7 +316,12 @@
     "Working_Title",
     "HoursLabel_Title",
     "QuarterLabel_Header",
-    "UpdateWeekends_Error"
+    "UpdateWeekends_Error",
+    "UpdateDialog_Name",
+    "UpdateDialog_Service",
+    "UpdateDialog_SetPreHolidays",
+    "UpdateInfo",
+    "PreHolidayInput_Error"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "8520d92b-1f6f-4885-bcb9-40f4178a82ee",

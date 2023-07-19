@@ -45,9 +45,8 @@ namespace Starkov.ProductionCalendar.Shared
     /// </summary>
     /// <param name="calendar">Календарь.</param>
     /// <param name="data">Данные по выходным.</param>
-    /// <param name="withPreHolidays">Необходимость обновления предпраздничных дней.</param>
-    /// <param name="settings">Настройки.</param>
-    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, bool withPreHolidays, ICalendarSettings settings)
+    /// <param name="settings">Настройки обновления.</param>
+    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
     {
       if (calendar == null || data == null)
       {
@@ -58,30 +57,18 @@ namespace Starkov.ProductionCalendar.Shared
       Logger.DebugFormat("ProductionCalendar. UpdateCalendar(func). Обновление данных календаря с ИД {0}.", calendar.Id);
       
       var days = calendar.Day;
-      var processed = new List<int>();
       
       // Выходные.
       foreach (var weekend in days.Where(x => data.Weekends.Contains(x.Day)))
-      {
         weekend.Kind = Sungero.CoreEntities.WorkingTimeCalendarDay.Kind.Weekend;
-        processed.Add(weekend.Id);
-      }
       
       // Праздники.
       foreach (var holiday in days.Where(x => data.Holidays.Contains(x.Day)))
-      {
         holiday.Kind = Sungero.CoreEntities.WorkingTimeCalendarDay.Kind.Holiday;
-        processed.Add(holiday.Id);
-      }
       
       // Рабочие дни.
-      foreach (var workingDay in days.Where(x => !processed.Contains(x.Id)))
+      foreach (var workingDay in days.Where(x => !data.Weekends.Contains(x.Day) && !data.Holidays.Contains(x.Day)))
         workingDay.Kind = null;
-      
-      // Предпраздничные дни.
-      if (withPreHolidays)
-        foreach (var preHoliday in days.Where(x => data.PreHolidays.Contains(x.Day)))
-          preHoliday.DayEnding -= 1;
       
       // Заполняем время для рабочих дней.
       foreach (var workingDay in days.Where(x => !x.Duration.HasValue && !x.Kind.HasValue))
@@ -91,6 +78,13 @@ namespace Starkov.ProductionCalendar.Shared
         workingDay.LunchBreakBeginning = settings.LunchBreakBeginning;
         workingDay.LunchBreakEnding = settings.LunchBreakEnding;
       }
+      
+      // Предпраздничные дни.
+      if (settings.NeedSetPreHolidays.GetValueOrDefault())
+        foreach (var preHoliday in days.Where(x => data.PreHolidays.Contains(x.Day)))
+          preHoliday.DayEnding -= 1;
+      
+      calendar.Save();
     }
   }
 }

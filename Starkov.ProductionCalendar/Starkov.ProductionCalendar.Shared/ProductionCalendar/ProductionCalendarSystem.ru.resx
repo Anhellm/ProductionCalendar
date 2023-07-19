@@ -79,14 +79,14 @@
   <data name="Property_Year" xml:space="preserve">
     <value>Год</value>
   </data>
-  <data name="Action_UpdateWeekends" xml:space="preserve">
-    <value>Обновить выходные</value>
+  <data name="Action_UpdateFromExternalService" xml:space="preserve">
+    <value>Обновить из внешнего сервиса</value>
   </data>
-  <data name="Action_UpdateWeekendsHint" xml:space="preserve">
-    <value>Обновить выходыне из внешнего сервиса</value>
+  <data name="Action_UpdateFromExternalServiceHint" xml:space="preserve">
+    <value>Обновить календарь из внешнего сервиса</value>
   </data>
-  <data name="Action_UpdateWeekendsDescription" xml:space="preserve">
-    <value>Обновить выходыне из внешнего сервиса</value>
+  <data name="Action_UpdateFromExternalServiceDescription" xml:space="preserve">
+    <value>Обновить календарь из внешнего сервиса</value>
   </data>
   <data name="Ribbon_ExternalServiceGroup_368ec19b5f5d4af3a1f432d0a1ea9028" xml:space="preserve">
     <value>Внешний сервис</value>
@@ -105,5 +105,11 @@
   </data>
   <data name="Action_ShowHolidaysDescription" xml:space="preserve">
     <value>Показать информацию о праздниках</value>
+  </data>
+  <data name="Property_PreHolidays" xml:space="preserve">
+    <value>Предпраздничные дни</value>
+  </data>
+  <data name="Form_71f0b4d91232404b9f19ded7e30369d7" xml:space="preserve">
+    <value>Предпраздничные дни</value>
   </data>
 </root>

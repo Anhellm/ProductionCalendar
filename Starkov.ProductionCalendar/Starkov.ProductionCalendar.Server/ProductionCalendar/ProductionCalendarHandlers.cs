@@ -23,11 +23,16 @@ namespace Starkov.ProductionCalendar
 
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
+      // Дубли.
       var duplicates = Functions.ProductionCalendar.GetCalendars()
         .Where(x => Equals(x.WorkingTimeCalendar, _obj.WorkingTimeCalendar))
         .Where(x => !Equals(x, _obj));
       if (duplicates.Any())
         e.AddError(ProductionCalendars.Resources.Duplicate_Error);
+      
+      // Проверка предпраздничных дней.
+      if (Functions.ProductionCalendar.GetPreHolidays(_obj).Any(x => x.Year != _obj.Year))
+        e.AddError(ProductionCalendars.Resources.PreHolidayInput_ErrorFormat(_obj.Year));
     }
   }
 

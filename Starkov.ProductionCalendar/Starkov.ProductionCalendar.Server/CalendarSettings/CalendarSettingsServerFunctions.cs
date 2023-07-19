@@ -11,13 +11,36 @@ namespace Starkov.ProductionCalendar.Server
   {
 
     /// <summary>
+    /// Получить структуру с настройками обновления.
+    /// </summary>
+    /// <returns>Структура с настройками обновления.</returns>
+    [Public, Remote(IsPure = true)]
+    public static Structures.CalendarSettings.IUpdateSettings GetUpdateSettings()
+    {
+      var structure = Structures.CalendarSettings.UpdateSettings.Create();
+      
+      var setting = GetSettings();
+      if (setting == null)
+        return structure;
+      
+      structure.DefaultService = setting.DefaultService;
+      structure.NeedSetPreHolidays = setting.NeedSetPreHolidays;
+      structure.DayBeginning = setting.DayBeginning;
+      structure.DayEnding = setting.DayEnding;
+      structure.LunchBreakBeginning = setting.LunchBreakBeginning;
+      structure.LunchBreakEnding = setting.LunchBreakEnding;
+      
+      return structure;
+    }
+    
+    /// <summary>
     /// Получить настройки.
     /// </summary>
     /// <returns>Запись справочника Настройки.</returns>
     [Public, Remote(IsPure = true)]
     public static ICalendarSettings GetSettings()
     {
-      return CalendarSettingses.GetAll().FirstOrDefault();
+      return CalendarSettingses.GetAllCached().FirstOrDefault();
     }
     
     /// <summary>

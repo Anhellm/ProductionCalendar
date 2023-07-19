@@ -91,4 +91,19 @@
   <data name="UpdateWeekends_Error" xml:space="preserve">
     <value>Ошибка при обработке данных: {0}</value>
   </data>
+  <data name="UpdateDialog_Name" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="UpdateDialog_Service" xml:space="preserve">
+    <value>Сервис</value>
+  </data>
+  <data name="UpdateDialog_SetPreHolidays" xml:space="preserve">
+    <value>Заполнить предпраздничные дни</value>
+  </data>
+  <data name="UpdateInfo" xml:space="preserve">
+    <value>Данные получены из сервиса {0}: {1}</value>
+  </data>
+  <data name="PreHolidayInput_Error" xml:space="preserve">
+    <value>Предпраздничная дата должна соответствовать {0} году</value>
+  </data>
 </root>

@@ -91,4 +91,19 @@
   <data name="UpdateWeekends_Error" xml:space="preserve">
     <value>An error while updating data: {0}</value>
   </data>
+  <data name="UpdateDialog_Name" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="UpdateDialog_Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="UpdateDialog_SetPreHolidays" xml:space="preserve">
+    <value>Set preholidays</value>
+  </data>
+  <data name="UpdateInfo" xml:space="preserve">
+    <value>Data is updated from service {0}: {1}</value>
+  </data>
+  <data name="PreHolidayInput_Error" xml:space="preserve">
+    <value>Preholiday must correspond to {0} year</value>
+  </data>
 </root>

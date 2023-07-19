@@ -227,9 +227,55 @@
       "Placement": "Shared",
       "ReturnType": "global::Starkov.ProductionCalendar.ICalendarSettings",
       "ReturnTypeFullName": "Starkov.ProductionCalendar.ICalendarSettings, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "GetUpdateSettings",
+      "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Starkov.ProductionCalendar.Structures.CalendarSettings.IUpdateSettings",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.CalendarSettings.IUpdateSettings"
     }
   ],
-  "PublicStructures": [],
+  "PublicStructures": [
+    {
+      "Name": "UpdateSettings",
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "DefaultService",
+          "IsEntity": true,
+          "IsNullable": true,
+          "TypeFullName": "global::Starkov.ProductionCalendar.IService"
+        },
+        {
+          "Name": "NeedSetPreHolidays",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Boolean>"
+        },
+        {
+          "Name": "DayBeginning",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Double>"
+        },
+        {
+          "Name": "DayEnding",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Double>"
+        },
+        {
+          "Name": "LunchBreakBeginning",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Double>"
+        },
+        {
+          "Name": "LunchBreakEnding",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Double>"
+        }
+      ],
+      "StructureNamespace": "Starkov.ProductionCalendar.Structures.CalendarSettings"
+    }
+  ],
   "ResourcesKeys": [
     "CalendarSettingsName"
   ],

@@ -22,25 +22,28 @@ namespace Starkov.ProductionCalendar.Client
     #endregion
 
     #region Обновить праздники.
-    public virtual void UpdateWeekends(Sungero.Domain.Client.ExecuteActionArgs e)
+    public virtual void UpdateFromExternalService(Sungero.Domain.Client.ExecuteActionArgs e)
     {
-      var settings = Functions.CalendarSettings.Remote.GetSettings();
+      var settings = Functions.CalendarSettings.Remote.GetUpdateSettings();
       
-      var dialog = Dialogs.CreateInputDialog("Параметры");
-      var service = dialog.AddSelect("Сервис", true, settings?.DefaultService);
-      var withPreHolidays = dialog.AddBoolean("Обработать предпраздничные дни", settings?.NeedSetPreHolidays.GetValueOrDefault() ?? false);
+      var dialog = Dialogs.CreateInputDialog(ProductionCalendars.Resources.UpdateDialog_Name);
+      var service = dialog.AddSelect(ProductionCalendars.Resources.UpdateDialog_Service, true, settings.DefaultService);
+      var withPreHolidays = dialog.AddBoolean(ProductionCalendars.Resources.UpdateDialog_SetPreHolidays, settings.NeedSetPreHolidays.GetValueOrDefault());
       
       if (dialog.Show() == DialogButtons.Ok)
       {
         var serviceValue = service.Value;
+        settings.NeedSetPreHolidays = withPreHolidays.Value;
         
         try
         {
           var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
           
-          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, withPreHolidays.Value.GetValueOrDefault(), settings);
+          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
+          
+          Functions.ProductionCalendar.SetPreHolidays(_obj, data.PreHolidays);
           _obj.HolidayInfo = data.HolidayInfo;
-          _obj.UpdateInfo = string.Format("Данные получены из сервиса {0}: {1}", serviceValue.Name, Calendar.Now.ToString());
+          _obj.UpdateInfo = ProductionCalendars.Resources.UpdateInfoFormat(serviceValue.Name, Calendar.Now.ToString());
           _obj.Save();
         }
         catch (Exception ex)
@@ -51,7 +54,7 @@ namespace Starkov.ProductionCalendar.Client
       }
     }
 
-    public virtual bool CanUpdateWeekends(Sungero.Domain.Client.CanExecuteActionArgs e)
+    public virtual bool CanUpdateFromExternalService(Sungero.Domain.Client.CanExecuteActionArgs e)
     {
       return _obj.WorkingTimeCalendar?.AccessRights?.CanUpdate() ?? false;
     }

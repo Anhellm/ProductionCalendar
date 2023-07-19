@@ -246,7 +246,7 @@ namespace Starkov.ProductionCalendar.Server
       var preholidayStyle = Sungero.Docflow.PublicFunctions.Module.CreateStyle(Sungero.Core.Colors.Common.Blue);
       #endregion
       
-      var maxDuration = days.Select(x => x.Duration).Max();
+      var preholidays = Functions.ProductionCalendar.GetPreHolidays(_obj);
       
       // Группируем данные по месяцам в квартале.
       foreach (var month in days.GroupBy(x => x.Day.Month))
@@ -297,7 +297,7 @@ namespace Starkov.ProductionCalendar.Server
             
             // Стиль отображения дня.
             var style = day.Kind.HasValue ? weekendStyle : deafaultStyle;
-            if (maxDuration - day.Duration == 1)
+            if (preholidays.Contains(day.Day))
               style = preholidayStyle;
             
             content.AddLabel(day.Day.Day.ToString(), style);
