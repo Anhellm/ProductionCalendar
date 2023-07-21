@@ -222,7 +222,11 @@
     "AccessRightsCreate_Error",
     "NullCalendar_Error",
     "CalendarNotSaved_Message",
-    "CalendarCreate_Error"
+    "CalendarCreate_Error",
+    "TimeRange_Error",
+    "TimeComparison_Error",
+    "LunchTimeRange_Error",
+    "PeriodValidateName"
   ],
   "ServerAssemblyName": "Starkov.ProductionCalendar.Server",
   "ServerNamespace": "Starkov.ProductionCalendar.Server",

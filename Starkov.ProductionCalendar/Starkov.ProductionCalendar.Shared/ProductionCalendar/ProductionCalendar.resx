@@ -106,4 +106,28 @@
   <data name="PreHolidayInput_Error" xml:space="preserve">
     <value>Preholiday must correspond to {0} year</value>
   </data>
+  <data name="WorkScheduleChangeDialog_Name" xml:space="preserve">
+    <value>Change the work schedule</value>
+  </data>
+  <data name="DateComparisonDialog_Error" xml:space="preserve">
+    <value>The end date of the period cannot be less than the start date</value>
+  </data>
+  <data name="YearDialog_Error" xml:space="preserve">
+    <value>The year of the period must correspond to the calendar year</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_WithPreHolidays" xml:space="preserve">
+    <value>Taking into account the pre-holidays</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_PeriodFrom" xml:space="preserve">
+    <value>Period from</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_PeriodTo" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_NeedChangeSettings" xml:space="preserve">
+    <value>Change common settings</value>
+  </data>
+  <data name="WorkScheduleChangeSuccess_Info" xml:space="preserve">
+    <value>The data is updated</value>
+  </data>
 </root>

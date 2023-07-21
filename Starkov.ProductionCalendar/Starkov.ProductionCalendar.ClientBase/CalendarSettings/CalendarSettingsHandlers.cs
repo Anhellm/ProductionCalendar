@@ -7,8 +7,6 @@ using Starkov.ProductionCalendar.CalendarSettings;
 
 namespace Starkov.ProductionCalendar
 {
-  partial class CalendarSettingsClientHandlers
-  {
 
-  }
+
 }

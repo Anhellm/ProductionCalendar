@@ -16,8 +16,16 @@
       "Name": "ShowHolidays",
       "ActionArea": "Card",
       "GenerateHandler": true,
-      "LargeIconName": null,
-      "SmallIconName": null
+      "LargeIconName": "Action_ShowHolidays_large_f5f28c62e120476c8cd02d4a9fd52336.png",
+      "SmallIconName": "Action_ShowHolidays_small_f5f28c62e120476c8cd02d4a9fd52336.png"
+    },
+    {
+      "NameGuid": "aba9fbfd-a376-4f40-a767-70b881a28480",
+      "Name": "WorkScheduleChange",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "Action_WorkScheduleChange_large_aba9fbfda3764f40a76770b881a28480.png",
+      "SmallIconName": "Action_WorkScheduleChange_small_aba9fbfda3764f40a76770b881a28480.png"
     }
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
@@ -205,7 +213,11 @@
       "$type": "Sungero.Metadata.TextPropertyMetadata, Sungero.Metadata",
       "NameGuid": "b3575c1e-fe3a-4cdc-b59e-11dee1c63452",
       "Name": "HolidayInfo",
+      "CanBeSearch": false,
       "Code": "HolidayInfo",
+      "IsEnabled": false,
+      "IsShowedInList": false,
+      "IsVisibility": false,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToTextBinder",
       "PreviousPropertyGuid": "7688c811-3537-4df8-bb39-2204ce744292"
     },
@@ -321,7 +333,15 @@
     "UpdateDialog_Service",
     "UpdateDialog_SetPreHolidays",
     "UpdateInfo",
-    "PreHolidayInput_Error"
+    "PreHolidayInput_Error",
+    "WorkScheduleChangeDialog_Name",
+    "DateComparisonDialog_Error",
+    "YearDialog_Error",
+    "WorkScheduleChangeDialog_WithPreHolidays",
+    "WorkScheduleChangeDialog_PeriodFrom",
+    "WorkScheduleChangeDialog_PeriodTo",
+    "WorkScheduleChangeDialog_NeedChangeSettings",
+    "WorkScheduleChangeSuccess_Info"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "8520d92b-1f6f-4885-bcb9-40f4178a82ee",
@@ -343,8 +363,17 @@
         "Name": "ShowHolidays",
         "ActionGuid": "f5f28c62-e120-476c-8cd0-2d4a9fd52336",
         "ButtonSize": "Large",
+        "Index": -1,
+        "ParentGuid": "0b8fdfd9-1161-4196-9687-9eb8c1356df7"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "4703414b-87a5-4268-bf6e-0ca9aec159c1",
+        "Name": "WorkScheduleChange",
+        "ActionGuid": "aba9fbfd-a376-4f40-a767-70b881a28480",
+        "ButtonSize": "Large",
         "Index": 0,
-        "ParentGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028"
+        "ParentGuid": "0b8fdfd9-1161-4196-9687-9eb8c1356df7"
       }
     ],
     "Groups": [
@@ -353,6 +382,14 @@
         "Name": "ExternalServiceGroup",
         "IconName": null,
         "Index": 21,
+        "ParentGuid": "21a31627-5f58-4416-8c4a-90f538ee2e57",
+        "SmallIconName": null
+      },
+      {
+        "NameGuid": "0b8fdfd9-1161-4196-9687-9eb8c1356df7",
+        "Name": "CalendarWorkGroup",
+        "IconName": null,
+        "Index": 22,
         "ParentGuid": "21a31627-5f58-4416-8c4a-90f538ee2e57",
         "SmallIconName": null
       }

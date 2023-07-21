@@ -106,4 +106,28 @@
   <data name="PreHolidayInput_Error" xml:space="preserve">
     <value>Предпраздничная дата должна соответствовать {0} году</value>
   </data>
+  <data name="WorkScheduleChangeDialog_Name" xml:space="preserve">
+    <value>Изменить график работы</value>
+  </data>
+  <data name="DateComparisonDialog_Error" xml:space="preserve">
+    <value>Дата окончания периода не может быть меньше даты начала</value>
+  </data>
+  <data name="YearDialog_Error" xml:space="preserve">
+    <value>Год периода должен соответстовать году календаря</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_WithPreHolidays" xml:space="preserve">
+    <value>С учетом предпраздничных дней</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_PeriodFrom" xml:space="preserve">
+    <value>Диапазон с</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_PeriodTo" xml:space="preserve">
+    <value>по</value>
+  </data>
+  <data name="WorkScheduleChangeDialog_NeedChangeSettings" xml:space="preserve">
+    <value>Изменить общие настройки</value>
+  </data>
+  <data name="WorkScheduleChangeSuccess_Info" xml:space="preserve">
+    <value>Данные обновлены</value>
+  </data>
 </root>

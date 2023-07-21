@@ -112,4 +112,16 @@
   <data name="Form_71f0b4d91232404b9f19ded7e30369d7" xml:space="preserve">
     <value>Предпраздничные дни</value>
   </data>
+  <data name="Ribbon_CalendarWorkGroup_0b8fdfd91161419696879eb8c1356df7" xml:space="preserve">
+    <value>Работа с календарем</value>
+  </data>
+  <data name="Action_WorkScheduleChange" xml:space="preserve">
+    <value>Изменить график работы</value>
+  </data>
+  <data name="Action_WorkScheduleChangeHint" xml:space="preserve">
+    <value>Изменить график работы в календаре рабочего времени</value>
+  </data>
+  <data name="Action_WorkScheduleChangeDescription" xml:space="preserve">
+    <value>Изменить график работы в календаре рабочего времени</value>
+  </data>
 </root>

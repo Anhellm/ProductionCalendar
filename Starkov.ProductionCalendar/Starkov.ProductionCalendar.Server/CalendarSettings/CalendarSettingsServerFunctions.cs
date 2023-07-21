@@ -13,24 +13,35 @@ namespace Starkov.ProductionCalendar.Server
     /// <summary>
     /// Получить структуру с настройками обновления.
     /// </summary>
+    /// <param name="settings">Структура с настройками.</param>
+    /// <returns>Структура с настройками обновления.</returns>
+    [Public, Remote(IsPure = true)]
+    public static Structures.CalendarSettings.IUpdateSettings GetUpdateSettings(ICalendarSettings settings)
+    {
+      var structure = Structures.CalendarSettings.UpdateSettings.Create();
+      
+      if (settings == null)
+        return structure;
+      
+      structure.DefaultService = settings.DefaultService;
+      structure.NeedSetPreHolidays = settings.NeedSetPreHolidays;
+      structure.DayBeginning = settings.DayBeginning;
+      structure.DayEnding = settings.DayEnding;
+      structure.LunchBreakBeginning = settings.LunchBreakBeginning;
+      structure.LunchBreakEnding = settings.LunchBreakEnding;
+      
+      return structure;
+    }
+    
+    /// <summary>
+    /// Получить структуру с настройками обновления.
+    /// </summary>
     /// <returns>Структура с настройками обновления.</returns>
     [Public, Remote(IsPure = true)]
     public static Structures.CalendarSettings.IUpdateSettings GetUpdateSettings()
     {
-      var structure = Structures.CalendarSettings.UpdateSettings.Create();
-      
-      var setting = GetSettings();
-      if (setting == null)
-        return structure;
-      
-      structure.DefaultService = setting.DefaultService;
-      structure.NeedSetPreHolidays = setting.NeedSetPreHolidays;
-      structure.DayBeginning = setting.DayBeginning;
-      structure.DayEnding = setting.DayEnding;
-      structure.LunchBreakBeginning = setting.LunchBreakBeginning;
-      structure.LunchBreakEnding = setting.LunchBreakEnding;
-      
-      return structure;
+      var settings = GetSettings();
+      return GetUpdateSettings(settings);
     }
     
     /// <summary>
@@ -51,11 +62,9 @@ namespace Starkov.ProductionCalendar.Server
     {
       var settings = CalendarSettingses.Create();
       
-      settings.DayBeginning = 9;
-      settings.DayEnding = 17;
       settings.NeedSetPreHolidays = true;
       settings.DefaultService = Functions.Service.GetServices(Starkov.ProductionCalendar.Service.DataSource.Consultant).FirstOrDefault();
-      settings.Save();
+      Functions.CalendarSettings.UpdateSettings(settings, 9, 17, null, null);
       
       return settings;
     }

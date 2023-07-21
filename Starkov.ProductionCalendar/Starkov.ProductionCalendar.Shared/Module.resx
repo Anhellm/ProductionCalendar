@@ -70,4 +70,16 @@
   <data name="CalendarCreate_Error" xml:space="preserve">
     <value>Error while creating working time calendar: {0}. Contact administrator.</value>
   </data>
+  <data name="TimeRange_Error" xml:space="preserve">
+    <value>The value of property "{0}" must be in the range from 0 to 24</value>
+  </data>
+  <data name="TimeComparison_Error" xml:space="preserve">
+    <value>The start time (Property "{0}") cannot be longer than the end time (Property "{1}") </value>
+  </data>
+  <data name="LunchTimeRange_Error" xml:space="preserve">
+    <value>{0} should be in the working time range</value>
+  </data>
+  <data name="PeriodValidateName" xml:space="preserve">
+    <value>Lunch</value>
+  </data>
 </root>

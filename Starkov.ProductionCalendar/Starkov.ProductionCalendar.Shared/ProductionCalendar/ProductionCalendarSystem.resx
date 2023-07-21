@@ -133,4 +133,22 @@
   <data name="ControlGroup_06553252cc3d4f9a907cda5b49102267" xml:space="preserve">
     <value />
   </data>
+  <data name="Ribbon_CalendarWorkGroup_0b8fdfd91161419696879eb8c1356df7" xml:space="preserve">
+    <value>Work with calendar</value>
+  </data>
+  <data name="Action_WorkScheduleChange" xml:space="preserve">
+    <value>Change the work schedule</value>
+  </data>
+  <data name="Action_WorkScheduleChangeDescription" xml:space="preserve">
+    <value>Change the work schedule in working time calendar</value>
+  </data>
+  <data name="Action_WorkScheduleChangeHint" xml:space="preserve">
+    <value>Change the work schedule in working time calendar</value>
+  </data>
+  <data name="Action_WorkScheduleChangeConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_WorkScheduleChangeConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
 </root>

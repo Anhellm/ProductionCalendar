@@ -10,6 +10,28 @@ namespace Starkov.ProductionCalendar.Shared
   partial class ProductionCalendarFunctions
   {
     /// <summary>
+    /// Валидация значений диалога.
+    /// </summary>
+    /// <param name="args">Аргументы.</param>
+    /// <param name="inputValueFrom">Значение начала.</param>
+    /// <param name="inputValueTo">Значение окончания.</param>
+    /// <param name="controls">Массив контролов.</param>
+    public virtual void ChangeDialogValidateInputValue(CommonLibrary.InputDialogRefreshEventArgs args, DateTime? inputValueFrom, DateTime? inputValueTo, CommonLibrary.IDialogControl[] controls)
+    {
+      var year = _obj.Year.GetValueOrDefault();
+      
+      string error = string.Empty;
+      if (inputValueFrom > inputValueTo)
+        error = ProductionCalendars.Resources.DateComparisonDialog_Error;
+      
+      if ((inputValueFrom.HasValue && inputValueFrom.Value.Year != year) || (inputValueTo.HasValue && inputValueTo.Value.Year != year))
+        error = ProductionCalendars.Resources.YearDialog_Error;
+      
+      if (!string.IsNullOrEmpty(error))
+        args.AddError(error, controls);
+    }
+    
+    /// <summary>
     /// Заполнить предпраздничные дни.
     /// </summary>
     /// <param name="dates">Список дат.</param>

@@ -130,7 +130,8 @@
     }
   ],
   "HandledEvents": [
-    "CreatedServer"
+    "CreatedServer",
+    "BeforeSaveServer"
   ],
   "HideFromCreationArea": true,
   "HideFromNavigationEditorCreationArea": true,
@@ -227,6 +228,20 @@
       "Placement": "Shared",
       "ReturnType": "global::Starkov.ProductionCalendar.ICalendarSettings",
       "ReturnTypeFullName": "Starkov.ProductionCalendar.ICalendarSettings, Sungero.Domain.Interfaces"
+    },
+    {
+      "Name": "GetUpdateSettings",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "settings",
+          "ParameterType": "global::Starkov.ProductionCalendar.ICalendarSettings",
+          "ParameterTypeFullName": "Starkov.ProductionCalendar.ICalendarSettings, Sungero.Domain.Interfaces"
+        }
+      ],
+      "Placement": "Shared",
+      "ReturnType": "global::Starkov.ProductionCalendar.Structures.CalendarSettings.IUpdateSettings",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.CalendarSettings.IUpdateSettings"
     },
     {
       "Name": "GetUpdateSettings",
