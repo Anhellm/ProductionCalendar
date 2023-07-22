@@ -127,4 +127,10 @@
   <data name="CoverDescription_WorkingTimeCalendars" xml:space="preserve">
     <value>Open working time calendar databook.</value>
   </data>
+  <data name="JobDisplayName_f4620f6263d74681837eb2a269e8d381" xml:space="preserve">
+    <value>Update calendar data for next year</value>
+  </data>
+  <data name="JobDescription_f4620f6263d74681837eb2a269e8d381" xml:space="preserve">
+    <value>Creating or updating next year calendar from external service</value>
+  </data>
 </root>

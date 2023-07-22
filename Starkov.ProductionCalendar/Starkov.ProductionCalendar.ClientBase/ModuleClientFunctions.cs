@@ -103,10 +103,7 @@ namespace Starkov.ProductionCalendar.Client
       }
       
       // Находим основной рабочий календарь, иначе создаем.
-      var workingTimeCalendar = Functions.Module.Remote.GetWorkingTimeCalendars()
-        .Where(x => x.Year == year)
-        .FirstOrDefault();
-      
+      var workingTimeCalendar = Functions.Module.Remote.GetWorkingTimeCalendar(year);      
       if (workingTimeCalendar == null)
       {
         try

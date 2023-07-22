@@ -155,6 +155,17 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "Jobs": [
+    {
+      "NameGuid": "f4620f62-63d7-4681-837e-b2a269e8d381",
+      "Name": "NextYearCalendar",
+      "DaysOfMonthSchedule": "1",
+      "GenerateHandler": true,
+      "Monthly": "DaysOfMonth",
+      "MonthSchedule": "October",
+      "StartAt": "1753-01-01T00:00:00"
+    }
+  ],
   "Libraries": [
     {
       "NameGuid": "b88c3921-8f31-4924-86c6-ae39db439da6",
@@ -166,6 +177,20 @@
     {
       "Name": "CreateWorkingTimeCalendar",
       "IsRemote": true,
+      "Placement": "Shared",
+      "ReturnType": "global::Sungero.CoreEntities.IWorkingTimeCalendar",
+      "ReturnTypeFullName": "Sungero.CoreEntities.IWorkingTimeCalendar, Sungero.Domain.Shared"
+    },
+    {
+      "Name": "GetWorkingTimeCalendar",
+      "IsRemote": true,
+      "Parameters": [
+        {
+          "Name": "year",
+          "ParameterType": "global::System.Int32",
+          "ParameterTypeFullName": "System.Int32"
+        }
+      ],
       "Placement": "Shared",
       "ReturnType": "global::Sungero.CoreEntities.IWorkingTimeCalendar",
       "ReturnTypeFullName": "Sungero.CoreEntities.IWorkingTimeCalendar, Sungero.Domain.Shared"

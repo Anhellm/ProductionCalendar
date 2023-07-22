@@ -12,6 +12,17 @@ namespace Starkov.ProductionCalendar.Server
 
     #region Основные календари рабочего времени
     /// <summary>
+    /// Получить основной календарь рабочего времени.
+    /// </summary>
+    /// <param name="year">Год.</param>
+    /// <returns>Календарь рабочего времени за год.</returns>
+    [Public, Remote(IsPure = true)]
+    public virtual IWorkingTimeCalendar GetWorkingTimeCalendar(int year)
+    {
+      return GetWorkingTimeCalendars().Where(x => x.Year == year).FirstOrDefault();
+    }
+    
+    /// <summary>
     /// Получить основные календари рабочего времени.
     /// </summary>
     /// <returns>Основные календари рабочего времени.</returns>

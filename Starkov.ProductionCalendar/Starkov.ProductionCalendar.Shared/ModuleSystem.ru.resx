@@ -121,4 +121,10 @@
   <data name="CoverDescription_WorkingTimeCalendars" xml:space="preserve">
     <value>Открыть справочник календарей рабочего времени.</value>
   </data>
+  <data name="JobDisplayName_f4620f6263d74681837eb2a269e8d381" xml:space="preserve">
+    <value>Обновление данных календаря на следующий год</value>
+  </data>
+  <data name="JobDescription_f4620f6263d74681837eb2a269e8d381" xml:space="preserve">
+    <value>Создание или обновление календаря следующего года из внешнего сервиса</value>
+  </data>
 </root>

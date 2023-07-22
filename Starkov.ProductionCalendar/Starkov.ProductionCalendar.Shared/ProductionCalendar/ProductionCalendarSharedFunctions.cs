@@ -32,6 +32,23 @@ namespace Starkov.ProductionCalendar.Shared
     }
     
     /// <summary>
+    /// Обновить производственный календарь.
+    /// </summary>
+    /// <param name="data">Данные из внешнего сервиса.</param>
+    public virtual void UpdateProductionCalendar(Structures.Module.WeekendData data, IService service)
+    {
+      if (data == null)
+        return;
+      
+      SetPreHolidays(data.PreHolidays);
+      _obj.HolidayInfo = data.HolidayInfo;
+      _obj.UpdateInfo = ProductionCalendars.Resources.UpdateInfoFormat(service?.Name, Calendar.Now.ToString());
+      
+      _obj.Save();
+    }
+    
+    #region Предпраздничные дни.
+    /// <summary>
     /// Заполнить предпраздничные дни.
     /// </summary>
     /// <param name="dates">Список дат.</param>
@@ -52,7 +69,8 @@ namespace Starkov.ProductionCalendar.Shared
     {
       return _obj.PreHolidays.Where(x => x.Date.HasValue).Select(x => x.Date.Value).ToList();
     }
-
+    #endregion
+    
     /// <summary>
     /// Заполнить имя календаря.
     /// </summary>

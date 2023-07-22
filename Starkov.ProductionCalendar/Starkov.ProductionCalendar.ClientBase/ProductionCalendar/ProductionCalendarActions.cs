@@ -115,11 +115,7 @@ namespace Starkov.ProductionCalendar.Client
         {
           var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
           Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
-          
-          Functions.ProductionCalendar.SetPreHolidays(_obj, data.PreHolidays);
-          _obj.HolidayInfo = data.HolidayInfo;
-          _obj.UpdateInfo = ProductionCalendars.Resources.UpdateInfoFormat(serviceValue.Name, Calendar.Now.ToString());
-          _obj.Save();
+          Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
         }
         catch (Exception ex)
         {
