@@ -76,4 +76,10 @@
   <data name="Duplicate_Error" xml:space="preserve">
     <value>The service for the data source {0} already exists</value>
   </data>
+  <data name="XMLCalendar_DefaultName" xml:space="preserve">
+    <value>XMLCalendar</value>
+  </data>
+  <data name="XMLCalendarDefaultURL" xml:space="preserve">
+    <value>http://xmlcalendar.ru/data/ru/</value>
+  </data>
 </root>

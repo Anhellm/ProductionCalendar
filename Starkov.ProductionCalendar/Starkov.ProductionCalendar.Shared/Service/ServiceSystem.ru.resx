@@ -79,4 +79,7 @@
   <data name="Property_UseApi" xml:space="preserve">
     <value>Использовать API</value>
   </data>
+  <data name="Enum_DataSource_XMLCalendar" xml:space="preserve">
+    <value>XMLCalendar</value>
+  </data>
 </root>

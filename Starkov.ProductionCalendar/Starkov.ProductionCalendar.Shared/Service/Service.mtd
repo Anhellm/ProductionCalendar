@@ -99,7 +99,8 @@
   "HandledEvents": [
     "BeforeDeleteServer",
     "BeforeSaveServer",
-    "CreatedServer"
+    "CreatedServer",
+    "ShowingClient"
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "ProductionCalendarService",
@@ -158,6 +159,11 @@
           "NameGuid": "2237d56d-33db-491c-b69e-def1713bef23",
           "Name": "HeadHunter",
           "Code": "HeadHunter"
+        },
+        {
+          "NameGuid": "409e07ad-c26b-458e-b0ad-d3741c183090",
+          "Name": "XMLCalendar",
+          "Code": "XMLCalendar"
         }
       ],
       "IsEnabled": false,
@@ -228,7 +234,9 @@
     "HeadHunter_DefaultName",
     "Consultant_DefaultURL",
     "HeadHunter_DefaultURL",
-    "Duplicate_Error"
+    "Duplicate_Error",
+    "XMLCalendar_DefaultName",
+    "XMLCalendarDefaultURL"
   ],
   "RibbonCardMetadata": {
     "NameGuid": "c290e081-573b-4550-89db-0e0edff0474a",

@@ -30,6 +30,8 @@ namespace Starkov.ProductionCalendar.Server
                            Starkov.ProductionCalendar.Service.DataSource.Consultant, false);
       CreateDefaultService(Services.Resources.HeadHunter_DefaultName, Services.Resources.HeadHunter_DefaultURL,
                            Starkov.ProductionCalendar.Service.DataSource.HeadHunter, false);
+      CreateDefaultService(Services.Resources.XMLCalendar_DefaultName, Services.Resources.XMLCalendarDefaultURL,
+                           Starkov.ProductionCalendar.Service.DataSource.XMLCalendar, true);
     }
     
     /// <summary>

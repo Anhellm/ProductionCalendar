@@ -130,5 +130,31 @@ namespace Starkov.ProductionCalendar.Server
       
       return DataSource.Undefined;
     }
+    
+    #region Проверка доступности реализации.
+    /// <summary>
+    /// Проверка доступности API у сервиса.
+    /// </summary>
+    /// <param name="dataSourceName">Наименование источника данных.</param>
+    /// <returns>True/False.</returns>
+    [Remote(IsPure = true)]
+    public virtual bool HasApi(string dataSourceName)
+    {
+      var dataSource = GetDataSource(dataSourceName);
+      return CalendarService.CalendarService.HasApi(dataSource);
+    }
+    
+    /// <summary>
+    /// Проверка доступности парсера у сервиса.
+    /// </summary>
+    /// <param name="dataSourceName">Наименование источника данных.</param>
+    /// <returns>True/False.</returns>
+    [Remote(IsPure = true)]
+    public virtual bool HasParser(string dataSourceName)
+    {
+      var dataSource = GetDataSource(dataSourceName);
+      return CalendarService.CalendarService.HasParser(dataSource);
+    }
+    #endregion
   }
 }
