@@ -27,6 +27,9 @@
 #### **Фоновый процесс "Обновление данных календаря на следующий год".**
 Фоновый процесс для автоматизации создания/обновления данных по выходным и праздничным дням на следующий год.
 
+## Внешняя библиотека
+Для расширения функционала взаимодействия с внешними сервисами используется библиотека https://github.com/STARKOV-Group/CalendarService
+
 ## Порядок установки
 Для работы требуется установленный Directum Development studio версии 4.5 и выше.
 
@@ -37,7 +40,7 @@
 <block name="REPOSITORIES">
   <repository folderName="Base" solutionType="Base" url="<адрес локального репозитория>" />
   <repository folderName="Work" solutionType="Work" url="<адрес локального репозитория>" />
-  <repository folderName="<Папка из п.1>" solutionType="Work" url="" />
+  <repository folderName="<Папка из п.1>" solutionType="Work" url="https://github.com/STARKOV-Group/CalendarExtensions" />
 </block>
 ```
 
@@ -67,7 +70,7 @@
 <block name="REPOSITORIES">
   <repository folderName="Base" solutionType="Base" url="" /> 
   <repository folderName="<Папка из п.1>" solutionType="Base" url="<Адрес репозитория gitHub>" />
-  <repository folderName="<Папка для рабочего слоя>" solutionType="Work" url="" />
+  <repository folderName="<Папка для рабочего слоя>" solutionType="Work" url="https://github.com/STARKOV-Group/CalendarExtensions" />
 </block>
 ```
 
