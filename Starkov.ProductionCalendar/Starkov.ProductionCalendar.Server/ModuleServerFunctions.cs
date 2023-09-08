@@ -61,7 +61,7 @@ namespace Starkov.ProductionCalendar.Server
         return null;
       }
       
-      var dataAccess = GetGataAccess(year, service);
+      var dataAccess = GetDataAccess(year, service);
       var data = CalendarService.CalendarService.GetWeekendData(dataAccess, service.UseApi.GetValueOrDefault());
       
       return GetWeekendData(data);
@@ -108,7 +108,7 @@ namespace Starkov.ProductionCalendar.Server
     /// <param name="year">Год.</param>
     /// <param name="service">Сервис.</param>
     /// <returns>Класс для получения доступа к ресурсам.</returns>
-    public virtual CalendarService.DataAccess GetGataAccess(int year, IService service)
+    public virtual CalendarService.DataAccess GetDataAccess(int year, IService service)
     {
       if (service == null || !service.DataSource.HasValue)
         return null;
