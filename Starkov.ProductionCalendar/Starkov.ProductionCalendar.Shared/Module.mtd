@@ -155,6 +155,8 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "IsolatedAssemblyName": "Starkov.ProductionCalendar.Isolated",
+  "IsolatedNamespace": "Starkov.ProductionCalendar.Isolated",
   "Jobs": [
     {
       "NameGuid": "f4620f62-63d7-4681-837e-b2a269e8d381",
