@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -176,7 +176,10 @@ namespace Starkov.ProductionCalendar.Shared
       
       // Рабочие дни.
       foreach (var workingDay in days.Where(x => !data.Weekends.Contains(x.Day) && !data.Holidays.Contains(x.Day)))
+      {
         workingDay.Kind = null;
+        workingDay.Duration = null;
+      }
       
       // Заполняем время для рабочих дней.
       foreach (var workingDay in days.Where(x => !x.Duration.HasValue && !x.Kind.HasValue))
