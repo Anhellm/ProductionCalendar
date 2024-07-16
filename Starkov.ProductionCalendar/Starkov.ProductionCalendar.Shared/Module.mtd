@@ -158,6 +158,7 @@
   "InterfaceNamespace": "Starkov.ProductionCalendar",
   "IsolatedAssemblyName": "Starkov.ProductionCalendar.Isolated",
   "IsolatedNamespace": "Starkov.ProductionCalendar.Isolated",
+  "IsVisible": false,
   "Jobs": [
     {
       "NameGuid": "f4620f62-63d7-4681-837e-b2a269e8d381",
@@ -175,6 +176,9 @@
       "Name": "CalendarService",
       "Scope": "Both"
     }
+  ],
+  "Overridden": [
+    "IsVisible"
   ],
   "PublicFunctions": [
     {
