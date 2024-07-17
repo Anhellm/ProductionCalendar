@@ -1,0 +1,228 @@
+{
+  "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+  "Uuid": "68f72775-842d-450d-8be6-c594df806525",
+  "Items": {
+    "$type": "Sungero.DataExport.ExportingObject[], Sungero.DataExport",
+    "$values": [
+      {
+        "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+        "Uuid": "a51a122d-036d-4ba4-b37d-a304ee290ed5",
+        "ModuleView": {
+          "$type": "Sungero.DataExport.ExportingObjectId, Sungero.DataExport",
+          "TypeGuid": "f7cba906-f4c9-4f02-97e8-a6c6155a8ee6",
+          "Identifier": "68f72775-842d-450d-8be6-c594df806525"
+        },
+        "Number": 1,
+        "ItemType": "EntityType",
+        "NameGuid": "a0cb9556-3538-46b3-a869-892ba0b6fc89"
+      },
+      {
+        "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+        "Uuid": "8fc8f4ce-30d6-4e66-a5f7-546b9ce2d371",
+        "ModuleView": {
+          "$type": "Sungero.DataExport.ExportingObjectId, Sungero.DataExport",
+          "TypeGuid": "f7cba906-f4c9-4f02-97e8-a6c6155a8ee6",
+          "Identifier": "68f72775-842d-450d-8be6-c594df806525"
+        },
+        "Number": 2,
+        "ItemType": "EntityType",
+        "NameGuid": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85"
+      }
+    ]
+  },
+  "Recipients": {
+    "$type": "Sungero.DataExport.ExportingObject[], Sungero.DataExport",
+    "$values": [
+      {
+        "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+        "Uuid": "1d9d4f65-703e-43bd-84fa-394d546bce7a",
+        "ModuleView": {
+          "$type": "Sungero.DataExport.ExportingObjectId, Sungero.DataExport",
+          "TypeGuid": "f7cba906-f4c9-4f02-97e8-a6c6155a8ee6",
+          "Identifier": "68f72775-842d-450d-8be6-c594df806525"
+        },
+        "Recipient": {
+          "$type": "Sungero.DataExport.ExportingObjectId, Sungero.DataExport",
+          "TypeGuid": "5e9b55c2-c1f5-4e4f-aa09-7b6d461d87ed",
+          "Identifier": "ba88ed21-a43c-4684-be90-99c5a22e5c90"
+        }
+      }
+    ]
+  },
+  "Cover": {
+    "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverSettings, Sungero.NoCode.Settings.Interfaces",
+    "NameGuid": "6d9fca92-2e2d-4acd-983c-481e529a5ee4",
+    "Header": {
+      "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverHeaderSettings, Sungero.NoCode.Settings.Interfaces",
+      "NameGuid": "fc87ad2c-bb45-4cd6-8b8f-4460ce4333c7",
+      "Name": "CoverHeaderSettings",
+      "IconName": null,
+      "Background": null,
+      "BackgroundPosition": 1
+    },
+    "Footer": {
+      "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFooterSettings, Sungero.NoCode.Settings.Interfaces",
+      "NameGuid": "6518e621-3601-4b40-bb20-a301fbf83d21",
+      "Name": "CoverFooterSettings",
+      "IconName": null,
+      "Background": null,
+      "BackgroundPosition": 1
+    },
+    "Tabs": {
+      "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverTabSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
+      "$values": [
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverTabSettings, Sungero.NoCode.Settings.Interfaces",
+          "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5",
+          "NameGuid": "287dae68-942d-442c-81fd-71f1fc2b99c5",
+          "Name": "Tab",
+          "Index": 0,
+          "ParentId": "1d3bf1c8-e134-4d4c-89d1-a2b17ff4f4f1"
+        }
+      ]
+    },
+    "Groups": {
+      "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverGroupSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
+      "$values": [
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverGroupSettings, Sungero.NoCode.Settings.Interfaces",
+          "GroupId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
+          "ColumnNumber": 0,
+          "IconName": "a13f98ba-aeeb-4278-adfb-1808ae46615d.svg",
+          "NameGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
+          "Name": "Calendars",
+          "Index": 0,
+          "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverGroupSettings, Sungero.NoCode.Settings.Interfaces",
+          "GroupId": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+          "ColumnNumber": 1,
+          "IconName": "24e0d427-5235-44c0-ace4-89b2b04d5b9d.svg",
+          "NameGuid": "6fa23aa1-f078-4006-93f8-66d304cfab73",
+          "Name": "PrivateCalendars",
+          "Index": 1,
+          "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverGroupSettings, Sungero.NoCode.Settings.Interfaces",
+          "GroupId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972",
+          "ColumnNumber": 0,
+          "IconName": "2a4904f7-4d45-410f-9e25-dbbcfcc6e24b.svg",
+          "NameGuid": "735b2f0c-feeb-49a2-aa68-fb484fd7b972",
+          "Name": "Settings",
+          "Index": 2,
+          "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverGroupSettings, Sungero.NoCode.Settings.Interfaces",
+          "GroupId": "ad906bdd-8028-4b47-8335-7958e7d8cddb",
+          "ColumnNumber": 1,
+          "IconName": "abe42c2f-a6c1-47d3-a0db-a3e6f75b062b.svg",
+          "NameGuid": "ad906bdd-8028-4b47-8335-7958e7d8cddb",
+          "Name": "WorkingTimeCalendars",
+          "Index": 3,
+          "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
+        }
+      ]
+    },
+    "Actions": {
+      "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverActionSettingsBase, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
+      "$values": [
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "ShowOrCreateCurrentYearCalendar",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "a07c7815-72bb-416b-803c-9b72def4960a",
+          "NameGuid": "a07c7815-72bb-416b-803c-9b72def4960a",
+          "Name": "CurrentYearCalendar",
+          "Index": 0,
+          "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "ShowOrCreateNextYearCalendar",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c",
+          "NameGuid": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c",
+          "Name": "NextYearCalendar",
+          "Index": 1,
+          "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "ShowMainCalendars",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
+          "NameGuid": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
+          "Name": "ProductionCalendars",
+          "Index": 2,
+          "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "CreatePrivateCalendar",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "5d9848e0-a818-41df-8d25-6421b0de3d5d",
+          "NameGuid": "5d9848e0-a818-41df-8d25-6421b0de3d5d",
+          "Name": "CreatePrivateCalendar",
+          "Index": 0,
+          "ParentId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "ShowPrivateCalendars",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
+          "NameGuid": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
+          "Name": "PrivateProductionCalendars",
+          "Index": 1,
+          "ParentId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "FunctionName": "ShowCalendarSettings",
+          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+          "ActionId": "76b789f0-09ab-453d-a1f7-56ac09c4debf",
+          "NameGuid": "76b789f0-09ab-453d-a1f7-56ac09c4debf",
+          "Name": "Settings",
+          "Index": 0,
+          "ParentId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverEntityListActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "EntityTypeId": "5f2ee268-863d-48e1-a0e7-cd229d4b3c85",
+          "ActionId": "5e88e9bb-dea6-464c-a4bf-b2644fced777",
+          "NameGuid": "5e88e9bb-dea6-464c-a4bf-b2644fced777",
+          "Name": "Services",
+          "Index": 1,
+          "ParentId": "735b2f0c-feeb-49a2-aa68-fb484fd7b972"
+        },
+        {
+          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverEntityListActionSettings, Sungero.NoCode.Settings.Interfaces",
+          "EntityTypeId": "02720bfa-107b-4d7e-baac-0cd146a4b527",
+          "ActionId": "d0c4e334-a62c-4cf6-9a8d-73e757f48fe8",
+          "NameGuid": "d0c4e334-a62c-4cf6-9a8d-73e757f48fe8",
+          "Name": "WorkingTimeCalendars",
+          "Index": 0,
+          "ParentId": "ad906bdd-8028-4b47-8335-7958e7d8cddb"
+        }
+      ]
+    },
+    "RemoteControls": {
+      "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverRemoteControlSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
+      "$values": []
+    },
+    "Background": null,
+    "BackgroundPosition": 1
+  },
+  "ModuleNameGuid": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+  "Status": "Active",
+  "Priority": 1,
+  "StoreAsDefaultSetting": true,
+  "ExplorerModule": {
+    "$type": "Sungero.DataExport.ExportingObjectId, Sungero.DataExport",
+    "TypeGuid": "4cbdfb03-5462-43c4-a033-034e3d3aa095",
+    "Identifier": "b019eaad-a6b5-436e-8417-ee930b9c103e"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "Calendars_Title_8cf999cb4ce44e74a0bad7db3f6e8b1c": {
+    "en-US": "Main calendars",
+    "ru-RU": "Основные календари"
+  },
+  "CoverHeaderSettings_Title_fc87ad2cbb454cd68b8f4460ce4333c7": {
+    "en-US": "Production calendar",
+    "ru-RU": "Производственный календарь"
+  },
+  "CreatePrivateCalendar_Description_5d9848e0a81841df8d256421b0de3d5d": {
+    "en-US": "Create private production calendar",
+    "ru-RU": "Создать частный производственный календарь"
+  },
+  "CreatePrivateCalendar_Title_5d9848e0a81841df8d256421b0de3d5d": {
+    "en-US": "Create private calendar",
+    "ru-RU": "Создать частный календарь"
+  },
+  "CurrentYearCalendar_Description_a07c781572bb416b803c9b72def4960a": {
+    "en-US": "Show or create current year calendar",
+    "ru-RU": "Открыть или добавить календарь за текущий год"
+  },
+  "CurrentYearCalendar_Title_a07c781572bb416b803c9b72def4960a": {
+    "en-US": "Current year calendar",
+    "ru-RU": "Календарь на текущий год"
+  },
+  "Description": {},
+  "Name": {
+    "en-US": "Production calendar",
+    "ru-RU": "Производственный календарь"
+  },
+  "NextYearCalendar_Description_49ab4de3b1b64c379d687ce4d26b915c": {
+    "en-US": "Открыть или добавить календарь на следующий год"
+  },
+  "NextYearCalendar_Title_49ab4de3b1b64c379d687ce4d26b915c": {
+    "en-US": "Next year calendar",
+    "ru-RU": "Календарь на следующий  год"
+  },
+  "PrivateCalendars_Title_6fa23aa1f078400693f866d304cfab73": {
+    "en-US": "Private calendars",
+    "ru-RU": "Частные календари"
+  },
+  "PrivateProductionCalendars_Description_7e19d4ede6ee4865b0102e56a1ab0675": {
+    "en-US": "Show private production calendar databook.",
+    "ru-RU": "Открыть справочник частных производственных календарей."
+  },
+  "PrivateProductionCalendars_Title_7e19d4ede6ee4865b0102e56a1ab0675": {
+    "en-US": "Private production calendars",
+    "ru-RU": "Частные производственные календари"
+  },
+  "ProductionCalendars_Description_3c4450ea2a4f4526a8f312423e6c42fa": {
+    "en-US": "Show production calendar databook.",
+    "ru-RU": "Открыть справочник производственных календарей."
+  },
+  "ProductionCalendars_Title_3c4450ea2a4f4526a8f312423e6c42fa": {
+    "en-US": "Production calendars",
+    "ru-RU": "Производственные календари"
+  },
+  "Services_Description_5e88e9bbdea6464ca4bfb2644fced777": {
+    "en-US": "Show databook with service settings",
+    "ru-RU": "Открыть справочник с настройками сервисов"
+  },
+  "Services_Title_5e88e9bbdea6464ca4bfb2644fced777": {
+    "en-US": "Services",
+    "ru-RU": "Сервисы"
+  },
+  "Settings_Description_76b789f009ab453da1f756ac09c4debf": {
+    "en-US": "Open calendar settings",
+    "ru-RU": "Открыть настройки календарей"
+  },
+  "Settings_Title_735b2f0cfeeb49a2aa68fb484fd7b972": {
+    "en-US": "Settings",
+    "ru-RU": "Настройки"
+  },
+  "Settings_Title_76b789f009ab453da1f756ac09c4debf": {
+    "en-US": "Settings",
+    "ru-RU": "Настройки"
+  },
+  "Tab_Title_287dae68942d442c81fd71f1fc2b99c5": {
+    "en-US": "Tab"
+  },
+  "WorkingTimeCalendars_Description_d0c4e334a62c4cf69a8d73e757f48fe8": {
+    "en-US": "Open working time calendar databook.",
+    "ru-RU": "Открыть справочник календарей рабочего времени."
+  },
+  "WorkingTimeCalendars_Title_ad906bdd80284b4783357958e7d8cddb": {
+    "en-US": "Working time calendars",
+    "ru-RU": "Календари рабочего времени"
+  },
+  "WorkingTimeCalendars_Title_d0c4e334a62c4cf69a8d73e757f48fe8": {
+    "en-US": "Working time Calendars",
+    "ru-RU": "Календари рабочего времени"
+  }
+}
