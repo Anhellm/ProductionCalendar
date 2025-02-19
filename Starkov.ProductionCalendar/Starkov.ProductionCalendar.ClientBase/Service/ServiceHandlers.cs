@@ -12,7 +12,7 @@ namespace Starkov.ProductionCalendar
 
     public virtual void UseApiValueInput(Sungero.Presentation.BooleanValueInputEventArgs e)
     {
-        e.AddWarning(Services.Resources.CheckUrl_Warn);
+      e.AddWarning(Services.Resources.CheckUrl_Warn);
     }
 
     public virtual void UrlValueInput(Sungero.Presentation.StringValueInputEventArgs e)

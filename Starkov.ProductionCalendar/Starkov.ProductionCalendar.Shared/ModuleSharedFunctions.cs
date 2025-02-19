@@ -125,13 +125,17 @@ namespace Starkov.ProductionCalendar.Shared
     /// <param name="settings">Настройки обновления.</param>
     public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.IWeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
     {
+      var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+        .WithProperty("Function", "UpdateCalendar")
+        .WithProperty("CalendarId", calendar.Id);
+      
       if (calendar == null || data == null)
       {
-        Logger.Error("ProductionCalendar. UpdateCalendar(func). Переданы пустые параметры.");
+        _logger.Error("Переданы пустые параметры.");
         return;
       }
       
-      Logger.DebugFormat("ProductionCalendar. UpdateCalendar(func). Обновление данных календаря с ИД {0}.", calendar.Id);
+      _logger.Debug("Обновление данных календаря.");
       
       var days = calendar.Day;
       
@@ -165,6 +169,7 @@ namespace Starkov.ProductionCalendar.Shared
           preHoliday.DayEnding -= 1;
       
       calendar.Save();
+      _logger.Debug("Данные календаря обновлены.");
     }
     
     /// <summary>

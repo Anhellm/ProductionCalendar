@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -54,7 +54,7 @@ namespace Starkov.ProductionCalendar.Server
       }
       catch (Exception ex)
       {
-        Logger.Error("Ошибка при создании сервиса доступа к производственным календарям", ex);
+        Logger.WithLogger(Constants.Module.LoggerPostfix).Error(ex, "Ошибка при создании сервиса доступа к производственным календарям");
       }
       
       return Services.Null;

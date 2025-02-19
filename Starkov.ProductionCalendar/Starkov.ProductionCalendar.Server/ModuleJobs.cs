@@ -17,6 +17,10 @@ namespace Starkov.ProductionCalendar.Server
       int year = Calendar.Today.Year + 1;
       var settings = Functions.CalendarSettings.GetUpdateSettings();
       
+      var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+        .WithProperty("Job", "NextYearCalendar")
+        .WithProperty("Year", year);
+      
       Structures.Module.IWeekendData data = null;
       try
       {
@@ -24,7 +28,7 @@ namespace Starkov.ProductionCalendar.Server
       }
       catch (Exception ex)
       {
-        Logger.Error("Ошибка при получении данных из внешнего сервиса.", ex);
+        _logger.Error(ex, "Ошибка при получении данных из внешнего сервиса.");
         return;
       }
       
@@ -42,11 +46,11 @@ namespace Starkov.ProductionCalendar.Server
       try
       {
         Functions.Module.UpdateCalendar(workingTimeCalendar, data, settings);
-        Logger.DebugFormat("Обновлен календарь на {0} год.", year);
+        _logger.Debug("Календарь обновлен.");
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Ошибка при обновлении данных календаря на {0} год.", ex, year);
+        _logger.Error(ex, "Ошибка при обновлении данных календаря.");
         return;
       }
       
@@ -59,7 +63,7 @@ namespace Starkov.ProductionCalendar.Server
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Ошибка при обновлении данных производственного календаря на {0} год.", ex, year);
+        _logger.Error(ex, "Ошибка при обновлении данных производственного календаря.");
         return;
       }
     }

@@ -55,9 +55,12 @@ namespace Starkov.ProductionCalendar.Server
     [Remote]
     public virtual Structures.Module.IWeekendData GetWeekendData(int year, IService service)
     {
+      var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+        .WithProperty("Function", "GetWeekendData");
+      
       if (service == null)
       {
-        Logger.Error("ProductionCalendar. GetWeekendData(func). Получен пустой сервис.");
+        _logger.Error("Получен пустой сервис.");
         return null;
       }
       

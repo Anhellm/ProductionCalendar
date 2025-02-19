@@ -64,7 +64,7 @@ namespace Starkov.ProductionCalendar.Client
         
         try
         {
-          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, settings, withoutPreHolidays.Value.GetValueOrDefault(), 
+          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, settings, withoutPreHolidays.Value.GetValueOrDefault(),
                                           preholidays, dateStart.Value, dateEnd.Value);
           _obj.State.Controls.CalendarState.Refresh();
           Dialogs.ShowMessage(ProductionCalendars.Resources.WorkScheduleChangeSuccess_Info);
@@ -111,6 +111,9 @@ namespace Starkov.ProductionCalendar.Client
         var serviceValue = service.Value;
         settings.NeedSetPreHolidays = withPreHolidays.Value;
         
+        var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+          .WithProperty("Action", "UpdateFromExternalService");
+        
         try
         {
           var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
@@ -119,7 +122,7 @@ namespace Starkov.ProductionCalendar.Client
         }
         catch (Exception ex)
         {
-          Logger.Error("ProductionCalendar. UpdateWeekends(action). Ошибка обработки данных.", ex);
+          _logger.Error(ex, "Ошибка обработки данных.");
           Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
         }
       }
