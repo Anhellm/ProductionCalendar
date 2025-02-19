@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
 using Sungero.CoreEntities;
-using CalendarService;
 
 namespace Starkov.ProductionCalendar.Server
 {

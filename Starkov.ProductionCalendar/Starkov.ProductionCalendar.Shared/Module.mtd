@@ -241,9 +241,9 @@
   ],
   "Libraries": [
     {
-      "NameGuid": "b88c3921-8f31-4924-86c6-ae39db439da6",
-      "Name": "CalendarService",
-      "Scope": "Both"
+      "NameGuid": "f0f656b1-522d-4978-bdeb-d1afac7b238c",
+      "Name": "Libraries",
+      "Scope": "Server"
     }
   ],
   "Overridden": [
