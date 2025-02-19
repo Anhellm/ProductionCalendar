@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -53,7 +53,7 @@ namespace Starkov.ProductionCalendar.Server
     /// <param name="service">Сервис.</param>
     /// <returns>Структура с данными по выходным.</returns>
     [Remote]
-    public virtual Structures.Module.WeekendData GetWeekendData(int year, IService service)
+    public virtual Structures.Module.IWeekendData GetWeekendData(int year, IService service)
     {
       if (service == null)
       {
@@ -72,7 +72,7 @@ namespace Starkov.ProductionCalendar.Server
     /// </summary>
     /// <param name="data">Данные из внещней системы.</param>
     /// <returns>Структура с данными по выходным.</returns>
-    public virtual Structures.Module.WeekendData GetWeekendData(CalendarService.WeekendData data)
+    public virtual Structures.Module.IWeekendData GetWeekendData(CalendarService.WeekendData data)
     {
       if (data == null)
       {

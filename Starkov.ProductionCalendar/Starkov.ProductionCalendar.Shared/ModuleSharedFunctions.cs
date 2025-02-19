@@ -154,7 +154,7 @@ namespace Starkov.ProductionCalendar.Shared
     /// <param name="calendar">Календарь.</param>
     /// <param name="data">Данные по выходным.</param>
     /// <param name="settings">Настройки обновления.</param>
-    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
+    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.IWeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
     {
       if (calendar == null || data == null)
       {

@@ -156,7 +156,34 @@
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.ProductionCalendar",
+  "IsolatedAreas": [
+    {
+      "NameGuid": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Name": "ExternalData"
+    }
+  ],
   "IsolatedAssemblyName": "Starkov.ProductionCalendar.Isolated",
+  "IsolatedFunctions": [
+    {
+      "NameGuid": "533c23f0-2598-41b5-b64d-f831a95d27c7",
+      "Name": "GetWeekendData",
+      "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Parameters": [
+        {
+          "Name": "requestParams",
+          "ParameterType": "global::Starkov.ProductionCalendar.Structures.Module.IRequestParams",
+          "ParameterTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IRequestParams, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "loggerPostfix",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::Starkov.ProductionCalendar.Structures.Module.IWeekendData",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IWeekendData, Sungero.Domain.Interfaces"
+    }
+  ],
   "IsolatedNamespace": "Starkov.ProductionCalendar.Isolated",
   "IsVisible": false,
   "Jobs": [
@@ -247,7 +274,65 @@
       "ReturnTypeFullName": "System.Void"
     }
   ],
-  "PublicStructures": [],
+  "PublicStructures": [
+    {
+      "Name": "RequestParams",
+      "IsIsolated": true,
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "Year",
+          "TypeFullName": "global::System.Int32"
+        },
+        {
+          "Name": "UrlTemplate",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "ServiceName",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "ByApi",
+          "TypeFullName": "global::System.Boolean"
+        }
+      ],
+      "StructureNamespace": "Starkov.ProductionCalendar.Structures.Module"
+    },
+    {
+      "Name": "WeekendData",
+      "IsIsolated": true,
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "HolidayInfo",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        },
+        {
+          "Name": "Weekends",
+          "IsList": true,
+          "IsNullable": true,
+          "TypeFullName": "global::System.Collections.Generic.List<global::System.DateTime>"
+        },
+        {
+          "Name": "Holidays",
+          "IsList": true,
+          "IsNullable": true,
+          "TypeFullName": "global::System.Collections.Generic.List<global::System.DateTime>"
+        },
+        {
+          "Name": "PreHolidays",
+          "IsList": true,
+          "IsNullable": true,
+          "TypeFullName": "global::System.Collections.Generic.List<global::System.DateTime>"
+        }
+      ],
+      "StructureNamespace": "Starkov.ProductionCalendar.Structures.Module"
+    }
+  ],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.ProductionCalendar",
   "ResourcesKeys": [

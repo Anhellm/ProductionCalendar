@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -17,7 +17,7 @@ namespace Starkov.ProductionCalendar.Server
       int year = Calendar.Today.Year + 1;
       var settings = Functions.CalendarSettings.GetUpdateSettings();
       
-      Structures.Module.WeekendData data = null;
+      Structures.Module.IWeekendData data = null;
       try
       {
         data = Functions.Module.GetWeekendData(year, settings.DefaultService);
