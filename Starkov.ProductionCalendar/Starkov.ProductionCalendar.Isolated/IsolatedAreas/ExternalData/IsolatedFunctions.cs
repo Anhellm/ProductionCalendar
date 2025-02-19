@@ -56,6 +56,83 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
           throw new NotImplementedException("Сервис не определен.");
       }
     }
-
+    
+    #region Проверка доступности реализации.
+    /// <summary>
+    /// Возможность изменения реализации для сервиса.
+    /// </summary>
+    /// <param name="name">Наименование сервиса.</param>
+    /// <returns>True/False.</returns>
+    [Public]
+    public virtual bool CanSwitchImplementation(string name)
+    {
+      var type = GetServiceType(name);
+      return CanUseApi(type) && CanUseParse(type);
+    }
+    
+    /// <summary>
+    /// Возможность использования сервиса через API.
+    /// </summary>
+    /// <param name="name">Наименование сервиса.</param>
+    /// <returns>True/False.</returns>
+    [Public]
+    public virtual bool CanUseApi(string name)
+    {
+      var type = GetServiceType(name);
+      return CanUseApi(type);
+    }
+    
+    /// <summary>
+    /// Возможность использования сервиса через API.
+    /// </summary>
+    /// <param name="serviceType">Тип.</param>
+    /// <returns>True/False.</returns>
+    public virtual bool CanUseApi(Type serviceType)
+    {
+      return serviceType?.IsAssignableFrom(typeof(IApiService)) ?? false;
+    }
+    
+    /// <summary>
+    /// Возможность использования сервиса через парсер.
+    /// </summary>
+    /// <param name="name">Наименование сервиса.</param>
+    /// <returns>True/False.</returns>
+    [Public]
+    public virtual bool CanUseParse(string name)
+    {
+      var type = GetServiceType(name);
+      return CanUseParse(type);
+    }
+    
+    /// <summary>
+    /// Возможность использования сервиса через парсер.
+    /// </summary>
+    /// <param name="serviceType">Тип.</param>
+    /// <returns>True/False.</returns>
+    public virtual bool CanUseParse(Type serviceType)
+    {
+      return serviceType?.IsAssignableFrom(typeof(IParseService)) ?? false;
+    }
+    
+    /// <summary>
+    /// Получить тип по наименованию.
+    /// </summary>
+    /// <param name="name">Наименование сервиса.</param>
+    /// <returns>Тип.</returns>
+    public virtual Type GetServiceType(string name)
+    {
+      switch (name)
+      {
+        case "XMLCalendar":
+          return typeof(XMLCalendar);
+        case "Consultant":
+          return typeof(ConsultantPlus);
+        case "HeadHunter":
+          return typeof(HeadHunter);
+        default:
+          return null;
+      }
+    }
+    #endregion
   }
 }

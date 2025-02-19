@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -7,6 +7,15 @@ using Starkov.ProductionCalendar.Service;
 
 namespace Starkov.ProductionCalendar
 {
+  partial class ServiceCreatingFromServerHandler
+  {
+
+    public override void CreatingFrom(Sungero.Domain.CreatingFromEventArgs e)
+    {
+      e.Without(_info.Properties.DataSource);
+    }
+  }
+
   partial class ServiceServerHandlers
   {
 
@@ -22,6 +31,13 @@ namespace Starkov.ProductionCalendar
       {
         var sourceName = _obj.Info.Properties.DataSource.GetLocalizedValue(source);
         e.AddError(Starkov.ProductionCalendar.Services.Resources.Duplicate_ErrorFormat(sourceName));
+        return;
+      }
+      
+      var urlError = Functions.Service.ValidateUrl(_obj.Url);
+      if (!string.IsNullOrEmpty(urlError))
+      {
+        e.AddError(urlError);
         return;
       }
     }

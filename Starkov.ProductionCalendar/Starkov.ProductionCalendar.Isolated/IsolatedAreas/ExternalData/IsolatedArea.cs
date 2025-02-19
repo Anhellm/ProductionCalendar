@@ -410,7 +410,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <param name="year">Год.</param>
     public ServiceBase(string urlTemplate, int year)
     {
-      Url = string.Format(urlTemplate, year);
+      Url = urlTemplate.Replace("{year}", year.ToString());
       Logger = Logger.WithLogger("CalendarService");
     }
   }

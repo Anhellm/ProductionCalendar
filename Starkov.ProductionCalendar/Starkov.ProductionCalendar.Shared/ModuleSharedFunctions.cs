@@ -118,37 +118,6 @@ namespace Starkov.ProductionCalendar.Shared
     #endregion
 
     /// <summary>
-    /// Получить список дат.
-    /// </summary>
-    /// <param name="dates">Массив дней.</param>
-    /// <param name="month">Номер месяца.</param>
-    /// <param name="year">Год.</param>
-    /// <returns>Список дат.</returns>
-    public List<DateTime> GetListDates(string[] dates, int month, int year)
-    {
-      if (dates == null)
-        return new List<DateTime>();
-      
-      return dates
-        .Select(x =>
-                {
-                  int result;
-                  return int.TryParse(x, out result) ? result : -1;
-                })
-        .Where(x => x > -1)
-        .Select(x =>
-                {
-                  DateTime date;
-                  string stringDate = string.Format("{0}.{1}.{2}", x, month, year);
-                  return DateTime.TryParseExact(stringDate, "d.M.yyyy", TenantInfo.Culture, System.Globalization.DateTimeStyles.None, out date) ?
-                    date :
-                    DateTime.MinValue;
-                })
-        .Where(x => x > DateTime.MinValue)
-        .ToList();
-    }
-
-    /// <summary>
     /// Обновить календарь рабочего времени.
     /// </summary>
     /// <param name="calendar">Календарь.</param>

@@ -24,7 +24,7 @@ namespace Starkov.ProductionCalendar.Server
       }
       catch (Exception ex)
       {
-        Logger.Error("Ошибка при получении данных из внешнего сервис.", ex);
+        Logger.Error("Ошибка при получении данных из внешнего сервиса.", ex);
         return;
       }
       

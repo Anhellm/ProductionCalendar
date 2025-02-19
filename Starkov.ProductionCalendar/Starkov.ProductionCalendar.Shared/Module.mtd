@@ -165,6 +165,48 @@
   "IsolatedAssemblyName": "Starkov.ProductionCalendar.Isolated",
   "IsolatedFunctions": [
     {
+      "NameGuid": "3e906bad-f831-4cef-9268-86461fe9c30f",
+      "Name": "CanSwitchImplementation",
+      "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Parameters": [
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean"
+    },
+    {
+      "NameGuid": "0a695822-96a5-41d7-b06f-17ac070f302f",
+      "Name": "CanUseApi",
+      "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Parameters": [
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean"
+    },
+    {
+      "NameGuid": "d6d6ff98-e9ff-40a1-9b0b-bb0cfaf28d17",
+      "Name": "CanUseParse",
+      "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Parameters": [
+        {
+          "Name": "name",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.Boolean",
+      "ReturnTypeFullName": "System.Boolean"
+    },
+    {
       "NameGuid": "533c23f0-2598-41b5-b64d-f831a95d27c7",
       "Name": "GetWeekendData",
       "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",

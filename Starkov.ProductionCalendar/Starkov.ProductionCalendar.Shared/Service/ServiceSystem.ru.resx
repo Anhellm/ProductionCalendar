@@ -71,7 +71,7 @@
     <value>Сервисы</value>
   </data>
   <data name="Property_Url" xml:space="preserve">
-    <value>Адрес</value>
+    <value>Шаблон адреса</value>
   </data>
   <data name="Property_DataSource" xml:space="preserve">
     <value>Тип</value>

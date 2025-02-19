@@ -68,10 +68,10 @@
     <value>HeadHunter</value>
   </data>
   <data name="Consultant_DefaultURL" xml:space="preserve">
-    <value>https://www.consultant.ru/law/ref/calendar/proizvodstvennye</value>
+    <value>https://www.consultant.ru/law/ref/calendar/proizvodstvennye/{year}/</value>
   </data>
   <data name="HeadHunter_DefaultURL" xml:space="preserve">
-    <value>https://hh.ru/article/calendar</value>
+    <value>https://yaroslavl.hh.ru/article/calendar{year}</value>
   </data>
   <data name="Duplicate_Error" xml:space="preserve">
     <value>Сервис для источника данных {0} уже существует</value>
@@ -80,6 +80,15 @@
     <value>XMLCalendar</value>
   </data>
   <data name="XMLCalendarDefaultURL" xml:space="preserve">
-    <value>http://xmlcalendar.ru/data/ru/</value>
+    <value>https://xmlcalendar.ru/data/ru/{year}/calendar.xml</value>
+  </data>
+  <data name="EmptyUrl" xml:space="preserve">
+    <value>Пустой адрес</value>
+  </data>
+  <data name="WithoutYear" xml:space="preserve">
+    <value>Шаблон Url должен содержать значение "{year}" для подстановки года. Пример: https://www.consultant.ru/law/ref/calendar/proizvodstvennye/{year}/</value>
+  </data>
+  <data name="CheckUrl_Warn" xml:space="preserve">
+    <value>Проверьте корректность шаблона после изменения способа получения данных.</value>
   </data>
 </root>

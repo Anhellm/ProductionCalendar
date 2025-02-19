@@ -61,100 +61,28 @@ namespace Starkov.ProductionCalendar.Server
         return null;
       }
       
-      var dataAccess = GetGataAccess(year, service);
-      var data = CalendarService.CalendarService.GetWeekendData(dataAccess, service.UseApi.GetValueOrDefault());
-      
-      return GetWeekendData(data);
+      var requestParams = GetRequestParams(year, service);
+      return IsolatedFunctions.ExternalData.GetWeekendData(requestParams, Constants.Module.LoggerPostfix);
     }
-    
-    /// <summary>
-    /// Получить структуру с данными по выходным.
-    /// </summary>
-    /// <param name="data">Данные из внещней системы.</param>
-    /// <returns>Структура с данными по выходным.</returns>
-    public virtual Structures.Module.IWeekendData GetWeekendData(CalendarService.WeekendData data)
-    {
-      if (data == null)
-      {
-        Logger.Error("ProductionCalendar. GetWeekendData(func). Получены пустые данные из внешнего сервиса.");
-        return null;
-      }
-      
-      var year = data.Year;
-      
-      var holidays = new List<DateTime>();
-      var weekends = new List<DateTime>();
-      var preHolidays = new List<DateTime>();
-      
-      foreach (var month in data.Months)
-      {
-        holidays.AddRange(Functions.Module.GetListDates(month.Holidays, month.Number, year));
-        weekends.AddRange(Functions.Module.GetListDates(month.Weekends, month.Number, year));
-        preHolidays.AddRange(Functions.Module.GetListDates(month.PreHolidays, month.Number, year));
-      }
-      
-      var weekendData = Structures.Module.WeekendData.Create();
-      weekendData.HolidayInfo = data.HolidayInfo;
-      weekendData.Holidays = holidays;
-      weekendData.Weekends = weekends;
-      weekendData.PreHolidays = preHolidays;
-      
-      return weekendData;
-    }
-    
+
     /// <summary>
     /// Получить класс для получения доступа к ресурсам.
     /// </summary>
     /// <param name="year">Год.</param>
     /// <param name="service">Сервис.</param>
     /// <returns>Класс для получения доступа к ресурсам.</returns>
-    public virtual CalendarService.DataAccess GetGataAccess(int year, IService service)
+    public virtual Structures.Module.IRequestParams GetRequestParams(int year, IService service)
     {
       if (service == null || !service.DataSource.HasValue)
         return null;
       
-      var dataSource = GetDataSource(service.DataSource.Value.ToString());
-      return new DataAccess(year, service.Url, dataSource);
-    }
-    
-    /// <summary>
-    /// Получить значение перечисления источника данных.
-    /// </summary>
-    /// <param name="dataSource">Наименование источника данных.</param>
-    /// <returns>Значение перечисления источника данных.</returns>
-    public virtual CalendarService.DataSource GetDataSource(string dataSourceName)
-    {
-      DataSource dataSource = DataSource.Undefined;
-      if (DataSource.TryParse(dataSourceName, out dataSource))
-        return dataSource;
+      var structure = Structures.Module.RequestParams.Create();
+      structure.ServiceName = service.DataSource.Value.Value;
+      structure.UrlTemplate = service.Url;
+      structure.Year = year;
+      structure.ByApi = service.UseApi.GetValueOrDefault();
       
-      return DataSource.Undefined;
+      return structure;
     }
-    
-    #region Проверка доступности реализации.
-    /// <summary>
-    /// Проверка доступности API у сервиса.
-    /// </summary>
-    /// <param name="dataSourceName">Наименование источника данных.</param>
-    /// <returns>True/False.</returns>
-    [Remote(IsPure = true)]
-    public virtual bool HasApi(string dataSourceName)
-    {
-      var dataSource = GetDataSource(dataSourceName);
-      return CalendarService.CalendarService.HasApi(dataSource);
-    }
-    
-    /// <summary>
-    /// Проверка доступности парсера у сервиса.
-    /// </summary>
-    /// <param name="dataSourceName">Наименование источника данных.</param>
-    /// <returns>True/False.</returns>
-    [Remote(IsPure = true)]
-    public virtual bool HasParser(string dataSourceName)
-    {
-      var dataSource = GetDataSource(dataSourceName);
-      return CalendarService.CalendarService.HasParser(dataSource);
-    }
-    #endregion
   }
 }
