@@ -64,7 +64,18 @@ namespace Starkov.ProductionCalendar.Server
       }
       
       var requestParams = GetRequestParams(year, service);
-      return IsolatedFunctions.ExternalData.GetWeekendData(requestParams, Constants.Module.LoggerPostfix);
+      
+      Structures.Module.IWeekendData result;
+      try
+      {
+        result = IsolatedFunctions.ExternalData.GetWeekendData(requestParams, Constants.Module.LoggerPostfix);
+      }
+      catch 
+      {
+        throw AppliedCodeException.Create("Неопознанная ошибка. Обратитесь к администратору.");
+      }
+      
+      return result;
     }
 
     /// <summary>

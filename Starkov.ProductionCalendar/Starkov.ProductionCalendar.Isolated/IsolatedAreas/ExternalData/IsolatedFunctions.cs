@@ -26,9 +26,13 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
         logger.WithObject(requestParams).Debug("Запрос данных внешнего сервиса.");
         
         var service = GetService(requestParams);
-        service.Logger = logger;
+        service.ServiceLogger = logger;
         
-        return service.GetWeekendInfo();
+        var result = service.GetWeekendInfo();
+        if (result == null)
+          throw new InvalidOperationException("Получен пустой набор данных.");
+        
+        return result;
       }
       catch (Exception ex)
       {
@@ -89,7 +93,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>True/False.</returns>
     public virtual bool CanUseApi(Type serviceType)
     {
-      return serviceType?.IsAssignableFrom(typeof(IApiService)) ?? false;
+      return serviceType?.GetInterfaces().Any(x => Equals(x, typeof(IApiService))) ?? false;
     }
     
     /// <summary>
@@ -111,7 +115,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>True/False.</returns>
     public virtual bool CanUseParse(Type serviceType)
     {
-      return serviceType?.IsAssignableFrom(typeof(IParseService)) ?? false;
+      return serviceType?.GetInterfaces().Any(x => Equals(x, typeof(IParseService))) ?? false;
     }
     
     /// <summary>

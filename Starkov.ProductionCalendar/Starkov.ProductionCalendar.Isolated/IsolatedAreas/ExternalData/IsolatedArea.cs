@@ -27,7 +27,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <summary>
     /// Логгер.
     /// </summary>
-    ILogger Logger { get; set; }
+    ILogger ServiceLogger { get; set; }
     
     /// <summary>
     /// Адрес доступа.
@@ -123,7 +123,12 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
   /// Результат парсинга страницы.
   /// </summary>
   internal class HTMLMonthsInfo : IExtConvertable
-  {    
+  {
+    /// <summary>
+    /// Url полученной HTML.
+    /// </summary>
+    internal string Url { get; set; }
+    
     /// <summary>
     /// Элементы месяца.
     /// </summary>
@@ -163,11 +168,12 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       return ConvertImplementation?.Invoke(Months, HolidaysInfo);
     }
     
-    internal HTMLMonthsInfo(IHtmlCollection<IElement> months, IElement holidaysInfo, CreateWeekendData implementation)
+    internal HTMLMonthsInfo(IHtmlCollection<IElement> months, IElement holidaysInfo, string getUrl, CreateWeekendData implementation)
     {
       Months = months;
       HolidaysInfo = holidaysInfo;
       ConvertImplementation = implementation;
+      Url = getUrl;
     }
   }
   
@@ -203,7 +209,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структура с выходными/праздничными днями.</returns>
     public Structures.Module.IWeekendData Convert()
     {
-      var result = Structures.Module.WeekendData.Create();
+      var result = CommonFunctions.InitEmptyStructure();
       
       try
       {
@@ -390,7 +396,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <summary>
     /// Логгер.
     /// </summary>
-    public virtual ILogger Logger { get; set; }
+    public virtual ILogger ServiceLogger { get; set; }
     
     /// <summary>
     /// Адрес доступа.
@@ -411,7 +417,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     public ServiceBase(string urlTemplate, int year)
     {
       Url = urlTemplate.Replace("{year}", year.ToString());
-      Logger = Logger.WithLogger("CalendarService");
+      ServiceLogger = Logger.WithLogger("CalendarService");
     }
   }
   
@@ -451,13 +457,13 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       if (service == null)
         throw new ArgumentNullException("Пустые параметры.");
       
-      service.Logger?.Debug("Запрос данных к API. {url}", service.Url);
+      service.ServiceLogger?.Debug("Запрос данных к API. {url}", service.Url);
       
       // Получаем данные с сайта.
       bool success = CommonFunctions.Get(service.Url, service.ContentType, out string result);
       if (!success)
       {
-        service.Logger?.Error(result);
+        service.ServiceLogger?.Error(result);
         return null;
       }
       
@@ -469,7 +475,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       }
       catch (Exception ex)
       {
-        service.Logger?.Error(ex, "Ошибка при десериализации данных.");
+        service.ServiceLogger?.Error(ex, "Ошибка при десериализации данных.");
         return null;
       }
 
@@ -540,16 +546,17 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       
       HTMLMonthsInfo htmlMonthsInfo;
 
-      service.Logger?.Debug("Запрос данных сайта. {url}", service.Url);
+      service.ServiceLogger?.Debug("Запрос данных сайта. {url}", service.Url);
       
       // Получаем данные с сайта.
       try
       {
         htmlMonthsInfo = CommonFunctions.GetHTMLMonthsInfo(null, service.Url, service.MonthsSelector, service.HolidaySelector, service.CreateWeekendData);
+        service.ServiceLogger?.Debug("Адрес из HTML. {Url}", htmlMonthsInfo.Url);
       }
       catch (Exception ex)
       {
-        service.Logger?.Error(ex, "Ошибка при получении данных со страницы");
+        service.ServiceLogger?.Error(ex, "Ошибка при получении данных со страницы");
         return null;
       }
 
@@ -557,7 +564,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       string validate = htmlMonthsInfo.Validate();
       if (!string.IsNullOrEmpty(validate))
       {
-        service.Logger?.Error(validate);
+        service.ServiceLogger?.Error(validate);
         return null;
       }
 
@@ -701,7 +708,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <summary>
     /// Логгер.
     /// </summary>
-    public override ILogger Logger
+    public override ILogger ServiceLogger
     {
       set
       {
@@ -762,7 +769,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структуру с информацией по выходным/праздничным дням.</returns>
     public override Structures.Module.IWeekendData CreateWeekendData(IHtmlCollection<IElement> months, IElement holidayInfo)
     {
-      var structure = Structures.Module.WeekendData.Create();
+      var structure = CommonFunctions.InitEmptyStructure();
       structure.HolidayInfo = GetHolidayInfo(holidayInfo);
       
       try
@@ -842,7 +849,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структуру с информацией по выходным/праздничным дням.</returns>
     public override Structures.Module.IWeekendData CreateWeekendData(IHtmlCollection<IElement> months, IElement holidayInfo)
     {
-      var structure = Structures.Module.WeekendData.Create();
+      var structure = CommonFunctions.InitEmptyStructure();
       structure.HolidayInfo = GetHolidayInfo(holidayInfo);
       
       var listMonth = months.ToList();
@@ -850,7 +857,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       {
         foreach (var month in listMonth)
         {
-          var index = listMonth.IndexOf(month);
+          var index = listMonth.IndexOf(month) + 1;
           
           // Предпраздничные дни.
           var preHolidays = month.GetElementsByClassName(PreHolidayClassName)
@@ -926,7 +933,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структуру с информацией по выходным/праздничным дням.</returns>
     public override Structures.Module.IWeekendData CreateWeekendData(IHtmlCollection<IElement> months, IElement holidayInfo)
     {
-      var structure = Structures.Module.WeekendData.Create();
+      var structure = CommonFunctions.InitEmptyStructure();
       structure.HolidayInfo = GetHolidayInfo(holidayInfo);
       
       var listMonth = months.ToList();
@@ -934,7 +941,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       {
         foreach (var month in listMonth)
         {
-          var index = listMonth.IndexOf(month);
+          var index = listMonth.IndexOf(month) + 1;
           
           // Предпраздничные дни.
           var preHolidays = month.GetElementsByClassName(PreHolidayClassName)
@@ -1021,7 +1028,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
         using (var document = context.OpenAsync(url))
         {
           var htmlResult = document.Result;
-          return new HTMLMonthsInfo(htmlResult.QuerySelectorAll(monthSelector), htmlResult.QuerySelector(holidaySelector), convertImplementation);
+          return new HTMLMonthsInfo(htmlResult.QuerySelectorAll(monthSelector), htmlResult.QuerySelector(holidaySelector), htmlResult.Url, convertImplementation);
         }
       }
     }
@@ -1104,6 +1111,22 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     {
       return GetDaysBetween(start, end)
         .Where(d => d.DayOfWeek == DayOfWeek.Saturday || d.DayOfWeek == DayOfWeek.Sunday);
+    }
+    
+        
+    /// <summary>
+    /// Создать пустую структуру.
+    /// </summary>
+    /// <returns>Структура.</returns>
+    public static Structures.Module.IWeekendData InitEmptyStructure()
+    {
+      var structure = Structures.Module.WeekendData.Create();
+      structure.HolidayInfo = string.Empty;
+      structure.Holidays = new List<DateTime>();
+      structure.Weekends = new List<DateTime>();
+      structure.PreHolidays  = new List<DateTime>();
+      
+      return structure;
     }
   }
 }
