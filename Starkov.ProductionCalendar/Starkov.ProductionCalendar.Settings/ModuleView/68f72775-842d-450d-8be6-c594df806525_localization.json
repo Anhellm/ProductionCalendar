@@ -3,6 +3,10 @@
     "en-US": "Main calendars",
     "ru-RU": "Основные календари"
   },
+  "CoverHeaderSettings_Description_fc87ad2cbb454cd68b8f4460ce4333c7": {
+    "en-US": "The module is designed to work with working time calendars and automate the filling of the production calendar.",
+    "ru-RU": "Модуль предназначен для работы с календарями рабочего времени и автоматизации заполнения производственного календаря."
+  },
   "CoverHeaderSettings_Title_fc87ad2cbb454cd68b8f4460ce4333c7": {
     "en-US": "Production calendar",
     "ru-RU": "Производственный календарь"
