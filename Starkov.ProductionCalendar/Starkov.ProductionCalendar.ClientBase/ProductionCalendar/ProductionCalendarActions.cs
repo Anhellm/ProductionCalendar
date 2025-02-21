@@ -109,7 +109,15 @@ namespace Starkov.ProductionCalendar.Client
       var html = dialog.AddFileSelect(ProductionCalendars.Resources.UpdateDialog_File, false)
         .WithFilter(ProductionCalendars.Resources.UpdateDialog_FileFilterName, "html", "htm");
       
+      var ayncButton = dialog.Buttons.AddCustom(ProductionCalendars.Resources.UpdateDialog_AsyncButton);
+      dialog.Buttons.AddOkCancel();
+      
+      ayncButton.IsVisible = settings.CanAsyncUpdate.GetValueOrDefault();
+      
       bool canParse = IsolatedFunctions.ExternalData.CanUseParse(defualtService?.DataSource.Value.Value);
+      bool hasContent = false;
+      
+      #region Обработчики диалога.
       service.SetOnValueChanged(
         (args) =>
         {
@@ -120,32 +128,58 @@ namespace Starkov.ProductionCalendar.Client
         (args) =>
         {
           html.IsVisible = canParse;
+          hasContent = html.Value?.Content?.Length > 0;
+          ayncButton.IsEnabled = !hasContent && args.IsValid;
+        });
+      #endregion
+      
+      dialog.SetOnButtonClick(
+        (args) =>
+        {
+          var btn = args.Button;
+          
+          #region Ok.
+          if (btn == DialogButtons.Ok)
+          {
+            var serviceValue = service.Value;
+            settings.NeedSetPreHolidays = withPreHolidays.Value;
+            
+            var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+              .WithProperty("Action", "UpdateFromExternalService");
+            
+            try
+            {
+              // Структура с массивом байт файла.
+              Sungero.Docflow.Structures.Module.IByteArray structure = null;
+              if (canParse && hasContent)
+                structure = Sungero.Docflow.Structures.Module.ByteArray.Create(html.Value.Content);
+              
+              var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue, structure);
+              Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
+              Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
+            }
+            catch (Exception ex)
+            {
+              _logger.Error(ex, "Ошибка обработки данных.");
+              Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
+            }
+          }
+          #endregion
+          
+          #region АО.
+          if (btn == ayncButton)
+          {
+            e.CloseFormAfterAction = true;
+            
+            var handler = AsyncHandlers.UpdateCalendar.Create();
+            handler.ProductionCalendarId = _obj.Id;
+            handler.ServiceId = service.Value.Id;
+            handler.ExecuteAsync(ProductionCalendars.Resources.AsyncUpdate_CompleteNotification);
+          }
+          #endregion
         });
       
-      if (dialog.Show() == DialogButtons.Ok)
-      {
-        var serviceValue = service.Value;
-        settings.NeedSetPreHolidays = withPreHolidays.Value;
-        
-        var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
-          .WithProperty("Action", "UpdateFromExternalService");
-        
-        try
-        {
-          Sungero.Docflow.Structures.Module.IByteArray structure = null;
-          if (canParse && html != null)
-            structure = Sungero.Docflow.Structures.Module.ByteArray.Create(html.Value.Content);
-          
-          var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue, structure);
-          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
-          Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
-        }
-        catch (Exception ex)
-        {
-          _logger.Error(ex, "Ошибка обработки данных.");
-          Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
-        }
-      }
+      dialog.Show();
     }
 
     public virtual bool CanUpdateFromExternalService(Sungero.Domain.Client.CanExecuteActionArgs e)

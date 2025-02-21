@@ -136,4 +136,10 @@
   <data name="UpdateDialog_FileFilterName" xml:space="preserve">
     <value>Web-page</value>
   </data>
+  <data name="UpdateDialog_AsyncButton" xml:space="preserve">
+    <value>Async update</value>
+  </data>
+  <data name="AsyncUpdate_CompleteNotification" xml:space="preserve">
+    <value>Calendar is updated.</value>
+  </data>
 </root>

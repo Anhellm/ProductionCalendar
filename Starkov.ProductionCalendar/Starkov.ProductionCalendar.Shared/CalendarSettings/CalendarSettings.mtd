@@ -27,14 +27,22 @@
         {
           "$type": "Sungero.Metadata.ControlGroupMetadata, Sungero.Metadata",
           "NameGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
-          "Name": "MainGroup"
+          "Name": "MainGroup",
+          "ColumnDefinitions": [
+            {
+              "Percentage": 50.0
+            },
+            {
+              "Percentage": 50.0
+            }
+          ]
         },
         {
           "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
           "NameGuid": "1e57e5cc-2f31-4f83-b7f1-8c200287e668",
           "Name": "DefaultService",
           "ColumnNumber": 0,
-          "ColumnSpan": 1,
+          "ColumnSpan": 2,
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
           "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
           "PropertyGuid": "fbb2fc43-bb5a-46fb-94b9-3b7f16e2c7af",
@@ -68,7 +76,7 @@
             }
           ],
           "ColumnNumber": 0,
-          "ColumnSpan": 1,
+          "ColumnSpan": 2,
           "GroupType": "GroupBox",
           "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
           "RowNumber": 2,
@@ -122,6 +130,19 @@
           "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
           "ParentGuid": "bf8d7be5-d06f-4996-9fe4-51480d4c22ab",
           "PropertyGuid": "dd407d36-3241-48d2-8b45-7f60ba291198",
+          "RowNumber": 1,
+          "RowSpan": 1,
+          "Settings": []
+        },
+        {
+          "$type": "Sungero.Metadata.ControlMetadata, Sungero.Metadata",
+          "NameGuid": "a11b46e2-1aa2-44cc-bfda-4b78b3a7b1a9",
+          "Name": "CanAsyncUpdate",
+          "ColumnNumber": 1,
+          "ColumnSpan": 1,
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+          "ParentGuid": "aa35d601-b808-4ec7-8258-8edb770ab604",
+          "PropertyGuid": "adc5a789-3a0b-4562-8879-014e5d08e924",
           "RowNumber": 1,
           "RowSpan": 1,
           "Settings": []
@@ -219,6 +240,14 @@
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.NumericEditorToIntAndDoubleBinder",
       "PreviousPropertyGuid": "1f6daf6f-b460-4d5e-a1e3-6eb205b9b5d4",
       "Versions": []
+    },
+    {
+      "$type": "Sungero.Metadata.BooleanPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "adc5a789-3a0b-4562-8879-014e5d08e924",
+      "Name": "CanAsyncUpdate",
+      "Code": "CanAsyncUpdate",
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.BooleanEditorToBooleanBinder",
+      "PreviousPropertyGuid": "dd407d36-3241-48d2-8b45-7f60ba291198"
     }
   ],
   "PublicFunctions": [
@@ -286,6 +315,11 @@
           "Name": "LunchBreakEnding",
           "IsNullable": true,
           "TypeFullName": "global::System.Nullable<global::System.Double>"
+        },
+        {
+          "Name": "CanAsyncUpdate",
+          "IsNullable": true,
+          "TypeFullName": "global::System.Nullable<global::System.Boolean>"
         }
       ],
       "StructureNamespace": "Starkov.ProductionCalendar.Structures.CalendarSettings"

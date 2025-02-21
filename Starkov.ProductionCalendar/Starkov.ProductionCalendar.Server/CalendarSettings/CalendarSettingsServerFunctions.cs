@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -29,6 +29,7 @@ namespace Starkov.ProductionCalendar.Server
       structure.DayEnding = settings.DayEnding;
       structure.LunchBreakBeginning = settings.LunchBreakBeginning;
       structure.LunchBreakEnding = settings.LunchBreakEnding;
+      structure.CanAsyncUpdate = settings.CanAsyncUpdate;
       
       return structure;
     }

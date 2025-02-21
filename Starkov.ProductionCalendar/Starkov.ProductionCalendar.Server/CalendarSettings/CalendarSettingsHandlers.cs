@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -22,6 +22,7 @@ namespace Starkov.ProductionCalendar
     public override void Created(Sungero.Domain.CreatedEventArgs e)
     {
       _obj.Name = CalendarSettingses.Resources.CalendarSettingsName;
+      _obj.CanAsyncUpdate = false;
     }
   }
 

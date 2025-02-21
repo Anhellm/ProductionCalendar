@@ -2,7 +2,27 @@
   "$type": "Sungero.Metadata.ModuleMetadata, Sungero.Metadata",
   "NameGuid": "b019eaad-a6b5-436e-8417-ee930b9c103e",
   "Name": "ProductionCalendar",
-  "AsyncHandlers": [],
+  "AsyncHandlers": [
+    {
+      "NameGuid": "86daa524-0843-4ea8-9467-811fc12d32f1",
+      "Name": "UpdateCalendar",
+      "DelayPeriod": 5,
+      "DelayStrategy": "RegularDelayStrategy",
+      "IsHandlerGenerated": true,
+      "Parameters": [
+        {
+          "NameGuid": "1a81cdf8-e098-469c-9a6c-a4d5de6e36cc",
+          "Name": "ServiceId",
+          "ParameterType": "LongInteger"
+        },
+        {
+          "NameGuid": "26d5e3dd-2dca-4d2a-ae48-003a5b287378",
+          "Name": "ProductionCalendarId",
+          "ParameterType": "LongInteger"
+        }
+      ]
+    }
+  ],
   "ClientAssemblyName": "Starkov.ProductionCalendar.Client",
   "ClientBaseAssemblyName": "Starkov.ProductionCalendar.ClientBase",
   "ClientBaseNamespace": "Starkov.ProductionCalendar.ClientBase",

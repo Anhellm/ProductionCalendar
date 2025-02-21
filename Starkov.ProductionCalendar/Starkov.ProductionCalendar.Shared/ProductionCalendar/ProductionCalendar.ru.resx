@@ -136,4 +136,10 @@
   <data name="UpdateDialog_FileFilterName" xml:space="preserve">
     <value>Веб-страница</value>
   </data>
+  <data name="UpdateDialog_AsyncButton" xml:space="preserve">
+    <value>Обновить асинхронно</value>
+  </data>
+  <data name="AsyncUpdate_CompleteNotification" xml:space="preserve">
+    <value>Календарь обновлен.</value>
+  </data>
 </root>
