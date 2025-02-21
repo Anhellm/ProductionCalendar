@@ -80,6 +80,13 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     Structures.Module.IWeekendData Parse();
     
     /// <summary>
+    /// Получить информацию по выходным/праздничным дням.
+    /// </summary>
+    /// <param name="stream">Stream html файла.</param>
+    /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
+    Structures.Module.IWeekendData Parse(System.IO.Stream stream);
+    
+    /// <summary>
     /// Создать структура с информацией по выходным/праздничным дням.
     /// </summary>
     /// <param name="months">Список элементов с данными по месяцам.</param>
@@ -523,7 +530,17 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
     public virtual Structures.Module.IWeekendData Parse()
     {
-      return ParseServiceBase.ParseBase(this);
+      return ParseServiceBase.ParseBase(this, null);
+    }
+    
+    /// <summary>
+    /// Получить информацию по выходным/праздничным дням.
+    /// </summary>
+    /// <param name="stream">Stream html файла.</param>
+    /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
+    public virtual Structures.Module.IWeekendData Parse(System.IO.Stream stream)
+    {
+      return ParseServiceBase.ParseBase(this, stream);
     }
     
     /// <summary>
@@ -538,8 +555,10 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// Базовая реализация получения информации по выходным/праздничным дням через парсинг.
     /// </summary>
     /// <param name="service">Сервис.</param>
+    /// <param name="stream">Stream html файла.</param>
     /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
-    public static Structures.Module.IWeekendData ParseBase(IParseService service)
+    /// <remarks>Если stream = null, обращается к Url сервиса.</remarks>
+    public static Structures.Module.IWeekendData ParseBase(IParseService service, System.IO.Stream stream)
     {
       if (service == null)
         throw new ArgumentNullException("Пустые параметры данных.");
@@ -551,7 +570,9 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       // Получаем данные с сайта.
       try
       {
-        htmlMonthsInfo = CommonFunctions.GetHTMLMonthsInfo(null, service.Url, service.MonthsSelector, service.HolidaySelector, service.CreateWeekendData);
+        htmlMonthsInfo = stream != null ?
+          CommonFunctions.GetHTMLMonthsInfo(null, stream, service.MonthsSelector, service.HolidaySelector, service.CreateWeekendData) :
+          CommonFunctions.GetHTMLMonthsInfo(null, service.Url, service.MonthsSelector, service.HolidaySelector, service.CreateWeekendData);
         service.ServiceLogger?.Debug("Адрес из HTML. {Url}", htmlMonthsInfo.Url);
       }
       catch (Exception ex)
@@ -663,7 +684,17 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
     public virtual Structures.Module.IWeekendData Parse()
     {
-      return ParseServiceBase.ParseBase(this);
+      return ParseServiceBase.ParseBase(this, null);
+    }
+    
+    /// <summary>
+    /// Получить информацию по выходным/праздничным дням.
+    /// </summary>
+    /// <param name="stream">Stream html файла.</param>
+    /// <returns>Структура с информацией по выходным/праздничным дням.</returns>
+    public virtual Structures.Module.IWeekendData Parse(System.IO.Stream stream)
+    {
+      return ParseServiceBase.ParseBase(this, stream);
     }
     
     /// <summary>
@@ -1009,6 +1040,34 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
     /// Получить коллекцию с данными по месяцам.
     /// </summary>
     /// <param name="config">Конфигурация (если null используется стандарнтная).</param>
+    /// <param name="stream">Stream html файла.</param>
+    /// <param name="monthSelector">Селектор для месяцев.</param>
+    /// <param name="holidaySelector">Селектор праздников.</param>
+    /// <param name="convertImplementation">Реализация преобразования в выходную структуру.</param>
+    /// <returns>Коллекция с данными по месяцам.</returns>
+    /// <exception cref="ArgumentNullException">Некорректные входные параметры.</exception>
+    internal static HTMLMonthsInfo GetHTMLMonthsInfo(AngleSharp.IConfiguration config, System.IO.Stream stream, string monthSelector, string holidaySelector, CreateWeekendData convertImplementation)
+    {
+      if (stream == null || string.IsNullOrEmpty(monthSelector) || string.IsNullOrEmpty(holidaySelector))
+        throw new ArgumentNullException("Переданы пустые параметры.");
+
+      if (config == null)
+        config = AngleSharp.Configuration.Default.WithDefaultLoader();
+
+      using (var context = AngleSharp.BrowsingContext.New(config))
+      {
+        using (var document = context.OpenAsync(x => x.Content(stream, true)))
+        {
+          var htmlResult = document.Result;
+          return new HTMLMonthsInfo(htmlResult.QuerySelectorAll(monthSelector), htmlResult.QuerySelector(holidaySelector), htmlResult.Url, convertImplementation);
+        }
+      }
+    }
+    
+    /// <summary>
+    /// Получить коллекцию с данными по месяцам.
+    /// </summary>
+    /// <param name="config">Конфигурация (если null используется стандарнтная).</param>
     /// <param name="url">Адресс.</param>
     /// <param name="monthSelector">Селектор для месяцев.</param>
     /// <param name="holidaySelector">Селектор праздников.</param>
@@ -1113,7 +1172,7 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
         .Where(d => d.DayOfWeek == DayOfWeek.Saturday || d.DayOfWeek == DayOfWeek.Sunday);
     }
     
-        
+    
     /// <summary>
     /// Создать пустую структуру.
     /// </summary>

@@ -24,7 +24,7 @@ namespace Starkov.ProductionCalendar.Server
       Structures.Module.IWeekendData data = null;
       try
       {
-        data = Functions.Module.GetWeekendData(year, settings.DefaultService);
+        data = Functions.Module.GetWeekendData(year, settings.DefaultService, null);
       }
       catch (Exception ex)
       {

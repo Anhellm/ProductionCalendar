@@ -50,9 +50,11 @@ namespace Starkov.ProductionCalendar.Server
     /// </summary>
     /// <param name="year">Год.</param>
     /// <param name="service">Сервис.</param>
+    /// <param name="htmlContent">HTMl - файл.</param>
     /// <returns>Структура с данными по выходным.</returns>
+    /// <remarks>htmlContent - если null то используется либо апи либо парситься сам сайт, если заполнено парситься именно файл.</remarks>
     [Remote]
-    public virtual Structures.Module.IWeekendData GetWeekendData(int year, IService service)
+    public virtual Structures.Module.IWeekendData GetWeekendData(int year, IService service, Sungero.Docflow.Structures.Module.IByteArray htmlContent)
     {
       var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
         .WithProperty("Function", "GetWeekendData");
@@ -68,9 +70,15 @@ namespace Starkov.ProductionCalendar.Server
       Structures.Module.IWeekendData result;
       try
       {
-        result = IsolatedFunctions.ExternalData.GetWeekendData(requestParams, Constants.Module.LoggerPostfix);
+        if (htmlContent != null)
+        {
+          using (var stream = new System.IO.MemoryStream(htmlContent.Bytes))
+            result = IsolatedFunctions.ExternalData.GetWeekendData(requestParams, stream, Constants.Module.LoggerPostfix);
+        }
+        else
+          result = IsolatedFunctions.ExternalData.GetWeekendData(requestParams, Constants.Module.LoggerPostfix);
       }
-      catch 
+      catch
       {
         throw AppliedCodeException.Create("Неопознанная ошибка. Обратитесь к администратору.");
       }

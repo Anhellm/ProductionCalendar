@@ -224,6 +224,30 @@
       ],
       "ReturnType": "global::Starkov.ProductionCalendar.Structures.Module.IWeekendData",
       "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IWeekendData, Sungero.Domain.Interfaces"
+    },
+    {
+      "NameGuid": "d55516d9-9a67-48eb-8349-3924c6d4c1f2",
+      "Name": "GetWeekendData",
+      "IsolatedAreaId": "87c03d2a-695c-448d-bf41-accb5a0c853c",
+      "Parameters": [
+        {
+          "Name": "requestParams",
+          "ParameterType": "global::Starkov.ProductionCalendar.Structures.Module.IRequestParams",
+          "ParameterTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IRequestParams, Sungero.Domain.Interfaces"
+        },
+        {
+          "Name": "stream",
+          "ParameterType": "global::System.IO.Stream",
+          "ParameterTypeFullName": "System.IO.Stream"
+        },
+        {
+          "Name": "loggerPostfix",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::Starkov.ProductionCalendar.Structures.Module.IWeekendData",
+      "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IWeekendData, Sungero.Domain.Interfaces"
     }
   ],
   "IsolatedNamespace": "Starkov.ProductionCalendar.Isolated",

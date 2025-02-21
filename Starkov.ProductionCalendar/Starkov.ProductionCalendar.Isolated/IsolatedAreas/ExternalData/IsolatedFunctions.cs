@@ -41,6 +41,42 @@ namespace Starkov.ProductionCalendar.Isolated.ExternalData
       }
     }
     
+    
+    /// <summary>
+    /// Получить структуру с данными по выходным/праздникам.
+    /// </summary>
+    /// <param name="requestParams">Параметры запроса.</param>
+    /// <param name="stream">Stream html файла.</param>
+    /// <param name="loggerPostfix">Постфикс для логгера.</param>
+    /// <returns>Структура данных.</returns>
+    [Public]
+    public virtual Structures.Module.IWeekendData GetWeekendData(Structures.Module.IRequestParams requestParams, System.IO.Stream stream, string loggerPostfix)
+    {
+      var logger = Logger.WithLogger(loggerPostfix);
+      
+      try
+      {
+        logger.WithObject(requestParams).Debug("Обработка данных из файла.");
+        
+        var service = GetService(requestParams);
+        if (!(service is IParseService))
+          throw new InvalidOperationException("Сервис не реализует необходимый интерфейс.");
+        
+        service.ServiceLogger = logger;
+        
+        var result = (service as IParseService).Parse(stream);
+        if (result == null)
+          throw new InvalidOperationException("Получен пустой набор данных.");
+        
+        return result;
+      }
+      catch (Exception ex)
+      {
+        logger.Error(ex);
+        throw;
+      }
+    }
+    
     /// <summary>
     /// Получить сервис.
     /// </summary>

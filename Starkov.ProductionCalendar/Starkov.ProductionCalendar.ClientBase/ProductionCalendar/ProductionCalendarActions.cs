@@ -101,10 +101,26 @@ namespace Starkov.ProductionCalendar.Client
     public virtual void UpdateFromExternalService(Sungero.Domain.Client.ExecuteActionArgs e)
     {
       var settings = Functions.CalendarSettings.Remote.GetUpdateSettings();
+      var defualtService = settings.DefaultService;
       
       var dialog = Dialogs.CreateInputDialog(ProductionCalendars.Resources.UpdateDialog_Name);
-      var service = dialog.AddSelect(ProductionCalendars.Resources.UpdateDialog_Service, true, settings.DefaultService);
+      var service = dialog.AddSelect(ProductionCalendars.Resources.UpdateDialog_Service, true, defualtService);
       var withPreHolidays = dialog.AddBoolean(ProductionCalendars.Resources.UpdateDialog_SetPreHolidays, settings.NeedSetPreHolidays.GetValueOrDefault());
+      var html = dialog.AddFileSelect(ProductionCalendars.Resources.UpdateDialog_File, false)
+        .WithFilter(ProductionCalendars.Resources.UpdateDialog_FileFilterName, "html", "htm");
+      
+      bool canParse = IsolatedFunctions.ExternalData.CanUseParse(defualtService?.DataSource.Value.Value);
+      service.SetOnValueChanged(
+        (args) =>
+        {
+          if (!Equals(args.NewValue, args.OldValue))
+            canParse = args.NewValue?.DataSource != null ? IsolatedFunctions.ExternalData.CanUseParse(args.NewValue.DataSource.Value.Value) : false;
+        });
+      dialog.SetOnRefresh(
+        (args) =>
+        {
+          html.IsVisible = canParse;
+        });
       
       if (dialog.Show() == DialogButtons.Ok)
       {
@@ -116,7 +132,11 @@ namespace Starkov.ProductionCalendar.Client
         
         try
         {
-          var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
+          Sungero.Docflow.Structures.Module.IByteArray structure = null;
+          if (canParse && html != null)
+            structure = Sungero.Docflow.Structures.Module.ByteArray.Create(html.Value.Content);
+          
+          var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue, structure);
           Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
           Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
         }

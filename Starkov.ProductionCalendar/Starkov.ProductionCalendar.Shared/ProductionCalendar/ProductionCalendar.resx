@@ -130,4 +130,10 @@
   <data name="WorkScheduleChangeSuccess_Info" xml:space="preserve">
     <value>The data is updated</value>
   </data>
+  <data name="UpdateDialog_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="UpdateDialog_FileFilterName" xml:space="preserve">
+    <value>Web-page</value>
+  </data>
 </root>
