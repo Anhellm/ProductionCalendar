@@ -49,4 +49,14 @@ namespace Starkov.ProductionCalendar.Structures.Module
     public bool ByApi { get; set; }
   }
 
+  /// <summary>
+  /// Информация о дате.
+  /// </summary>
+  [Public(Isolated = true)]
+  partial class DateInfo
+  {
+    public DateTime Date { get; set; }
+    
+    public string Type { get; set; }
+  }
 }

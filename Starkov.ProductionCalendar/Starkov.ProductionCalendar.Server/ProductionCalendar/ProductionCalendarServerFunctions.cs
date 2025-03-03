@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -329,5 +329,51 @@ namespace Starkov.ProductionCalendar.Server
       empty.AddLabel();
     }
     #endregion
+    
+    /// <summary>
+    /// Необходимость обновления сериализованных данных календаря.
+    /// </summary>
+    /// <returns>True/False.</returns>
+    [Remote(IsPure = true)]
+    public virtual bool NeedSerialize()
+    {
+      var wtc = _obj.WorkingTimeCalendar;
+      return wtc == null || GetLastDateChange(wtc) > GetLastDateChange(_obj);
+    }
+    
+    /// <summary>
+    /// Получить последнюю дату изменения сущности.
+    /// </summary>
+    /// <param name="entity">Сущность.</param>
+    /// <returns>Дата.</returns>
+    [Remote(IsPure = true)]
+    public static DateTime? GetLastDateChange(Sungero.Domain.Shared.IEntity entity)
+    {
+      if (entity == null)
+        return null;
+      
+      return entity.History.GetAll()
+        .Where(x => x.Action == Sungero.CoreEntities.History.Action.Update && x.HistoryDate.HasValue)
+        .Select(x => x.HistoryDate.Value)
+        .OrderByDescending(x => x)
+        .FirstOrDefault();
+    }
+    
+    /// <summary>
+    /// Сериализовать календаря в json.
+    /// </summary>
+    /// <param name="withSave">Необходимость сохранения.</param>
+    [Remote]
+    public virtual void SerializeCalendar(bool withSave)
+    {
+      var data = _obj.WorkingTimeCalendar?.Day
+        ?.Select(x => Starkov.ProductionCalendar.Structures.Module.DateInfo.Create(x.Day, x.Kind.HasValue ? x.Kind.Value.Value : string.Empty))
+        ?.ToList();
+      var preHolidays = _obj.PreHolidays.Where(x => x.Date.HasValue).Select(x => x.Date.Value).ToList();
+      
+      _obj.JsonInfo = IsolatedFunctions.Serialize.SerializeCalendar(data, preHolidays, Constants.Module.LoggerPostfix);
+      if (withSave)
+        _obj.Save();
+    }
   }
 }

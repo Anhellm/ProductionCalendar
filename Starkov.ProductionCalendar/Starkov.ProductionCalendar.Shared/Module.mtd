@@ -180,6 +180,10 @@
     {
       "NameGuid": "87c03d2a-695c-448d-bf41-accb5a0c853c",
       "Name": "ExternalData"
+    },
+    {
+      "NameGuid": "e6d3327f-a416-4445-b3fb-0e7191ff9535",
+      "Name": "Serialize"
     }
   ],
   "IsolatedAssemblyName": "Starkov.ProductionCalendar.Isolated",
@@ -268,6 +272,30 @@
       ],
       "ReturnType": "global::Starkov.ProductionCalendar.Structures.Module.IWeekendData",
       "ReturnTypeFullName": "Starkov.ProductionCalendar.Structures.Module.IWeekendData, Sungero.Domain.Interfaces"
+    },
+    {
+      "NameGuid": "7e3f50fc-9baf-4b8b-8764-c63ea55fff40",
+      "Name": "SerializeCalendar",
+      "IsolatedAreaId": "e6d3327f-a416-4445-b3fb-0e7191ff9535",
+      "Parameters": [
+        {
+          "Name": "dateInfos",
+          "ParameterType": "global::System.Collections.Generic.List<global::Starkov.ProductionCalendar.Structures.Module.IDateInfo>",
+          "ParameterTypeFullName": "System.Collections.Generic.List`1[[Starkov.ProductionCalendar.Structures.Module.IDateInfo, Sungero.Domain.Interfaces]]"
+        },
+        {
+          "Name": "preHolidays",
+          "ParameterType": "global::System.Collections.Generic.List<global::System.DateTime>",
+          "ParameterTypeFullName": "System.Collections.Generic.List`1[[System.DateTime]]"
+        },
+        {
+          "Name": "loggerPostfix",
+          "ParameterType": "global::System.String",
+          "ParameterTypeFullName": "System.String"
+        }
+      ],
+      "ReturnType": "global::System.String",
+      "ReturnTypeFullName": "System.String"
     }
   ],
   "IsolatedNamespace": "Starkov.ProductionCalendar.Isolated",
@@ -361,6 +389,24 @@
     }
   ],
   "PublicStructures": [
+    {
+      "Name": "DateInfo",
+      "IsIsolated": true,
+      "IsPublic": true,
+      "Properties": [
+        {
+          "Name": "Date",
+          "IsNullable": true,
+          "TypeFullName": "global::System.DateTime"
+        },
+        {
+          "Name": "Type",
+          "IsNullable": true,
+          "TypeFullName": "global::System.String"
+        }
+      ],
+      "StructureNamespace": "Starkov.ProductionCalendar.Structures.Module"
+    },
     {
       "Name": "RequestParams",
       "IsIsolated": true,

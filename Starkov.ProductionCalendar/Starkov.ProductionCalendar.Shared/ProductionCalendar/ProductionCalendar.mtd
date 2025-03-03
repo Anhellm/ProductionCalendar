@@ -26,6 +26,23 @@
       "GenerateHandler": true,
       "LargeIconName": "Action_WorkScheduleChange_large_aba9fbfda3764f40a76770b881a28480.png",
       "SmallIconName": "Action_WorkScheduleChange_small_aba9fbfda3764f40a76770b881a28480.png"
+    },
+    {
+      "NameGuid": "0dda2ae5-1352-4b8e-a6ae-81cb273e1595",
+      "Name": "NextYear",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": null,
+      "SmallIconName": null
+    },
+    {
+      "NameGuid": "acf6a675-6d5f-4df1-b0b8-e415972f2298",
+      "Name": "PreviousYear",
+      "ActionArea": "Card",
+      "GenerateHandler": true,
+      "LargeIconName": "",
+      "SmallIconName": "",
+      "Versions": []
     }
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
@@ -90,18 +107,23 @@
           "RowSpan": 1
         },
         {
-          "$type": "Sungero.Metadata.FunctionControlMetadata, Sungero.Metadata",
-          "NameGuid": "aabbe79b-af08-4b56-b6cc-c61988d4a96a",
-          "Name": "CalendarState",
+          "$type": "Sungero.Metadata.RemoteControlFormMetadata, Sungero.Metadata",
+          "NameGuid": "0db75ece-14bb-4fad-b3eb-3b1c9088fcd0",
+          "Name": "RemoteControl",
           "ColumnNumber": 0,
           "ColumnSpan": 1,
-          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StateViewToFunctionBinder",
-          "FunctionName": "GetProductionCalendarState",
+          "DataBinderTypeName": "Sungero.Presentation.CommonDataBinders.RemoteControlBinder",
           "HeaderLocation": "None",
           "ParentGuid": "3da04637-21a7-4dbb-aba0-b8bcac477085",
+          "RemoteControlGuid": "efdd8693-8364-4b64-96e0-8e314e1bfea2",
           "RowNumber": 0,
           "RowSpan": 1,
-          "Settings": []
+          "Settings": [
+            {
+              "Name": "NeedExpand",
+              "Value": true
+            }
+          ]
         }
       ]
     },
@@ -229,6 +251,18 @@
       "EntityGuid": "e9c6049f-cdbd-4053-b6ea-8249159c4eaa",
       "IsShowedInList": false,
       "PreviousPropertyGuid": "b3575c1e-fe3a-4cdc-b59e-11dee1c63452"
+    },
+    {
+      "$type": "Sungero.Metadata.TextPropertyMetadata, Sungero.Metadata",
+      "NameGuid": "94ddb64a-9419-46ab-bcba-bebd683056b7",
+      "Name": "JsonInfo",
+      "CanBeSearch": false,
+      "Code": "JsonInfo",
+      "IsEnabled": false,
+      "IsShowedInList": false,
+      "IsVisibility": false,
+      "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.StringEditorToTextBinder",
+      "PreviousPropertyGuid": "bd1a3b60-457c-4577-96eb-84a1a8657c3c"
     }
   ],
   "PublicFunctions": [
@@ -378,6 +412,26 @@
         "ButtonSize": "Large",
         "Index": 0,
         "ParentGuid": "0b8fdfd9-1161-4196-9687-9eb8c1356df7"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "187a9244-bebe-4112-b720-b4b3864da631",
+        "Name": "NextYear",
+        "ActionGuid": "0dda2ae5-1352-4b8e-a6ae-81cb273e1595",
+        "ButtonSize": "Large",
+        "Index": -1,
+        "IsVisible": false,
+        "ParentGuid": "f646e2c9-eb31-4f91-bf66-ff873f86e752"
+      },
+      {
+        "$type": "Sungero.Metadata.RibbonActionButtonMetadata, Sungero.Metadata",
+        "NameGuid": "b0a0cf49-f0bc-405b-84f0-6ecba78bfc58",
+        "Name": "PreviousYear",
+        "ActionGuid": "acf6a675-6d5f-4df1-b0b8-e415972f2298",
+        "ButtonSize": "Large",
+        "Index": -2,
+        "IsVisible": false,
+        "ParentGuid": "f646e2c9-eb31-4f91-bf66-ff873f86e752"
       }
     ],
     "Groups": [
@@ -396,10 +450,25 @@
         "Index": 22,
         "ParentGuid": "21a31627-5f58-4416-8c4a-90f538ee2e57",
         "SmallIconName": null
+      },
+      {
+        "NameGuid": "f646e2c9-eb31-4f91-bf66-ff873f86e752",
+        "Name": "NavigationGroup",
+        "IconName": null,
+        "Index": 0,
+        "ParentGuid": "b5c96da2-ad30-4a03-8d52-607596a78aab",
+        "SmallIconName": null
       }
     ],
     "IsAncestorMetadata": true,
-    "Pages": [],
+    "Pages": [
+      {
+        "NameGuid": "b5c96da2-ad30-4a03-8d52-607596a78aab",
+        "Name": "NavigationPage",
+        "Index": 31,
+        "ParentGuid": "ab56c73d-5e95-4014-b359-86c97643f13c"
+      }
+    ],
     "RibbonKind": "Card"
   },
   "RibbonCollectionMetadata": {

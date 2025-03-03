@@ -9,6 +9,32 @@ namespace Starkov.ProductionCalendar.Client
 {
   partial class ProductionCalendarActions
   {
+    #region Открыть календарь на след. год.
+    public virtual void PreviousYear(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      if (_obj.Year.HasValue)
+        Functions.Module.ShowOrCreateMainCalendar(_obj.Year.Value - 1);
+    }
+
+    public virtual bool CanPreviousYear(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return _obj.Year.HasValue;
+    }
+    #endregion
+
+    #region Открыть календарь на след. год.
+    public virtual void NextYear(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      if (_obj.Year.HasValue)
+        Functions.Module.ShowOrCreateMainCalendar(_obj.Year.Value + 1);
+    }
+
+    public virtual bool CanNextYear(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return _obj.Year.HasValue;
+    }
+    #endregion
+
     #region Изменить график работы
     public virtual void WorkScheduleChange(Sungero.Domain.Client.ExecuteActionArgs e)
     {
@@ -65,8 +91,7 @@ namespace Starkov.ProductionCalendar.Client
         try
         {
           Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, settings, withoutPreHolidays.Value.GetValueOrDefault(),
-                                          preholidays, dateStart.Value, dateEnd.Value);
-          _obj.State.Controls.CalendarState.Refresh();
+                                          preholidays, dateStart.Value, dateEnd.Value);          
           Dialogs.ShowMessage(ProductionCalendars.Resources.WorkScheduleChangeSuccess_Info);
         }
         catch (Exception ex)

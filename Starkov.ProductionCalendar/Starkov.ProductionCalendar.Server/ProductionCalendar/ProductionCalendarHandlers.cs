@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -33,6 +33,10 @@ namespace Starkov.ProductionCalendar
       // Проверка предпраздничных дней.
       if (Functions.ProductionCalendar.GetPreHolidays(_obj).Any(x => x.Year != _obj.Year))
         e.AddError(ProductionCalendars.Resources.PreHolidayInput_ErrorFormat(_obj.Year));
+      
+      // Сериализация календаря для внешнего контрола.
+      if (Functions.ProductionCalendar.NeedSerialize(_obj))
+        Functions.ProductionCalendar.SerializeCalendar(_obj, false);
     }
   }
 

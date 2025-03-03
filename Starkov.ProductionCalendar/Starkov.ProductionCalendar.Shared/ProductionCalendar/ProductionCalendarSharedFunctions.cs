@@ -43,7 +43,8 @@ namespace Starkov.ProductionCalendar.Shared
       SetPreHolidays(data.PreHolidays);
       _obj.HolidayInfo = data.HolidayInfo;
       _obj.UpdateInfo = ProductionCalendars.Resources.UpdateInfoFormat(service?.Name, Calendar.Now.ToString());
-      
+       Functions.ProductionCalendar.Remote.SerializeCalendar(_obj, false);
+       
       _obj.Save();
     }
     
