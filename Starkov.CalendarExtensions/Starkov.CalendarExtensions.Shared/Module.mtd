@@ -34,6 +34,39 @@
   "IsolatedNamespace": "Starkov.CalendarExtensions.Isolated",
   "OrderedSpecialFolders": [],
   "PublicStructures": [],
+  "RemoteComponents": [
+    {
+      "NameGuid": "2ca89885-60de-4180-aeb0-cd59a93071ce",
+      "Name": "CalendarControl",
+      "ComponentVersion": "1.0",
+      "Controls": [
+        {
+          "NameGuid": "4455807c-9985-48f0-8e15-6b11aca59860",
+          "Name": "CalendarControl",
+          "DisplayNames": [
+            {
+              "NameGuid": "950a749b-4dab-45e2-a330-15e58fae6ef6",
+              "DisplayName": "Календарь",
+              "Locale": "ru"
+            },
+            {
+              "NameGuid": "ca9f2ec5-1b88-4c22-a1f6-9bddfeff9e36",
+              "DisplayName": "Calendar",
+              "Locale": "en"
+            }
+          ],
+          "Loaders": [
+            {
+              "NameGuid": "c0b997ac-7aa8-45fe-91b8-8cb7589dd434",
+              "Name": "calendar-control-card-loader"
+            }
+          ]
+        }
+      ],
+      "HostApiVersion": "1.0.0",
+      "PublicName": "STARKOV_Group_Calendar_1_0"
+    }
+  ],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.CalendarExtensions",
   "ResourcesKeys": [],
