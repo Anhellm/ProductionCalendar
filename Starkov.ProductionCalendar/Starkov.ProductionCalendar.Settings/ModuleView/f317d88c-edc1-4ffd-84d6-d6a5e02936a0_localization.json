@@ -30,7 +30,7 @@
   "Description": {},
   "Name": {
     "en-US": "Production calendar",
-    "ru-RU": "Производственный календарь (Настройка)"
+    "ru-RU": "Производственный календарь"
   },
   "NextYearCalendar_Description_49ab4de3b1b64c379d687ce4d26b915c": {
     "en-US": "Открыть или добавить календарь на следующий год"
@@ -58,26 +58,6 @@
   "ProductionCalendars_Title_3c4450ea2a4f4526a8f312423e6c42fa": {
     "en-US": "Production calendars",
     "ru-RU": "Производственные календари"
-  },
-  "Services_Description_5e88e9bbdea6464ca4bfb2644fced777": {
-    "en-US": "Show databook with service settings",
-    "ru-RU": "Открыть справочник с настройками сервисов"
-  },
-  "Services_Title_5e88e9bbdea6464ca4bfb2644fced777": {
-    "en-US": "Services",
-    "ru-RU": "Сервисы"
-  },
-  "Settings_Description_76b789f009ab453da1f756ac09c4debf": {
-    "en-US": "Open calendar settings",
-    "ru-RU": "Открыть настройки календарей"
-  },
-  "Settings_Title_735b2f0cfeeb49a2aa68fb484fd7b972": {
-    "en-US": "Settings",
-    "ru-RU": "Настройки"
-  },
-  "Settings_Title_76b789f009ab453da1f756ac09c4debf": {
-    "en-US": "Settings",
-    "ru-RU": "Настройки"
   },
   "Tab_Title_287dae68942d442c81fd71f1fc2b99c5": {
     "en-US": "Tab"
