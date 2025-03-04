@@ -7,28 +7,6 @@
       "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverHeaderSettings, Sungero.NoCode.Settings.Interfaces",
       "NameGuid": "fc87ad2c-bb45-4cd6-8b8f-4460ce4333c7",
       "Name": "CoverHeaderSettings",
-      "LocalizationStrings": [
-        {
-          "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-          "StringCode": "CoverHeaderSettings_Title_fc87ad2cbb454cd68b8f4460ce4333c7",
-          "Hash": null,
-          "LocalizationValues": {
-            "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-            "en-US": "Production calendar",
-            "ru-RU": "Производственный календарь"
-          }
-        },
-        {
-          "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-          "StringCode": "CoverHeaderSettings_Description_fc87ad2cbb454cd68b8f4460ce4333c7",
-          "Hash": null,
-          "LocalizationValues": {
-            "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-            "en-US": "The module is designed to work with working time calendars and automate the filling of the production calendar.",
-            "ru-RU": "Модуль предназначен для работы с календарями рабочего времени и автоматизации заполнения производственного календаря."
-          }
-        }
-      ],
       "IconName": null,
       "Background": null,
       "BackgroundPosition": 1
@@ -37,7 +15,6 @@
       "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFooterSettings, Sungero.NoCode.Settings.Interfaces",
       "NameGuid": "6518e621-3601-4b40-bb20-a301fbf83d21",
       "Name": "CoverFooterSettings",
-      "LocalizationStrings": [],
       "IconName": null,
       "Background": null,
       "BackgroundPosition": 1
@@ -50,17 +27,6 @@
           "TabId": "287dae68-942d-442c-81fd-71f1fc2b99c5",
           "NameGuid": "287dae68-942d-442c-81fd-71f1fc2b99c5",
           "Name": "Tab",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "Tab_Title_287dae68942d442c81fd71f1fc2b99c5",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Tab"
-              }
-            }
-          ],
           "Index": 0,
           "ParentId": "00000000-0000-0000-0000-000000000000"
         }
@@ -76,18 +42,6 @@
           "IconName": "a13f98ba-aeeb-4278-adfb-1808ae46615d.svg",
           "NameGuid": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c",
           "Name": "Calendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "Calendars_Title_8cf999cb4ce44e74a0bad7db3f6e8b1c",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Main calendars",
-                "ru-RU": "Основные календари"
-              }
-            }
-          ],
           "Index": 0,
           "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
         },
@@ -98,18 +52,6 @@
           "IconName": "24e0d427-5235-44c0-ace4-89b2b04d5b9d.svg",
           "NameGuid": "6fa23aa1-f078-4006-93f8-66d304cfab73",
           "Name": "PrivateCalendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "PrivateCalendars_Title_6fa23aa1f078400693f866d304cfab73",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Private calendars",
-                "ru-RU": "Частные календари"
-              }
-            }
-          ],
           "Index": 1,
           "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
         },
@@ -120,18 +62,6 @@
           "IconName": "abe42c2f-a6c1-47d3-a0db-a3e6f75b062b.svg",
           "NameGuid": "ad906bdd-8028-4b47-8335-7958e7d8cddb",
           "Name": "WorkingTimeCalendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "WorkingTimeCalendars_Title_ad906bdd80284b4783357958e7d8cddb",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Working time calendars",
-                "ru-RU": "Календари рабочего времени"
-              }
-            }
-          ],
           "Index": 2,
           "ParentId": "287dae68-942d-442c-81fd-71f1fc2b99c5"
         }
@@ -147,28 +77,6 @@
           "ActionId": "a07c7815-72bb-416b-803c-9b72def4960a",
           "NameGuid": "a07c7815-72bb-416b-803c-9b72def4960a",
           "Name": "CurrentYearCalendar",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "CurrentYearCalendar_Title_a07c781572bb416b803c9b72def4960a",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Current year calendar",
-                "ru-RU": "Календарь на текущий год"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "CurrentYearCalendar_Description_a07c781572bb416b803c9b72def4960a",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Show or create current year calendar",
-                "ru-RU": "Открыть или добавить календарь за текущий год"
-              }
-            }
-          ],
           "Index": 0,
           "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
         },
@@ -179,27 +87,6 @@
           "ActionId": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c",
           "NameGuid": "49ab4de3-b1b6-4c37-9d68-7ce4d26b915c",
           "Name": "NextYearCalendar",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "NextYearCalendar_Title_49ab4de3b1b64c379d687ce4d26b915c",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Next year calendar",
-                "ru-RU": "Календарь на следующий  год"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "NextYearCalendar_Description_49ab4de3b1b64c379d687ce4d26b915c",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Открыть или добавить календарь на следующий год"
-              }
-            }
-          ],
           "Index": 1,
           "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
         },
@@ -210,62 +97,8 @@
           "ActionId": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
           "NameGuid": "3c4450ea-2a4f-4526-a8f3-12423e6c42fa",
           "Name": "ProductionCalendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "ProductionCalendars_Title_3c4450ea2a4f4526a8f312423e6c42fa",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Production calendars",
-                "ru-RU": "Производственные календари"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "ProductionCalendars_Description_3c4450ea2a4f4526a8f312423e6c42fa",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Show production calendar databook.",
-                "ru-RU": "Открыть справочник производственных календарей."
-              }
-            }
-          ],
           "Index": 2,
           "ParentId": "8cf999cb-4ce4-4e74-a0ba-d7db3f6e8b1c"
-        },
-        {
-          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
-          "FunctionName": "CreatePrivateCalendar",
-          "FunctionModuleId": "b019eaad-a6b5-436e-8417-ee930b9c103e",
-          "ActionId": "5d9848e0-a818-41df-8d25-6421b0de3d5d",
-          "NameGuid": "5d9848e0-a818-41df-8d25-6421b0de3d5d",
-          "Name": "CreatePrivateCalendar",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "CreatePrivateCalendar_Title_5d9848e0a81841df8d256421b0de3d5d",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Create private calendar",
-                "ru-RU": "Создать частный календарь"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "CreatePrivateCalendar_Description_5d9848e0a81841df8d256421b0de3d5d",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Create private production calendar",
-                "ru-RU": "Создать частный производственный календарь"
-              }
-            }
-          ],
-          "Index": 0,
-          "ParentId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
         },
         {
           "$type": "Sungero.NoCode.Settings.Interfaces.Models.Cover.CoverFunctionActionSettings, Sungero.NoCode.Settings.Interfaces",
@@ -274,29 +107,7 @@
           "ActionId": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
           "NameGuid": "7e19d4ed-e6ee-4865-b010-2e56a1ab0675",
           "Name": "PrivateProductionCalendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "PrivateProductionCalendars_Title_7e19d4ede6ee4865b0102e56a1ab0675",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Private production calendars",
-                "ru-RU": "Частные производственные календари"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "PrivateProductionCalendars_Description_7e19d4ede6ee4865b0102e56a1ab0675",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Show private production calendar databook.",
-                "ru-RU": "Открыть справочник частных производственных календарей."
-              }
-            }
-          ],
-          "Index": 1,
+          "Index": 0,
           "ParentId": "6fa23aa1-f078-4006-93f8-66d304cfab73"
         },
         {
@@ -305,28 +116,6 @@
           "ActionId": "d0c4e334-a62c-4cf6-9a8d-73e757f48fe8",
           "NameGuid": "d0c4e334-a62c-4cf6-9a8d-73e757f48fe8",
           "Name": "WorkingTimeCalendars",
-          "LocalizationStrings": [
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "WorkingTimeCalendars_Title_d0c4e334a62c4cf69a8d73e757f48fe8",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Working time Calendars",
-                "ru-RU": "Календари рабочего времени"
-              }
-            },
-            {
-              "$type": "Sungero.NoCode.Settings.Models.SettingsLocalizationString, Sungero.NoCode.Settings.Interfaces",
-              "StringCode": "WorkingTimeCalendars_Description_d0c4e334a62c4cf69a8d73e757f48fe8",
-              "Hash": null,
-              "LocalizationValues": {
-                "$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[System.String, System.Private.CoreLib]], System.Private.CoreLib",
-                "en-US": "Open working time calendar databook.",
-                "ru-RU": "Открыть справочник календарей рабочего времени."
-              }
-            }
-          ],
           "Index": 0,
           "ParentId": "ad906bdd-8028-4b47-8335-7958e7d8cddb"
         }

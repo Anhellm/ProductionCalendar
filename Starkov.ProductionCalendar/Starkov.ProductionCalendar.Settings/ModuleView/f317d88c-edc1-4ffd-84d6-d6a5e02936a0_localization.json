@@ -11,14 +11,6 @@
     "en-US": "Production calendar",
     "ru-RU": "Производственный календарь"
   },
-  "CreatePrivateCalendar_Description_5d9848e0a81841df8d256421b0de3d5d": {
-    "en-US": "Create private production calendar",
-    "ru-RU": "Создать частный производственный календарь"
-  },
-  "CreatePrivateCalendar_Title_5d9848e0a81841df8d256421b0de3d5d": {
-    "en-US": "Create private calendar",
-    "ru-RU": "Создать частный календарь"
-  },
   "CurrentYearCalendar_Description_a07c781572bb416b803c9b72def4960a": {
     "en-US": "Show or create current year calendar",
     "ru-RU": "Открыть или добавить календарь за текущий год"

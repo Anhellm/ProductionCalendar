@@ -475,7 +475,8 @@
     "TimeRange_Error",
     "TimeComparison_Error",
     "LunchTimeRange_Error",
-    "PeriodValidateName"
+    "PeriodValidateName",
+    "CreateEmptyCalendar_Warn"
   ],
   "ServerAssemblyName": "Starkov.ProductionCalendar.Server",
   "ServerNamespace": "Starkov.ProductionCalendar.Server",

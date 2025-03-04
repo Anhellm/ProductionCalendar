@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -61,22 +61,19 @@ namespace Starkov.ProductionCalendar.Client
     /// </summary>
     public virtual void CreatePrivateCalendar()
     {
+      if (!ProductionCalendars.AccessRights.CanCreate())
+      {
+        Dialogs.ShowMessage(Resources.AccessRightsCreate_Error, MessageType.Warning);
+        return;
+      }
+      
       var privateCalendar = PrivateWorkingTimeCalendars.GetAll().ShowSelect();
       if (privateCalendar == null)
         return;
       
       // Ищем существующий календарь, иначе создаем.
-      var productionCalendar = Functions.ProductionCalendar.Remote.GetCalendar(privateCalendar);
-      if (productionCalendar == null)
-      {
-        if (!ProductionCalendars.AccessRights.CanCreate())
-        {
-          Dialogs.ShowMessage(Resources.AccessRightsCreate_Error, MessageType.Warning);
-          return;
-        }
-        
-        productionCalendar = Functions.ProductionCalendar.Remote.CreateCalendar(privateCalendar);
-      }
+      var productionCalendar = Functions.ProductionCalendar.Remote.GetCalendar(privateCalendar) ??
+        Functions.ProductionCalendar.Remote.CreateCalendar(privateCalendar);
       
       if (productionCalendar == null)
       {
@@ -102,8 +99,15 @@ namespace Starkov.ProductionCalendar.Client
         return;
       }
       
+      // Проверка прав.
+      if (!ProductionCalendars.AccessRights.CanCreate())
+      {
+        Dialogs.ShowMessage(Resources.CreateEmptyCalendar_WarnFormat(year), MessageType.Warning);
+        return;
+      }
+      
       // Находим основной рабочий календарь, иначе создаем.
-      var workingTimeCalendar = Functions.Module.Remote.GetWorkingTimeCalendar(year);      
+      var workingTimeCalendar = Functions.Module.Remote.GetWorkingTimeCalendar(year);
       if (workingTimeCalendar == null)
       {
         try

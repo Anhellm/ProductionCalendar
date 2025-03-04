@@ -82,4 +82,7 @@
   <data name="PeriodValidateName" xml:space="preserve">
     <value>Lunch</value>
   </data>
+  <data name="CreateEmptyCalendar_Warn" xml:space="preserve">
+    <value>Calendar for {0} It doesn't exist. You don't have the rights to create a directory entry. Contact the administrator.</value>
+  </data>
 </root>

@@ -82,4 +82,7 @@
   <data name="PeriodValidateName" xml:space="preserve">
     <value>Обед</value>
   </data>
+  <data name="CreateEmptyCalendar_Warn" xml:space="preserve">
+    <value>Календарь на {0} не существует. Нет прав на создание записи справочника. Обратитесь к администратору.</value>
+  </data>
 </root>
