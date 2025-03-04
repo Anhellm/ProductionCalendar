@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -11,6 +11,14 @@ namespace Starkov.ProductionCalendar.Server
   {
 
     public override void Initializing(Sungero.Domain.ModuleInitializingEventArgs e)
+    {
+      Sungero.Commons.PublicInitializationFunctions.Module.ModuleVersionInit(this.FirstInitializing, Constants.Module.Init.ProdCalendar.Name, Version.Parse(Constants.Module.Init.ProdCalendar.FirstInitVersion));
+    }
+    
+    /// <summary>
+    /// Начальная инициализация модуля после установки.
+    /// </summary>
+    public virtual void FirstInitializing()
     {
       CreateDefaultServices();
       CreateDefaultSettings();
@@ -74,11 +82,6 @@ namespace Starkov.ProductionCalendar.Server
       var calendarAccessRights = ProductionCalendars.AccessRights;
       calendarAccessRights.Grant(all, DefaultAccessRightsTypes.Read);
       calendarAccessRights.Save();
-      
-      // Справочник Настройки.
-      var settingsAccessRights = CalendarSettingses.AccessRights;
-      settingsAccessRights.Grant(all, DefaultAccessRightsTypes.Read);
-      settingsAccessRights.Save();
     }
   }
 }
