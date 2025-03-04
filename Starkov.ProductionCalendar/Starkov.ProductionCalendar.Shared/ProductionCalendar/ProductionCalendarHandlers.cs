@@ -16,7 +16,6 @@ namespace Starkov.ProductionCalendar
         return;
       
       _obj.IsPrivate = PrivateWorkingTimeCalendars.Is(e.NewValue);
-      _obj.Year = e.NewValue?.Year;
       
       Functions.ProductionCalendar.FillName(_obj);
       
