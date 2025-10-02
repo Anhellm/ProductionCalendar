@@ -150,6 +150,7 @@
       ]
     }
   ],
+  "FormViewUuid": "05d19a00-72e2-42ee-9669-698976158b39",
   "HandledEvents": [
     "CreatedServer",
     "BeforeSaveServer"

@@ -26,7 +26,6 @@
     "Tabs": []
   },
   "DesktopViews": [],
-  "IconResourcesKeys": [],
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.CalendarExtensions",
@@ -69,7 +68,6 @@
   ],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.CalendarExtensions",
-  "ResourcesKeys": [],
   "ServerAssemblyName": "Starkov.CalendarExtensions.Server",
   "ServerNamespace": "Starkov.CalendarExtensions.Server",
   "SharedAssemblyName": "Starkov.CalendarExtensions.Shared",
@@ -80,11 +78,11 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 9
+      "Number": 11
     },
     {
       "Type": "ModuleMetadata",
-      "Number": 9
+      "Number": 11
     },
     {
       "Type": "DomainApi",

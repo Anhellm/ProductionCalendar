@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.ProductionCalendar.Shared
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     #region Валидация значений времени.
     /// <summary>

@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.ProductionCalendar.Server
 {
-  public class ModuleJobs
+  public partial class ModuleJobs
   {
 
     /// <summary>

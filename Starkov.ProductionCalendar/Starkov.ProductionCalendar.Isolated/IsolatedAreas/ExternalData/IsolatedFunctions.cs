@@ -7,7 +7,7 @@ using Starkov.ProductionCalendar.Structures.Module;
 
 namespace Starkov.ProductionCalendar.Isolated.ExternalData
 {
-  public class IsolatedFunctions
+  public partial class IsolatedFunctions
   {
 
     /// <summary>

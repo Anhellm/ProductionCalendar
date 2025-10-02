@@ -156,6 +156,7 @@
       "ParentFormGuid": "d87cac07-7d45-4b14-b269-21f085b0a7fe"
     }
   ],
+  "FormViewUuid": "2b54729e-b5eb-49de-87ee-b7e7d9cce96f",
   "HandledEvents": [
     "BeforeSaveServer",
     "CreatingFromServer",

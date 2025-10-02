@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.ProductionCalendar.Client
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
 
     #region Обложка.
