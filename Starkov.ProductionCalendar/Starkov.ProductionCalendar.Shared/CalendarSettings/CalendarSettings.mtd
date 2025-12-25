@@ -162,6 +162,7 @@
   "IsAutoCreated": true,
   "IsCacheable": true,
   "IsVisible": false,
+  "ListViewUuid": "1e01ef08-8663-4e3c-b930-072e6261ed54",
   "OperationsClass": "",
   "Overridden": [
     "IsVisible",

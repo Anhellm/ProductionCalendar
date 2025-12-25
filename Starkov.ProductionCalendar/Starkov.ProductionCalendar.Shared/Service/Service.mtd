@@ -108,6 +108,7 @@
   "IntegrationServiceName": "ProductionCalendarService",
   "IsAutoCreated": true,
   "IsStatusEnabled": true,
+  "ListViewUuid": "4ceb61ee-d020-4a70-8149-a08a1e83de12",
   "OperationsClass": "",
   "Overridden": [
     "IsAutoCreated",

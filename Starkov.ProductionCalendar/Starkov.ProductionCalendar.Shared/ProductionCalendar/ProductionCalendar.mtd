@@ -165,6 +165,7 @@
   ],
   "IconResourcesKeys": [],
   "IntegrationServiceName": "ProductionCalendarProductionCalendar",
+  "ListViewUuid": "2c6524eb-5ba0-447c-bf98-b8f19b2ce821",
   "OperationsClass": "",
   "Overridden": [
     "CanBeSearch"
