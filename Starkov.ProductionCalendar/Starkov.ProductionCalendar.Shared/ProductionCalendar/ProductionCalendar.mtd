@@ -192,7 +192,6 @@
       "HandledEvents": [
         "ChangedShared"
       ],
-      "IsLoadEagerly": true,
       "IsRequired": true,
       "ListDataBinderTypeName": "Sungero.Presentation.CommonDataBinders.DropDownEditorToNavigationBinder",
       "PreviousPropertyGuid": "25b90d6f-005d-4ac2-a658-44c728ec6dea"
@@ -217,7 +216,6 @@
       "Code": "Year",
       "ComputedType": "Link",
       "IsEnabled": false,
-      "IsLoadEagerly": true,
       "IsVisibility": false,
       "LinkedNavigationProperty": "fb96460c-42b5-43fb-9074-c1bdf25182b6",
       "LinkedNavigationPropertyProperty": "78302208-a771-422f-8c5d-b1232eceb098",
@@ -488,7 +486,7 @@
   "Versions": [
     {
       "Type": "EntityMetadata",
-      "Number": 13
+      "Number": 14
     }
   ]
 }
