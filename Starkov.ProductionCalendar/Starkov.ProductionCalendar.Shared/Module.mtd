@@ -318,7 +318,8 @@
     }
   ],
   "Overridden": [
-    "IsVisible"
+    "IsVisible",
+    "IsLicensed"
   ],
   "PublicFunctions": [
     {
@@ -347,7 +348,7 @@
       "IsRemote": true,
       "Placement": "Shared",
       "ReturnType": "global::System.Linq.IQueryable<global::Sungero.CoreEntities.IWorkingTimeCalendar>",
-      "ReturnTypeFullName": "System.Linq.IQueryable"
+      "ReturnTypeFullName": "System.Linq.IQueryable`1[[Sungero.CoreEntities.IWorkingTimeCalendar, Sungero.Domain.Shared]]"
     },
     {
       "Name": "ShowMainCalendars",

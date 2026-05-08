@@ -16,6 +16,7 @@
   ],
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
   "CanBeNavigationPropertyType": true,
+  "CanBeUsedInIntegration": false,
   "Code": "Service",
   "CreationAreaMetadata": {
     "NameGuid": "f7766750-eee2-4fcd-8003-5c06a90d1f44",
@@ -112,7 +113,8 @@
   "OperationsClass": "",
   "Overridden": [
     "IsAutoCreated",
-    "IsStatusEnabled"
+    "IsStatusEnabled",
+    "CanBeUsedInIntegration"
   ],
   "Properties": [
     {
@@ -228,12 +230,12 @@
         {
           "Name": "dataSource",
           "ParameterType": "global::System.Nullable<global::Sungero.Core.Enumeration>",
-          "ParameterTypeFullName": "System.Nullable"
+          "ParameterTypeFullName": "System.Nullable`1[[Sungero.Core.Enumeration, Sungero.Domain.Shared]]"
         }
       ],
       "Placement": "Shared",
       "ReturnType": "global::System.Linq.IQueryable<global::Starkov.ProductionCalendar.IService>",
-      "ReturnTypeFullName": "System.Linq.IQueryable"
+      "ReturnTypeFullName": "System.Linq.IQueryable`1[[Starkov.ProductionCalendar.IService, Sungero.Domain.Interfaces]]"
     }
   ],
   "PublicStructures": [],

@@ -48,6 +48,7 @@
   "BaseGuid": "04581d26-0780-4cfd-b3cd-c2cafc5798b0",
   "CanBeNavigationPropertyType": true,
   "CanBeSearch": true,
+  "CanBeUsedInIntegration": false,
   "Code": "ProdCalendar",
   "CreationAreaMetadata": {
     "NameGuid": "f7766750-eee2-4fcd-8003-5c06a90d1f44",
@@ -168,7 +169,8 @@
   "ListViewUuid": "2c6524eb-5ba0-447c-bf98-b8f19b2ce821",
   "OperationsClass": "",
   "Overridden": [
-    "CanBeSearch"
+    "CanBeSearch",
+    "CanBeUsedInIntegration"
   ],
   "Properties": [
     {
@@ -290,7 +292,7 @@
         {
           "Name": "year",
           "ParameterType": "global::System.Nullable<global::System.Int32>",
-          "ParameterTypeFullName": "System.Nullable"
+          "ParameterTypeFullName": "System.Nullable`1[[System.Int32]]"
         }
       ],
       "Placement": "Shared",
@@ -316,7 +318,7 @@
       "IsRemote": true,
       "Placement": "Shared",
       "ReturnType": "global::System.Linq.IQueryable<global::Starkov.ProductionCalendar.IProductionCalendar>",
-      "ReturnTypeFullName": "System.Linq.IQueryable"
+      "ReturnTypeFullName": "System.Linq.IQueryable`1[[Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces]]"
     },
     {
       "Name": "GetPreHolidays",
@@ -329,14 +331,14 @@
       ],
       "Placement": "Shared",
       "ReturnType": "global::System.Collections.Generic.List<global::System.DateTime>",
-      "ReturnTypeFullName": "System.Collections.Generic.List"
+      "ReturnTypeFullName": "System.Collections.Generic.List`1[[System.DateTime]]"
     },
     {
       "Name": "GetPrivateCalendars",
       "IsRemote": true,
       "Placement": "Shared",
       "ReturnType": "global::System.Linq.IQueryable<global::Starkov.ProductionCalendar.IProductionCalendar>",
-      "ReturnTypeFullName": "System.Linq.IQueryable"
+      "ReturnTypeFullName": "System.Linq.IQueryable`1[[Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces]]"
     },
     {
       "Name": "GetPrivateCalendars",
@@ -345,12 +347,12 @@
         {
           "Name": "year",
           "ParameterType": "global::System.Nullable<global::System.Int32>",
-          "ParameterTypeFullName": "System.Nullable"
+          "ParameterTypeFullName": "System.Nullable`1[[System.Int32]]"
         }
       ],
       "Placement": "Shared",
       "ReturnType": "global::System.Linq.IQueryable<global::Starkov.ProductionCalendar.IProductionCalendar>",
-      "ReturnTypeFullName": "System.Linq.IQueryable"
+      "ReturnTypeFullName": "System.Linq.IQueryable`1[[Starkov.ProductionCalendar.IProductionCalendar, Sungero.Domain.Interfaces]]"
     }
   ],
   "PublicStructures": [],

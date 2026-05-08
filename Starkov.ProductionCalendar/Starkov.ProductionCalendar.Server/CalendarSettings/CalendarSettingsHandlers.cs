@@ -9,7 +9,6 @@ namespace Starkov.ProductionCalendar
 {
   partial class CalendarSettingsServerHandlers
   {
-
     public override void BeforeSave(Sungero.Domain.BeforeSaveEventArgs e)
     {
       var structure = Functions.CalendarSettings.GetUpdateSettings(_obj);
