@@ -117,6 +117,10 @@
         {
           "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Form.FlexCard.FlexControlLayout, Sungero.NoCode.Settings.Interfaces",
           "PropertyName": "WorkingTimeCalendar",
+          "AdditionalNavigationPropertyGuids": {
+            "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+            "$values": []
+          },
           "HeaderLocation": "Left",
           "NeedExpand": false,
           "NeedAutosize": false,
@@ -145,14 +149,18 @@
         {
           "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Form.FlexCard.FlexControlLayout, Sungero.NoCode.Settings.Interfaces",
           "PropertyName": "",
+          "AdditionalNavigationPropertyGuids": {
+            "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+            "$values": []
+          },
           "HeaderLocation": "None",
           "NeedExpand": true,
           "NeedAutosize": false,
-          "RemoteControlGuid": "efdd8693-8364-4b64-96e0-8e314e1bfea2",
+          "RemoteControlGuid": "b3be9e12-31b0-42b1-b166-77bb3a0bd91b",
           "GridSettings": null,
           "Binder": "RemoteControl",
           "IsAutotextEnabled": false,
-          "PropertyGuid": "00000000-0000-0000-0000-000000000000",
+          "PropertyGuid": "94ddb64a-9419-46ab-bcba-bebd683056b7",
           "ParentGuid": "3da04637-21a7-4dbb-aba0-b8bcac477085",
           "RealParentGuid": "3da04637-21a7-4dbb-aba0-b8bcac477085",
           "IsVisible": true,
@@ -169,7 +177,7 @@
           "ParentEntityGuid": "a0cb9556-3538-46b3-a869-892ba0b6fc89",
           "IsEnabled": true,
           "NameGuid": "0db75ece-14bb-4fad-b3eb-3b1c9088fcd0",
-          "Name": "RemoteControl"
+          "Name": "Специальный контрол: Календарь"
         },
         {
           "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Form.InplaceFormLayout, Sungero.NoCode.Settings.Interfaces",
@@ -226,6 +234,10 @@
         {
           "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Form.FlexCard.FlexControlLayout, Sungero.NoCode.Settings.Interfaces",
           "PropertyName": "PreHolidays",
+          "AdditionalNavigationPropertyGuids": {
+            "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+            "$values": []
+          },
           "HeaderLocation": "Top",
           "NeedFitReadOnlyGridHeightToContent": false,
           "NeedExpand": false,
@@ -303,7 +315,10 @@
             "IsShowGroupBorder": false,
             "IsRare": null,
             "NameGuid": "368ec19b-5f5d-4af3-a1f4-32d0a1ea9028",
-            "OverridenFields": null,
+            "OverridenFields": {
+              "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+              "$values": []
+            },
             "HasAncestorSettings": false,
             "Name": "ExternalServiceGroup"
           },
@@ -316,7 +331,10 @@
             "IsShowGroupBorder": false,
             "IsRare": null,
             "NameGuid": "0b8fdfd9-1161-4196-9687-9eb8c1356df7",
-            "OverridenFields": null,
+            "OverridenFields": {
+              "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+              "$values": []
+            },
             "HasAncestorSettings": false,
             "Name": "CalendarWorkGroup"
           }
@@ -341,7 +359,7 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "29b1c651-d388-402d-9453-5054d82daf72",
             "OverridenFields": {
               "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
@@ -366,7 +384,7 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "4450f91a-cdbf-4ffe-83dd-9abf5b596fb2",
             "OverridenFields": {
               "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
@@ -391,7 +409,7 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "4703414b-87a5-4268-bf6e-0ca9aec159c1",
             "OverridenFields": {
               "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
@@ -415,9 +433,12 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "b5c96da2-ad30-4a03-8d52-607596a78aab",
-            "OverridenFields": null,
+            "OverridenFields": {
+              "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+              "$values": []
+            },
             "HasAncestorSettings": false,
             "Name": "NavigationPage"
           },
@@ -437,7 +458,7 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "187a9244-bebe-4112-b720-b4b3864da631",
             "OverridenFields": {
               "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
@@ -462,7 +483,7 @@
             "IsAccent": false,
             "IsRare": null,
             "IsEnabled": true,
-            "IsShowInContextMenu": null,
+            "IsShowInContextMenu": false,
             "NameGuid": "b0a0cf49-f0bc-405b-84f0-6ecba78bfc58",
             "OverridenFields": {
               "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
@@ -475,15 +496,15 @@
       }
     },
     "PropertyStates": {
-      "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.PropertyStateSettings[], Sungero.NoCode.Settings.Interfaces",
+      "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Entity.PropertyStateSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
       "$values": []
     },
     "ChildCollectionPropertyRibbon": {
-      "$type": "System.Collections.Generic.Dictionary`2[[System.Guid, System.Private.CoreLib],[Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
+      "$type": "System.Collections.ObjectModel.ReadOnlyDictionary`2[[System.Guid, System.Private.CoreLib],[Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettings, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
       "bd1a3b60-457c-4577-96eb-84a1a8657c3c": {
         "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettings, Sungero.NoCode.Settings.Interfaces",
         "Groups": {
-          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettingsGroup[], Sungero.NoCode.Settings.Interfaces",
+          "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettingsGroup, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
           "$values": [
             {
               "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettingsGroup, Sungero.NoCode.Settings.Interfaces",
@@ -494,14 +515,17 @@
               "IsShowGroupBorder": true,
               "IsRare": null,
               "NameGuid": "cdbd1987-c138-46e1-b0e6-492735fbe7c4",
-              "OverridenFields": null,
+              "OverridenFields": {
+                "$type": "System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]], System.Private.CoreLib",
+                "$values": []
+              },
               "HasAncestorSettings": false,
               "Name": "MainGroup"
             }
           ]
         },
         "Buttons": {
-          "$type": "Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettingsButton[], Sungero.NoCode.Settings.Interfaces",
+          "$type": "System.Collections.Generic.List`1[[Sungero.NoCode.Settings.Interfaces.Models.Entity.Ribbon.RibbonSettingsButton, Sungero.NoCode.Settings.Interfaces]], System.Private.CoreLib",
           "$values": []
         }
       }
@@ -512,7 +536,7 @@
   },
   "Criteria": null,
   "Priority": 0,
-  "SettingsVersion": 1,
+  "SettingsVersion": 5,
   "CardViewType": "DefaultView",
   "ClientContext": "DefaultContext",
   "IsAutogenerated": false,
