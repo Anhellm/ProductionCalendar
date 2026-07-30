@@ -40,24 +40,24 @@
       "ComponentVersion": "2.0",
       "Controls": [
         {
-          "NameGuid": "b3be9e12-31b0-42b1-b166-77bb3a0bd91b",
-          "Name": "CalendarControl",
+          "NameGuid": "cc7023c5-8020-4d58-a700-022d03a0033d",
+          "Name": "CardCalendarControl",
           "DisplayNames": [
             {
-              "NameGuid": "7af421f7-be3f-4464-be0c-206db6f8929c",
+              "NameGuid": "3814d0c0-e59e-4fd8-bd6e-afbd04f7990c",
               "DisplayName": "Calendar",
               "Locale": "en"
             },
             {
-              "NameGuid": "868c9e45-7bde-4a55-a205-bfc6a84bb021",
+              "NameGuid": "cfd5822a-14eb-4015-869b-5b09bc95db4c",
               "DisplayName": "Календарь",
               "Locale": "ru"
             }
           ],
           "Loaders": [
             {
-              "NameGuid": "5ceffc7c-10da-47bd-8fb9-28c4f1eb13ba",
-              "Name": "calendar-control-card-loader"
+              "NameGuid": "4846537e-64ce-4a1e-a523-a47ad882d820",
+              "Name": "card-calendar-control-loader"
             }
           ]
         }
