@@ -44,19 +44,19 @@
           "Name": "CardCalendarControl",
           "DisplayNames": [
             {
-              "NameGuid": "3814d0c0-e59e-4fd8-bd6e-afbd04f7990c",
-              "DisplayName": "Calendar",
-              "Locale": "en"
-            },
-            {
-              "NameGuid": "cfd5822a-14eb-4015-869b-5b09bc95db4c",
+              "NameGuid": "1258d7c4-0e51-4e06-8aef-0212b7f9a95d",
               "DisplayName": "Календарь",
               "Locale": "ru"
+            },
+            {
+              "NameGuid": "d5bac6a4-d985-4a10-949c-2c2f9411b63c",
+              "DisplayName": "Calendar",
+              "Locale": "en"
             }
           ],
           "Loaders": [
             {
-              "NameGuid": "4846537e-64ce-4a1e-a523-a47ad882d820",
+              "NameGuid": "5d7f6639-677d-4119-880d-2707400558c2",
               "Name": "card-calendar-control-loader"
             }
           ]
