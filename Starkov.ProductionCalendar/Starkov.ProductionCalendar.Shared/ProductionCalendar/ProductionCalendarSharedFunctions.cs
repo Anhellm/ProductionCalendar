@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -35,7 +35,7 @@ namespace Starkov.ProductionCalendar.Shared
     /// Обновить производственный календарь.
     /// </summary>
     /// <param name="data">Данные из внешнего сервиса.</param>
-    public virtual void UpdateProductionCalendar(Structures.Module.WeekendData data, IService service)
+    public virtual void UpdateProductionCalendar(Structures.Module.IWeekendData data, IService service)
     {
       if (data == null)
         return;
@@ -43,7 +43,8 @@ namespace Starkov.ProductionCalendar.Shared
       SetPreHolidays(data.PreHolidays);
       _obj.HolidayInfo = data.HolidayInfo;
       _obj.UpdateInfo = ProductionCalendars.Resources.UpdateInfoFormat(service?.Name, Calendar.Now.ToString());
-      
+       Functions.ProductionCalendar.Remote.SerializeCalendar(_obj, false);
+       
       _obj.Save();
     }
     

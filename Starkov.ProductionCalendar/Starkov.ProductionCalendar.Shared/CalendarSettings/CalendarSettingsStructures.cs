@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -19,6 +19,7 @@ namespace Starkov.ProductionCalendar.Structures.CalendarSettings
     public double? DayEnding { get; set; }
     public double? LunchBreakBeginning { get; set; }
     public double? LunchBreakEnding { get; set; }
+    public bool? CanAsyncUpdate { get; set; }
   }
 
 }

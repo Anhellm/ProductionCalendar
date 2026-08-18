@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -16,10 +16,11 @@ namespace Starkov.ProductionCalendar
         return;
       
       _obj.IsPrivate = PrivateWorkingTimeCalendars.Is(e.NewValue);
-      _obj.Year = e.NewValue?.Year;
       
       Functions.ProductionCalendar.FillName(_obj);
-      _obj.State.Controls.CalendarState.Refresh();
+      
+      // Сериализация календаря для внешнего контрола.
+      Functions.ProductionCalendar.Remote.SerializeCalendar(_obj, false);
     }
 
   }

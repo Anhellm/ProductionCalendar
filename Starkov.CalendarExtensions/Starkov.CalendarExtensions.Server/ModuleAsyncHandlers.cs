@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.CalendarExtensions.Server
 {
-  public class ModuleAsyncHandlers
+  public partial class ModuleAsyncHandlers
   {
 
   }

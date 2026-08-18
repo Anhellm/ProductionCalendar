@@ -1,0 +1,9 @@
+{
+  "$type": "Sungero.DataExport.ExportingObject, Sungero.DataExport",
+  "Uuid": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+  "ModuleNameGuid": "b019eaad-a6b5-436e-8417-ee930b9c103e",
+  "HelpCode": "Starkov_ProductionCalendar",
+  "Status": "Active",
+  "SortingPriority": "Medium",
+  "StoreAsDefaultSetting": true
+}

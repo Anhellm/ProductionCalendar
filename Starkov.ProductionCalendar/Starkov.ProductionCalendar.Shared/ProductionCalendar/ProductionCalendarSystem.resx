@@ -151,4 +151,43 @@
   <data name="Action_WorkScheduleChangeConfirmationDescription" xml:space="preserve">
     <value />
   </data>
+  <data name="Property_JsonInfo" xml:space="preserve">
+    <value>Summary information in json</value>
+  </data>
+  <data name="Action_NextYear" xml:space="preserve">
+    <value>Next year</value>
+  </data>
+  <data name="Action_NextYearDescription" xml:space="preserve">
+    <value>Open databook entry for next year</value>
+  </data>
+  <data name="Action_NextYearHint" xml:space="preserve">
+    <value>Open databook entry for next year</value>
+  </data>
+  <data name="Action_NextYearConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_NextYearConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_PreviousYear" xml:space="preserve">
+    <value>Previous year</value>
+  </data>
+  <data name="Action_PreviousYearDescription" xml:space="preserve">
+    <value>Open databook entry for previous year</value>
+  </data>
+  <data name="Action_PreviousYearHint" xml:space="preserve">
+    <value>Open databook entry for previous year</value>
+  </data>
+  <data name="Action_PreviousYearConfirmationMessage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Action_PreviousYearConfirmationDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ribbon_NavigationPage_b5c96da2ad304a038d52607596a78aab" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="Ribbon_NavigationGroup_f646e2c9eb314f91bf66ff873f86e752" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
 </root>

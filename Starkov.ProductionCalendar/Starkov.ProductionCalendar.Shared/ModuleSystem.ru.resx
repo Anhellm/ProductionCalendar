@@ -127,4 +127,7 @@
   <data name="JobDescription_f4620f6263d74681837eb2a269e8d381" xml:space="preserve">
     <value>Создание или обновление календаря следующего года из внешнего сервиса</value>
   </data>
+  <data name="AsyncHandler_Description_86daa52408434ea89467811fc12d32f1" xml:space="preserve">
+    <value>Обновление данных календаря из внешнего сервиса.</value>
+  </data>
 </root>

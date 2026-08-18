@@ -9,6 +9,32 @@ namespace Starkov.ProductionCalendar.Client
 {
   partial class ProductionCalendarActions
   {
+    #region Открыть календарь на след. год.
+    public virtual void PreviousYear(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      if (_obj.Year.HasValue)
+        Functions.Module.ShowOrCreateMainCalendar(_obj.Year.Value - 1);
+    }
+
+    public virtual bool CanPreviousYear(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return _obj.Year.HasValue;
+    }
+    #endregion
+
+    #region Открыть календарь на след. год.
+    public virtual void NextYear(Sungero.Domain.Client.ExecuteActionArgs e)
+    {
+      if (_obj.Year.HasValue)
+        Functions.Module.ShowOrCreateMainCalendar(_obj.Year.Value + 1);
+    }
+
+    public virtual bool CanNextYear(Sungero.Domain.Client.CanExecuteActionArgs e)
+    {
+      return _obj.Year.HasValue;
+    }
+    #endregion
+
     #region Изменить график работы
     public virtual void WorkScheduleChange(Sungero.Domain.Client.ExecuteActionArgs e)
     {
@@ -64,9 +90,8 @@ namespace Starkov.ProductionCalendar.Client
         
         try
         {
-          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, settings, withoutPreHolidays.Value.GetValueOrDefault(), 
-                                          preholidays, dateStart.Value, dateEnd.Value);
-          _obj.State.Controls.CalendarState.Refresh();
+          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, settings, withoutPreHolidays.Value.GetValueOrDefault(),
+                                          preholidays, dateStart.Value, dateEnd.Value);          
           Dialogs.ShowMessage(ProductionCalendars.Resources.WorkScheduleChangeSuccess_Info);
         }
         catch (Exception ex)
@@ -101,28 +126,85 @@ namespace Starkov.ProductionCalendar.Client
     public virtual void UpdateFromExternalService(Sungero.Domain.Client.ExecuteActionArgs e)
     {
       var settings = Functions.CalendarSettings.Remote.GetUpdateSettings();
+      var defualtService = settings.DefaultService;
       
       var dialog = Dialogs.CreateInputDialog(ProductionCalendars.Resources.UpdateDialog_Name);
-      var service = dialog.AddSelect(ProductionCalendars.Resources.UpdateDialog_Service, true, settings.DefaultService);
+      var service = dialog.AddSelect(ProductionCalendars.Resources.UpdateDialog_Service, true, defualtService);
       var withPreHolidays = dialog.AddBoolean(ProductionCalendars.Resources.UpdateDialog_SetPreHolidays, settings.NeedSetPreHolidays.GetValueOrDefault());
+      var html = dialog.AddFileSelect(ProductionCalendars.Resources.UpdateDialog_File, false)
+        .WithFilter(ProductionCalendars.Resources.UpdateDialog_FileFilterName, "html", "htm");
       
-      if (dialog.Show() == DialogButtons.Ok)
-      {
-        var serviceValue = service.Value;
-        settings.NeedSetPreHolidays = withPreHolidays.Value;
-        
-        try
+      var ayncButton = dialog.Buttons.AddCustom(ProductionCalendars.Resources.UpdateDialog_AsyncButton);
+      dialog.Buttons.AddOkCancel();
+      
+      ayncButton.IsVisible = settings.CanAsyncUpdate.GetValueOrDefault();
+      
+      bool canParse = IsolatedFunctions.ExternalData.CanUseParse(defualtService?.DataSource.Value.Value);
+      bool hasContent = false;
+      
+      #region Обработчики диалога.
+      service.SetOnValueChanged(
+        (args) =>
         {
-          var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue);
-          Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
-          Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
-        }
-        catch (Exception ex)
+          if (!Equals(args.NewValue, args.OldValue))
+            canParse = args.NewValue?.DataSource != null ? IsolatedFunctions.ExternalData.CanUseParse(args.NewValue.DataSource.Value.Value) : false;
+        });
+      dialog.SetOnRefresh(
+        (args) =>
         {
-          Logger.Error("ProductionCalendar. UpdateWeekends(action). Ошибка обработки данных.", ex);
-          Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
-        }
-      }
+          html.IsVisible = canParse;
+          hasContent = html.Value?.Content?.Length > 0;
+          ayncButton.IsEnabled = !hasContent && args.IsValid;
+        });
+      #endregion
+      
+      dialog.SetOnButtonClick(
+        (args) =>
+        {
+          var btn = args.Button;
+          
+          #region Ok.
+          if (btn == DialogButtons.Ok)
+          {
+            var serviceValue = service.Value;
+            settings.NeedSetPreHolidays = withPreHolidays.Value;
+            
+            var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+              .WithProperty("Action", "UpdateFromExternalService");
+            
+            try
+            {
+              // Структура с массивом байт файла.
+              Sungero.Docflow.Structures.Module.IByteArray structure = null;
+              if (canParse && hasContent)
+                structure = Sungero.Docflow.Structures.Module.ByteArray.Create(html.Value.Content);
+              
+              var data = Functions.Module.Remote.GetWeekendData(_obj.Year.GetValueOrDefault(), serviceValue, structure);
+              Functions.Module.UpdateCalendar(_obj.WorkingTimeCalendar, data, settings);
+              Functions.ProductionCalendar.UpdateProductionCalendar(_obj, data, service.Value);
+            }
+            catch (Exception ex)
+            {
+              _logger.Error(ex, "Ошибка обработки данных.");
+              Dialogs.ShowMessage(ProductionCalendars.Resources.UpdateWeekends_ErrorFormat(ex.Message), MessageType.Error);
+            }
+          }
+          #endregion
+          
+          #region АО.
+          if (btn == ayncButton)
+          {
+            e.CloseFormAfterAction = true;
+            
+            var handler = AsyncHandlers.UpdateCalendar.Create();
+            handler.ProductionCalendarId = _obj.Id;
+            handler.ServiceId = service.Value.Id;
+            handler.ExecuteAsync(ProductionCalendars.Resources.AsyncUpdate_CompleteNotification);
+          }
+          #endregion
+        });
+      
+      dialog.Show();
     }
 
     public virtual bool CanUpdateFromExternalService(Sungero.Domain.Client.CanExecuteActionArgs e)

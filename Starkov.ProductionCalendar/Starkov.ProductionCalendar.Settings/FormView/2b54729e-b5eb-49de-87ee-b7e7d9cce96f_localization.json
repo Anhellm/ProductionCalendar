@@ -1,0 +1,27 @@
+{
+  "CalendarWorkGroup_Caption_0b8fdfd91161419696879eb8c1356df7": {
+    "en-US": "Work with calendar",
+    "ru-RU": "Работа с календарем"
+  },
+  "Description": {},
+  "ExternalServiceGroup_Caption_368ec19b5f5d4af3a1f432d0a1ea9028": {
+    "en-US": "External service",
+    "ru-RU": "Внешний сервис"
+  },
+  "MainPage_Title_d87cac077d454b14b26921f085b0a7fe": {
+    "en-US": "Properties",
+    "ru-RU": "Свойства"
+  },
+  "Name": {
+    "en-US": "Production calendar",
+    "ru-RU": "Производственный календарь"
+  },
+  "NavigationPage_Caption_b5c96da2ad304a038d52607596a78aab": {
+    "en-US": "Navigation",
+    "ru-RU": "Навигация"
+  },
+  "PreHolidaysPage_Title_71f0b4d91232404b9f19ded7e30369d7": {
+    "en-US": "Preholidays",
+    "ru-RU": "Предпраздничные дни"
+  }
+}

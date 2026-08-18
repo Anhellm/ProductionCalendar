@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.ProductionCalendar.Shared
 {
-  public class ModuleFunctions
+  public partial class ModuleFunctions
   {
     #region Валидация значений времени.
     /// <summary>
@@ -118,51 +118,24 @@ namespace Starkov.ProductionCalendar.Shared
     #endregion
 
     /// <summary>
-    /// Получить список дат.
-    /// </summary>
-    /// <param name="dates">Массив дней.</param>
-    /// <param name="month">Номер месяца.</param>
-    /// <param name="year">Год.</param>
-    /// <returns>Список дат.</returns>
-    public List<DateTime> GetListDates(string[] dates, int month, int year)
-    {
-      if (dates == null)
-        return new List<DateTime>();
-      
-      return dates
-        .Select(x =>
-                {
-                  int result;
-                  return int.TryParse(x, out result) ? result : -1;
-                })
-        .Where(x => x > -1)
-        .Select(x =>
-                {
-                  DateTime date;
-                  string stringDate = string.Format("{0}.{1}.{2}", x, month, year);
-                  return DateTime.TryParseExact(stringDate, "d.M.yyyy", TenantInfo.Culture, System.Globalization.DateTimeStyles.None, out date) ?
-                    date :
-                    DateTime.MinValue;
-                })
-        .Where(x => x > DateTime.MinValue)
-        .ToList();
-    }
-
-    /// <summary>
     /// Обновить календарь рабочего времени.
     /// </summary>
     /// <param name="calendar">Календарь.</param>
     /// <param name="data">Данные по выходным.</param>
     /// <param name="settings">Настройки обновления.</param>
-    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.WeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
+    public virtual void UpdateCalendar(IWorkingTimeCalendar calendar, Structures.Module.IWeekendData data, Structures.CalendarSettings.IUpdateSettings settings)
     {
+      var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+        .WithProperty("Function", "UpdateCalendar")
+        .WithProperty("CalendarId", calendar.Id);
+      
       if (calendar == null || data == null)
       {
-        Logger.Error("ProductionCalendar. UpdateCalendar(func). Переданы пустые параметры.");
+        _logger.Error("Переданы пустые параметры.");
         return;
       }
       
-      Logger.DebugFormat("ProductionCalendar. UpdateCalendar(func). Обновление данных календаря с ИД {0}.", calendar.Id);
+      _logger.Debug("Обновление данных календаря.");
       
       var days = calendar.Day;
       
@@ -196,6 +169,7 @@ namespace Starkov.ProductionCalendar.Shared
           preHoliday.DayEnding -= 1;
       
       calendar.Save();
+      _logger.Debug("Данные календаря обновлены.");
     }
     
     /// <summary>

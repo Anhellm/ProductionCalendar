@@ -26,7 +26,6 @@
     "Tabs": []
   },
   "DesktopViews": [],
-  "IconResourcesKeys": [],
   "Importance": "Medium",
   "InterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "InterfaceNamespace": "Starkov.CalendarExtensions",
@@ -34,9 +33,41 @@
   "IsolatedNamespace": "Starkov.CalendarExtensions.Isolated",
   "OrderedSpecialFolders": [],
   "PublicStructures": [],
+  "RemoteComponents": [
+    {
+      "NameGuid": "fff72ef4-11c5-41e5-8387-f66b04c08692",
+      "Name": "CalendarControl",
+      "ComponentVersion": "2.0",
+      "Controls": [
+        {
+          "NameGuid": "cc7023c5-8020-4d58-a700-022d03a0033d",
+          "Name": "CardCalendarControl",
+          "DisplayNames": [
+            {
+              "NameGuid": "1258d7c4-0e51-4e06-8aef-0212b7f9a95d",
+              "DisplayName": "Календарь",
+              "Locale": "ru"
+            },
+            {
+              "NameGuid": "d5bac6a4-d985-4a10-949c-2c2f9411b63c",
+              "DisplayName": "Calendar",
+              "Locale": "en"
+            }
+          ],
+          "Loaders": [
+            {
+              "NameGuid": "5d7f6639-677d-4119-880d-2707400558c2",
+              "Name": "card-calendar-control-loader"
+            }
+          ]
+        }
+      ],
+      "HostApiVersion": "1.0.1",
+      "PublicName": "STARKOV_Group_Calendar_2_0"
+    }
+  ],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.CalendarExtensions",
-  "ResourcesKeys": [],
   "ServerAssemblyName": "Starkov.CalendarExtensions.Server",
   "ServerNamespace": "Starkov.CalendarExtensions.Server",
   "SharedAssemblyName": "Starkov.CalendarExtensions.Shared",
@@ -47,11 +78,11 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 8
+      "Number": 12
     },
     {
       "Type": "ModuleMetadata",
-      "Number": 8
+      "Number": 12
     },
     {
       "Type": "DomainApi",

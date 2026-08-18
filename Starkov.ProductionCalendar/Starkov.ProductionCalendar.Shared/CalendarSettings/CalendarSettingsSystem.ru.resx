@@ -91,4 +91,7 @@
   <data name="ControlGroup_bf8d7be5d06f49969fe451480d4c22ab" xml:space="preserve">
     <value>Распорядок дня</value>
   </data>
+  <data name="Property_CanAsyncUpdate" xml:space="preserve">
+    <value>Возможность асинхронного обновления</value>
+  </data>
 </root>

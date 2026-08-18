@@ -71,7 +71,7 @@
     <value>Service</value>
   </data>
   <data name="Property_Url" xml:space="preserve">
-    <value>Url</value>
+    <value>Url template</value>
   </data>
   <data name="Property_DataSource" xml:space="preserve">
     <value>Source</value>

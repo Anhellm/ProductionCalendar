@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Sungero.Core;
@@ -6,7 +6,7 @@ using Sungero.CoreEntities;
 
 namespace Starkov.ProductionCalendar.Server
 {
-  public class ModuleJobs
+  public partial class ModuleJobs
   {
 
     /// <summary>
@@ -17,14 +17,18 @@ namespace Starkov.ProductionCalendar.Server
       int year = Calendar.Today.Year + 1;
       var settings = Functions.CalendarSettings.GetUpdateSettings();
       
-      Structures.Module.WeekendData data = null;
+      var _logger = Logger.WithLogger(Constants.Module.LoggerPostfix)
+        .WithProperty("Job", "NextYearCalendar")
+        .WithProperty("Year", year);
+      
+      Structures.Module.IWeekendData data = null;
       try
       {
-        data = Functions.Module.GetWeekendData(year, settings.DefaultService);
+        data = Functions.Module.GetWeekendData(year, settings.DefaultService, null);
       }
       catch (Exception ex)
       {
-        Logger.Error("Ошибка при получении данных из внешнего сервис.", ex);
+        _logger.Error(ex, "Ошибка при получении данных из внешнего сервиса.");
         return;
       }
       
@@ -42,11 +46,11 @@ namespace Starkov.ProductionCalendar.Server
       try
       {
         Functions.Module.UpdateCalendar(workingTimeCalendar, data, settings);
-        Logger.DebugFormat("Обновлен календарь на {0} год.", year);
+        _logger.Debug("Календарь обновлен.");
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Ошибка при обновлении данных календаря на {0} год.", ex, year);
+        _logger.Error(ex, "Ошибка при обновлении данных календаря.");
         return;
       }
       
@@ -59,7 +63,7 @@ namespace Starkov.ProductionCalendar.Server
       }
       catch (Exception ex)
       {
-        Logger.ErrorFormat("Ошибка при обновлении данных производственного календаря на {0} год.", ex, year);
+        _logger.Error(ex, "Ошибка при обновлении данных производственного календаря.");
         return;
       }
     }

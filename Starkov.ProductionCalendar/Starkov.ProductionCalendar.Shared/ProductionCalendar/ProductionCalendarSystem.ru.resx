@@ -124,4 +124,31 @@
   <data name="Action_WorkScheduleChangeDescription" xml:space="preserve">
     <value>Изменить график работы в календаре рабочего времени</value>
   </data>
+  <data name="Property_JsonInfo" xml:space="preserve">
+    <value>Сводная информация в json</value>
+  </data>
+  <data name="Action_NextYear" xml:space="preserve">
+    <value>Следующий год</value>
+  </data>
+  <data name="Action_NextYearHint" xml:space="preserve">
+    <value>Открыть запись справочника для следующего года</value>
+  </data>
+  <data name="Action_NextYearDescription" xml:space="preserve">
+    <value>Открыть запись справочника для следующего года</value>
+  </data>
+  <data name="Action_PreviousYear" xml:space="preserve">
+    <value>Предыдущий год</value>
+  </data>
+  <data name="Action_PreviousYearHint" xml:space="preserve">
+    <value>Открыть запись справочника для предыдущего года</value>
+  </data>
+  <data name="Action_PreviousYearDescription" xml:space="preserve">
+    <value>Открыть запись справочника для предыдущего года</value>
+  </data>
+  <data name="Ribbon_NavigationPage_b5c96da2ad304a038d52607596a78aab" xml:space="preserve">
+    <value>Навигация</value>
+  </data>
+  <data name="Ribbon_NavigationGroup_f646e2c9eb314f91bf66ff873f86e752" xml:space="preserve">
+    <value>Навигация</value>
+  </data>
 </root>
