@@ -318,8 +318,8 @@
     }
   ],
   "Overridden": [
-    "IsVisible",
-    "IsLicensed"
+    "IsLicensed",
+    "IsVisible"
   ],
   "PublicFunctions": [
     {
@@ -396,7 +396,6 @@
       "Properties": [
         {
           "Name": "Date",
-          "IsNullable": true,
           "TypeFullName": "global::System.DateTime"
         },
         {

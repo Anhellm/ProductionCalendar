@@ -112,9 +112,9 @@
   "ListViewUuid": "4ceb61ee-d020-4a70-8149-a08a1e83de12",
   "OperationsClass": "",
   "Overridden": [
+    "CanBeUsedInIntegration",
     "IsAutoCreated",
-    "IsStatusEnabled",
-    "CanBeUsedInIntegration"
+    "IsStatusEnabled"
   ],
   "Properties": [
     {
@@ -123,9 +123,9 @@
       "Name": "Status",
       "IsAncestorMetadata": true,
       "Overridden": [
-        "IsVisibility",
         "CanBeSearch",
-        "IsShowedInList"
+        "IsShowedInList",
+        "IsVisibility"
       ]
     },
     {

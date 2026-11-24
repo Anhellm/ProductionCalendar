@@ -32,6 +32,7 @@
   "IsolatedAssemblyName": "Starkov.CalendarExtensions.Isolated",
   "IsolatedNamespace": "Starkov.CalendarExtensions.Isolated",
   "OrderedSpecialFolders": [],
+  "OverrideSuffix": "Starkov",
   "PublicStructures": [],
   "RemoteComponents": [
     {
@@ -68,6 +69,7 @@
   ],
   "ResourceInterfaceAssemblyName": "Sungero.Domain.Interfaces",
   "ResourceInterfaceNamespace": "Starkov.CalendarExtensions",
+  "ResourcesKeys": [],
   "ServerAssemblyName": "Starkov.CalendarExtensions.Server",
   "ServerNamespace": "Starkov.CalendarExtensions.Server",
   "SharedAssemblyName": "Starkov.CalendarExtensions.Shared",
@@ -78,7 +80,7 @@
   "Versions": [
     {
       "Type": "SolutionMetadata",
-      "Number": 12
+      "Number": 13
     },
     {
       "Type": "ModuleMetadata",
